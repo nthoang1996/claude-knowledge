@@ -11,10 +11,14 @@
             "id": "6a55b066d5143918",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Explore, Plan, Code, Commit"
             }
           }
         ]
@@ -214,18 +218,20 @@
   },
   "active": "6a55b066d5143918",
   "lastOpenFiles": [
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.5292aa48a73a",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.2dbcf245851c",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.10712c012fc8",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md.tmp.10284.f9d381030c69",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.10284.d2b88dbaaf82",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.10284.a65702cccbc8",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.dd0ca64e98dc",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.f7d04ffefc7f",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md.tmp.9128.ea22fd137957",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.fe430177e66a",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.136f20306a84",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.e3e9126184fd",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20776.9338b1700827",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.17084.0b241b65f972",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7676.140ec0a01148",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7676.305f28b20d2e",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.21672.56759cc90b02",
     "AI Agent.md",
     "2026-08-15.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md",
@@ -249,7 +255,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Outlook.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for PowerPoint.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Slack.md",
-    "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md"
+    "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md"
   ]
 }

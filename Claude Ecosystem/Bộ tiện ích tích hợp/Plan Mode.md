@@ -45,3 +45,4 @@ graph TD
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Code#Cơ chế phân quyền (Permissions)|Cơ chế phân quyền (Permissions)]]
+- Là bước 1-2 trong quy trình: [[Explore, Plan, Code, Commit]]

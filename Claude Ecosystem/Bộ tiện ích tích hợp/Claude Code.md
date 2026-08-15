@@ -60,6 +60,9 @@ Quyết định mức độ tự chủ của Claude Code và mức độ giám s
 - **Auto-accept edits** — tự do sửa file không cần hỏi, nhưng lệnh shell/terminal vẫn phải được duyệt; tăng tốc code/refactor mà vẫn chặn lệnh nguy hiểm.
 - **[[Plan Mode]]** — chỉ dùng tool read-only để khảo sát, lập kế hoạch chi tiết trước, người dùng duyệt kế hoạch rồi mới cho phép chỉnh sửa; phù hợp tác vụ lớn/phức tạp.
 
+> [!tip] Quy trình làm việc khuyến nghị
+> Kết hợp Plan Mode với các bước Code/Commit theo quy trình chuẩn [[Explore, Plan, Code, Commit]] để tối ưu hiệu quả khi dùng Claude Code.
+
 Có thể cấu hình các chế độ này trong `settings file` của Claude Code, hoặc chuyển đổi nhanh ngay trong lúc thao tác bằng phím tắt `Shift + Tab` (lặp lại để xoay vòng qua các chế độ) mà không cần sửa file cấu hình.
 
 > [!tip] Không có chế độ đúng/sai tuyệt đối
@@ -134,4 +137,5 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Khái niệm nền: [[AI Agent]]
+- Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]]
 - Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]]
