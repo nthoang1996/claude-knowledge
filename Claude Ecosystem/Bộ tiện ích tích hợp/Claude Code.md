@@ -65,6 +65,66 @@ Có thể cấu hình các chế độ này trong `settings file` của Claude C
 > [!warning] Rủi ro khi tắt permissions
 > Cho Claude Code toàn quyền chạy lệnh terminal mà không giám sát có thể gây sai sót khó đảo ngược: xóa nhầm dữ liệu, chạy nhầm lệnh build, cài đè gói thư viện...
 
+## Cài đặt & khởi chạy
+
+- **macOS / Linux / WSL** — khuyến nghị dùng lệnh `curl` (cài nhanh, hỗ trợ tự động cập nhật); có thể thay bằng `brew install` nhưng không tự cập nhật.
+- **Windows** — dùng `Invoke-RestMethod` trong PowerShell hoặc `curl` trong CMD; có thể thay bằng `winget install` nhưng cũng không tự cập nhật.
+- **Khởi chạy lần đầu** — mở terminal tại đúng thư mục dự án, gõ `claude` (nếu lệnh chưa nhận, tắt/mở lại terminal). Thiết lập ban đầu gồm: chọn color theme, rồi đăng nhập tài khoản Claude (Pro/Max) hoặc nhập API key — chọn đúng tùy chọn Enterprise nếu công ty dùng gói này.
+
+> [!warning] Phạm vi truy cập thư mục (Folder Scope)
+> Claude Code có toàn quyền truy cập thư mục nơi lệnh `claude` được gõ, cùng mọi thư mục con bên trong — cần đứng đúng thư mục dự án cần xử lý trước khi khởi chạy.
+
+### Cài đặt qua VS Code Extension
+
+- **Cài đặt** — mở bảng Extensions (`Ctrl+Shift+X`, Mac: `Cmd+Shift+X`), tìm "Claude Code", chọn đúng tiện ích do Anthropic phát hành (có tích xanh xác thực), nhấn Install, khởi động lại VS Code nếu được yêu cầu.
+- **Cách mở** — qua Command Palette (`Ctrl+Shift+P`/`Cmd+Shift+P` → "Claude Code: Open in New Tab") hoặc click icon Claude trên sidebar.
+- **Chuyển đổi giao diện** — mặc định hiển thị UI đồ họa tương tự bản Terminal; có thể tắt trong Settings để quay về trải nghiệm dòng lệnh (terminal) nguyên bản.
+
+### Cài đặt qua JetBrains IDE Plugin
+
+- **IDE hỗ trợ** — IntelliJ IDEA, PyCharm, WebStorm, CLion... (mọi IDE nền JetBrains).
+- **Cài đặt** — vào Settings → Plugins → tab Marketplace, tìm "Claude Code", nhấn Install, sau đó Restart IDE để áp dụng.
+- **Cách mở** — sau khi khởi động lại, icon Claude xuất hiện trên thanh công cụ; click vào để mở pane phụ chứa giao diện terminal, hiển thị song song bên cạnh editor chính.
+
+### Cài đặt qua Claude Desktop App
+
+- **Kích hoạt** — sau khi cài đặt và đăng nhập Claude Desktop App, nhấn nút gạt (toggle) **"Code"** ở phía trên cùng màn hình để chuyển từ giao diện Chat sang giao diện lập trình.
+- **Giao diện** — look-and-feel tương đồng giao diện Chat thông thường, dễ làm quen.
+- **Tính năng riêng** — so với CLI/IDE extension, bản Desktop có thêm:
+  - Chọn thư mục làm việc (working directory) cụ thể ngay trên giao diện.
+  - Tùy chỉnh [[#Cơ chế phân quyền (Permissions)|Permissions]] trực quan bằng UI thay vì sửa `settings file`.
+  - Hỗ trợ kết nối và làm việc trên môi trường **Cloud**, không chỉ giới hạn ở máy cục bộ.
+
+### Truy cập qua Trình duyệt Web (claude.ai/code)
+
+- **Cách truy cập** — vào thẳng `claude.ai/code`, hoặc nhấn mục **"Code"** trên sidebar trái của giao diện `claude.ai` thông thường.
+- **Giao diện** — cách hoạt động và bố cục tương đồng bản [[#Cài đặt qua Claude Desktop App|Desktop App]].
+
+> [!warning] Giới hạn phạm vi (chỉ GitHub Repository)
+> Khác với bản Terminal/IDE (toàn quyền thao tác trên ổ đĩa máy cục bộ), bản Web chỉ hoạt động trong phạm vi các **GitHub repository** đã kết nối — không truy cập được thư mục cục bộ.
+
+### So sánh nhanh các môi trường chạy
+
+| Môi trường | Phạm vi mã nguồn | Cách mở/kết nối |
+| --- | --- | --- |
+| Terminal / VS Code / JetBrains | Thư mục cục bộ bất kỳ | Lệnh `claude` hoặc plugin IDE |
+| Claude Desktop App | Thư mục cục bộ hoặc môi trường Cloud | Nút gạt "Code" trong app |
+| Trình duyệt Web (`claude.ai/code`) | Chỉ GitHub repository đã kết nối | Đường dẫn `claude.ai/code` hoặc sidebar |
+
+### Chọn môi trường theo nhu cầu sử dụng
+
+Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục đích thực tế:
+
+| Môi trường | Phù hợp nhất khi... | Ưu điểm cốt lõi |
+| --- | --- | --- |
+| Terminal | Muốn trải nghiệm sớm nhất các tính năng mới | Tính năng mới luôn được cập nhật tại đây đầu tiên |
+| VS Code / JetBrains | Muốn thao tác liền mạch ngay trong IDE đang code | Vừa đọc code vừa giao việc cho AI, không rời editor |
+| Desktop App | Muốn ủy quyền tác vụ chạy ngầm | Treo tác vụ cho Claude tự làm ở nền trong khi làm việc khác |
+| Web (`claude.ai/code`) | Cần làm việc từ xa qua GitHub repository | Không cần clone code về máy local |
+
+> [!tip] Không có lựa chọn tuyệt đối
+> Việc chọn môi trường nào phụ thuộc vào thói quen cá nhân và tính chất dự án đang triển khai.
+
 ## Liên kết
 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
