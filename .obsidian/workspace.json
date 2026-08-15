@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Plan",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -180,8 +180,8 @@
             "state": {
               "type": "bc-matrix-view",
               "state": {},
-              "icon": "blinds",
-              "title": "Matrix view"
+              "icon": "lucide-ghost",
+              "title": "bc-matrix-view"
             }
           },
           {
@@ -214,24 +214,24 @@
   },
   "active": "6a55b066d5143918",
   "lastOpenFiles": [
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7112.586b2ffb7fef",
-    "AI Agent.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7112.780a51be0a0d",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7112.6ec8e6c3ccda",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
-    "AI Agent.md.tmp.7112.35d902197531",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.17804.88609a80e2a2",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.f7d04ffefc7f",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md.tmp.9128.ea22fd137957",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.fe430177e66a",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.136f20306a84",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.9128.e3e9126184fd",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20776.9338b1700827",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.17084.0b241b65f972",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7676.140ec0a01148",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7676.305f28b20d2e",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.21672.56759cc90b02",
+    "AI Agent.md",
     "2026-08-15.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md",
-    "CLAUDE.md.tmp.17804.d11570418f31",
-    "CLAUDE.md.tmp.17804.319086b6bd41",
     "CLAUDE.md",
     "Sử dụng Claude hiệu quả.md",
-    "Claude Ecosystem.md.tmp.8072.c3a9f6b14b40",
-    "Claude Ecosystem.md.tmp.8072.95a6577bfd6d",
-    "Claude Ecosystem/Bộ tiện ích tích hợp.md.tmp.8072.7b58e85335bc",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.8072.06bc25c4d97e",
     "Sử dụng Claude hiệu quả/Ứng dụng thực tế.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Artifacts.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Research.md",
@@ -250,7 +250,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for PowerPoint.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Slack.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Projects.md"
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md"
   ]
 }

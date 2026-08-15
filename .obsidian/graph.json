@@ -8,6 +8,20 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
+      "query": "path:\"Claude Ecosystem.md\" OR path:\"Sử dụng Claude hiệu quả.md\"",
+      "color": {
+        "a": 1,
+        "rgb": 15277667
+      }
+    },
+    {
+      "query": "path:\"Claude Ecosystem/Bộ tiện ích tích hợp.md\" OR path:\"Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md\" OR path:\"Claude Ecosystem/Nền tảng cốt lõi.md\" OR path:\"Sử dụng Claude hiệu quả/Bắt đầu với Claude.md\" OR path:\"Sử dụng Claude hiệu quả/Ứng dụng thực tế.md\" OR path:\"Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md\"",
+      "color": {
+        "a": 1,
+        "rgb": 10233776
+      }
+    },
+    {
       "query": "path:\"Claude Ecosystem/Nền tảng cốt lõi/\"",
       "color": {
         "a": 1,
