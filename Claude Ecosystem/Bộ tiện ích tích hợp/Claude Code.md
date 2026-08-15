@@ -58,9 +58,14 @@ Quyết định mức độ tự chủ của Claude Code và mức độ giám s
 
 - **Default** — xin phép trước mọi lần sửa file hoặc chạy lệnh terminal; an toàn tối đa, duyệt từng thao tác.
 - **Auto-accept edits** — tự do sửa file không cần hỏi, nhưng lệnh shell/terminal vẫn phải được duyệt; tăng tốc code/refactor mà vẫn chặn lệnh nguy hiểm.
-- **Plan mode** — chỉ dùng tool read-only để khảo sát, lập kế hoạch chi tiết trước, người dùng duyệt kế hoạch rồi mới cho phép chỉnh sửa; phù hợp tác vụ lớn/phức tạp.
+- **[[Plan Mode]]** — chỉ dùng tool read-only để khảo sát, lập kế hoạch chi tiết trước, người dùng duyệt kế hoạch rồi mới cho phép chỉnh sửa; phù hợp tác vụ lớn/phức tạp.
 
-Có thể cấu hình các chế độ này trong `settings file` của Claude Code.
+Có thể cấu hình các chế độ này trong `settings file` của Claude Code, hoặc chuyển đổi nhanh ngay trong lúc thao tác bằng phím tắt `Shift + Tab` (lặp lại để xoay vòng qua các chế độ) mà không cần sửa file cấu hình.
+
+> [!tip] Không có chế độ đúng/sai tuyệt đối
+> Chọn chế độ phù hợp với mức độ tin tưởng và sự thoải mái của bản thân khi làm việc với Claude Code trong từng tác vụ cụ thể.
+
+<!-- -->
 
 > [!warning] Rủi ro khi tắt permissions
 > Cho Claude Code toàn quyền chạy lệnh terminal mà không giám sát có thể gây sai sót khó đảo ngược: xóa nhầm dữ liệu, chạy nhầm lệnh build, cài đè gói thư viện...
