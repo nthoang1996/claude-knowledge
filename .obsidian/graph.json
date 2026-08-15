@@ -1,0 +1,44 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"Claude Ecosystem/Nền tảng cốt lõi/\"",
+      "color": {
+        "a": 1,
+        "rgb": 4886745
+      }
+    },
+    {
+      "query": "path:\"Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/\"",
+      "color": {
+        "a": 1,
+        "rgb": 5875817
+      }
+    },
+    {
+      "query": "path:\"Claude Ecosystem/Bộ tiện ích tích hợp/\"",
+      "color": {
+        "a": 1,
+        "rgb": 14721072
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -0.6,
+  "nodeSizeMultiplier": 1.06852682926829,
+  "lineSizeMultiplier": 0.762575609756098,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.7132754626224413,
+  "close": true
+}
