@@ -50,9 +50,46 @@ Sau khi duyệt xong Plan, chọn **"Approve"** để Claude lần lượt thự
 
 Sau khi tự kiểm thử (self-testing) và hài lòng với kết quả, tác vụ mới sẵn sàng để commit/push:
 
-- **Review độc lập bằng Subagent** — trước khi tạo commit, chạy một Subagent riêng để rà soát lại toàn bộ code vừa sửa. Subagent đóng vai trò "cặp mắt mới" (fresh pair of eyes), không mang theo thành kiến hay giả định lệch mà Agent chính có thể đã tích tụ trong suốt phiên làm việc.
 - Để Claude tự viết commit message mô tả đúng thay đổi, theo đúng văn phong/chuẩn của dự án, thay vì tự soạn tay.
 - Luôn xem lại diff trước khi xác nhận — tránh để Claude tự ý push hoặc thao tác git nguy hiểm khi chưa được cho phép.
+
+### Review độc lập bằng Subagent
+
+Ngay trước khi push code để tạo Pull Request, chạy một **Subagent** riêng để rà soát lại toàn bộ code vừa sửa — bước kiểm tra cuối trước khi mã nguồn được chia sẻ ra ngoài.
+
+- **Cơ chế "góc nhìn mới" (fresh eyes)** — Subagent hoạt động trong một context window hoàn toàn độc lập với Agent chính, nên không mang theo thành kiến (bias) hay giả định lệch mà Agent chính có thể đã tích tụ trong suốt quá trình viết code trước đó.
+
+#### Hai nguyên tắc khi thiết lập Subagent review
+
+- **Giới hạn công cụ chỉ đọc (read-only tools)** — cấu hình cho Subagent kiểm duyệt chỉ được dùng các tool đọc (đọc file, tìm kiếm), không cấp quyền chỉnh sửa. Vai trò của reviewer là phát hiện và cảnh báo lỗi (flag issues), không tự ý sửa code.
+- **Check-in cấu hình vào repo (team alignment)** — lưu file cấu hình Subagent này vào kho mã nguồn của dự án, đảm bảo mọi thành viên trong team dùng chung một tiêu chuẩn đánh giá code thống nhất, thay vì mỗi người tự cấu hình riêng.
+
+> [!tip] Trong Claude Code
+> Có thể triển khai theo nguyên tắc trên bằng cách tạo custom subagent (qua `/agents`) chỉ cấp quyền `Read`, `Grep`, `Glob`... rồi lưu file cấu hình vào thư mục `.claude/agents/` trong repo dự án.
+
+### Tự động hóa với Skill `/commit-push-pr`
+
+Sau khi review xong, thay vì thực hiện thủ công từng bước riêng lẻ (`git commit` → `git push` → mở web tạo PR → copy link gửi Slack), có thể gộp cả chuỗi thao tác này vào một [[Skills|Skill]] gọi bằng lệnh duy nhất `/commit-push-pr`:
+
+- **Tự động phân tích & thực thi** — Claude tự đọc `git diff`, soạn commit message phù hợp, push branch lên remote và khởi tạo Pull Request — không cần chuyển qua lại giữa Terminal và giao diện Web GitHub/GitLab.
+- **Thông báo qua Slack (tùy chọn)** — nếu đã cấu hình [[Connectors (MCP)|Slack MCP Server]] và khai báo danh sách kênh cần nhận thông báo trong `CLAUDE.md`, Claude tự gửi link PR vừa tạo vào đúng kênh Slack của team ngay sau khi PR khởi tạo thành công, để đồng nghiệp vào review sớm.
+
+> [!tip] Vẫn cần xem lại trước khi push
+> Tự động hóa 3-trong-1 không thay thế bước xem diff/duyệt commit ở trên — nên vẫn xác nhận thay đổi trước khi để Claude push/tạo PR, đặc biệt với những repo có quy tắc branch protection nghiêm ngặt.
+
+### Tiếp tục phiên làm việc qua PR (`--from-pr`)
+
+- **Tự động liên kết (automatic linking)** — khi Claude tạo PR (qua `gh pr create` hoặc `/commit-push-pr`), phiên làm việc hiện tại tự động được gán liền với PR đó.
+- **Quay lại khi cần (resume session)** — khi PR có comment review từ đồng nghiệp hoặc CI báo lỗi build, không cần giải thích lại bối cảnh từ đầu; chỉ cần mở terminal gõ `claude --from-pr <PR_NUMBER>` (vd: `claude --from-pr 42`).
+- **Lợi ích** — Claude nạp lại đúng ngữ cảnh và lịch sử của phiên làm việc trước đó, có thể bắt tay sửa lỗi/điều chỉnh code ngay lập tức.
+
+### Tổng kết tính năng hỗ trợ Git
+
+| Tính năng | Công dụng chính | Lợi ích cho workflow |
+| --- | --- | --- |
+| Subagent Code Review | Đánh giá lại mã nguồn bằng subagent read-only trước khi push | Góc nhìn khách quan, không mang thành kiến từ agent chính |
+| `/commit-push-pr` | Gộp tạo commit message → push → tạo PR thành một thao tác | Tiết kiệm thời gian, tự động báo PR lên kênh Slack |
+| `claude --from-pr <ID>` | Khôi phục phiên làm việc gắn liền với một PR cụ thể | Xử lý feedback review/lỗi CI mà không mất bối cảnh cũ |
 
 ## Vì sao Explore & Plan là bước quan trọng nhất
 
@@ -75,4 +112,4 @@ Sau khi tự kiểm thử (self-testing) và hài lòng với kết quả, tác 
 ## Liên kết
 
 - Thuộc: [[Claude Code]]
-- Xem thêm: [[Plan Mode]]
+- Xem thêm: [[Plan Mode]], [[Skills]], [[Connectors (MCP)]]
