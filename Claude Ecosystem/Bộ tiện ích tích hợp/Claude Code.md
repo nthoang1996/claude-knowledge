@@ -43,12 +43,49 @@ graph LR
 
 Hai thành tố kỹ thuật làm nền cho vòng lặp Agentic ở trên, giúp Claude Code không chỉ "nói chuyện" mà thực sự hành động:
 
-- **Context (bộ nhớ phiên làm việc)** — chứa lịch sử hội thoại, nội dung file đã đọc, output lệnh terminal... Khi dữ liệu gần chạm giới hạn, Claude Code tự động **nén (compaction)**: tóm tắt/loại bỏ phần ít quan trọng, giữ lại chi tiết cốt lõi để không mất mạch việc đang làm dở.
+- **Context (bộ nhớ phiên làm việc)** — dung lượng **hữu hạn (finite)**, mọi thao tác trong phiên đều nạp thêm dữ liệu vào đây: lịch sử prompt & phản hồi, nội dung file đã đọc, lệnh terminal cùng kết quả trả về (tool output). Quản lý context tốt (biết khi nào nên `/clear`, tách phiên mới, tránh đọc tràn lan) là yếu tố quyết định để Claude không bị "tràn bộ nhớ" hoặc phản hồi chậm/lạc mạch — xem cơ chế xử lý khi đầy ở [[#Auto-Compaction — khi context đầy]].
 - **Tools (năng lực hành động)** — khác chatbot thông thường chỉ *text-in, text-out*, Claude Code gọi tool để hành động trực tiếp: đọc/ghi file, chạy lệnh, tìm kiếm web, tra cứu mã nguồn... Claude tự hiểu ngữ nghĩa mục tiêu để quyết định **khi nào** gọi tool nào và **dùng kết quả trả về** ra sao cho bước kế tiếp, không theo kịch bản cứng nhắc.
+
+### Auto-Compaction — khi context đầy
+
+Khi hội thoại và các thao tác (đọc file, chạy lệnh) tiến gần giới hạn Context Window, Claude Code tự động kích hoạt nén theo 2 cách:
+
+- **Tóm tắt (summarize)** — giữ lại chi tiết và quyết định quan trọng nhất dưới dạng bản tóm tắt ngắn gọn.
+- **Loại bỏ (remove)** — xóa các tool call output không còn cần thiết từ những lệnh đã chạy trước đó để giải phóng không gian.
+
+> [!warning] Đánh đổi: có thể thất lạc chi tiết
+> Compaction có thể vô tình làm mất một số chi tiết nhỏ hoặc bối cảnh cụ thể đã đọc trước đó. Nếu Claude bắt đầu quên yêu cầu ban đầu hoặc hoạt động kém chính xác sau một phiên làm việc quá dài, đó thường là dấu hiệu compaction đã diễn ra — nên cân nhắc `/clear` hoặc tách phiên mới khi gặp dấu hiệu này.
+
+### Lệnh quản lý context thủ công
+
+Ngoài auto-compaction, người dùng có thể chủ động kiểm soát context bằng slash command:
+
+- **`/compact`** — chủ động kích hoạt nén toàn bộ dữ liệu tính đến hiện tại, giữ lại bản tóm tắt. Dùng khi chuyển sang phần việc mới *trong cùng dự án*, muốn giải phóng bộ nhớ nhưng vẫn giữ mạch công việc trước đó.
+- **`/clear`** — xóa sạch 100% lịch sử, đưa về trạng thái ban đầu. Dùng khi kết thúc hẳn một tác vụ/tính năng và bắt đầu việc mới hoàn toàn độc lập, tránh nhiễu bởi thông tin cũ.
+- **`/context`** — hiển thị báo cáo tình trạng bộ nhớ hiện tại: kích thước đã dùng, các phân vùng tiêu tốn nhiều dung lượng nhất, kèm biểu đồ trực quan.
+
+| Lệnh | Hành động | Khi dùng |
+| --- | --- | --- |
+| `/compact` | Nén & tóm tắt | Giải phóng bộ nhớ, giữ tóm tắt nội dung chính |
+| `/clear` | Xóa hoàn toàn | Bắt đầu phiên mới từ con số 0 |
+| `/context` | Hiển thị thông số | Kiểm tra dung lượng còn lại & biểu đồ phân bổ |
+
+> [!tip] Quy tắc chọn `/compact` hay `/clear`
+>
+> - Đang **làm dở một tính năng cụ thể**, chỉ cần giải phóng bộ nhớ → `/compact` (vẫn giữ ngữ cảnh liên quan tới việc đang làm).
+> - Chuyển sang **một tính năng mới hoàn toàn** → `/clear` (lịch sử cũ không liên quan, để lại dễ gây nhiễu/định kiến — bias — cho việc mới).
+>
+> Với thông tin cần nhớ **xuyên suốt mọi phiên** kể cả sau `/clear` (quy ước dự án, kinh nghiệm xử lý lỗi lặp lại) — ghi vào file `CLAUDE.md` thay vì trông cậy vào context window, xem [[Explore, Plan, Code, Commit#3. Code (Viết mã)|tip CLAUDE.md]].
+
+### Mẹo tiết kiệm context
+
+- **Viết prompt cụ thể** — prompt ngắn nhưng mơ hồ tốn bộ nhớ hơn về lâu dài, vì thiếu chỉ dẫn buộc Claude phải tự đọc nhiều file và suy luận mở rộng để đoán ý; chỉ dẫn chi tiết ngay từ đầu giúp Claude đi thẳng vào vấn đề.
+- **Quản lý [[Connectors (MCP)|MCP server]]** — mặc định mỗi MCP server nạp toàn bộ tool của nó vào context dù không dùng đến; nên tắt bớt server không liên quan đến dự án hiện tại, hoặc cân nhắc dùng [[Skills]] — cơ chế tương tự nhưng không nạp sẵn toàn bộ công cụ ngay từ đầu.
+- **Ủy quyền cho Subagent** — subagent chạy song song, sở hữu context window độc lập với Agent chính; phù hợp cho tác vụ tra cứu chỉ cần nhận kết quả cuối (vd: "endpoint đăng nhập nằm ở đâu?") — subagent tự tìm kiếm rồi chỉ trả về bản tóm tắt, giữ context chính luôn gọn.
 
 ## Nguyên tắc dùng hiệu quả
 
-- **Context window có giới hạn** — không nạp toàn bộ codebase cùng lúc; hoạt động theo kiểu agent, tự truy vết/tra cứu đúng file, đúng hàm cần thiết thay vì đọc tràn lan.
+- **Context window có giới hạn** — không nạp toàn bộ codebase cùng lúc; hoạt động theo kiểu agent, tự truy vết/tra cứu đúng file, đúng hàm cần thiết thay vì đọc tràn lan. Kết hợp prompt cụ thể, gọn MCP/Skills và ủy quyền Subagent (xem [[#Mẹo tiết kiệm context]]) để giữ context chính luôn sạch.
 - **Luôn xin phép trước khi hành động** — mặc định hỏi ý kiến trước khi chạy lệnh terminal hoặc ghi đè file; người dùng luôn kiểm soát, có thể chọn giám sát chặt từng thao tác hoặc duyệt nhanh.
 - **Vẫn có thể mắc sai sót** — hiểu sai ý định, tạo bug mới, hoặc đưa ra giải pháp quá phức tạp (over-engineer); cần người dùng tiếp tục tham gia rà soát, định hướng lại kịp thời (stay in the loop).
 
@@ -138,4 +175,4 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Khái niệm nền: [[AI Agent]]
 - Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]]
-- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]]
+- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Skills]]
