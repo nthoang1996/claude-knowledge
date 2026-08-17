@@ -81,7 +81,7 @@ Ngoài auto-compaction, người dùng có thể chủ động kiểm soát cont
 
 - **Viết prompt cụ thể** — prompt ngắn nhưng mơ hồ tốn bộ nhớ hơn về lâu dài, vì thiếu chỉ dẫn buộc Claude phải tự đọc nhiều file và suy luận mở rộng để đoán ý; chỉ dẫn chi tiết ngay từ đầu giúp Claude đi thẳng vào vấn đề.
 - **Quản lý [[Connectors (MCP)|MCP server]]** — mặc định mỗi MCP server nạp toàn bộ tool của nó vào context dù không dùng đến; nên tắt bớt server không liên quan đến dự án hiện tại, hoặc cân nhắc dùng [[Skills]] — cơ chế tương tự nhưng không nạp sẵn toàn bộ công cụ ngay từ đầu.
-- **Ủy quyền cho Subagent** — subagent chạy song song, sở hữu context window độc lập với Agent chính; phù hợp cho tác vụ tra cứu chỉ cần nhận kết quả cuối (vd: "endpoint đăng nhập nằm ở đâu?") — subagent tự tìm kiếm rồi chỉ trả về bản tóm tắt, giữ context chính luôn gọn.
+- **[[Subagents (Tác vụ phụ)|Ủy quyền cho Subagent]]** — chạy song song, sở hữu context window độc lập với Agent chính; phù hợp cho tác vụ tra cứu chỉ cần nhận kết quả cuối, subagent tự tìm kiếm rồi chỉ trả về bản tóm tắt, giữ context chính luôn gọn.
 
 ## Nguyên tắc dùng hiệu quả
 
@@ -175,4 +175,4 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Khái niệm nền: [[AI Agent]]
 - Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
-- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Skills]]
+- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Skills]], [[Subagents (Tác vụ phụ)]]
