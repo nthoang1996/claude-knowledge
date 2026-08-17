@@ -75,7 +75,7 @@ Ngoài auto-compaction, người dùng có thể chủ động kiểm soát cont
 > - Đang **làm dở một tính năng cụ thể**, chỉ cần giải phóng bộ nhớ → `/compact` (vẫn giữ ngữ cảnh liên quan tới việc đang làm).
 > - Chuyển sang **một tính năng mới hoàn toàn** → `/clear` (lịch sử cũ không liên quan, để lại dễ gây nhiễu/định kiến — bias — cho việc mới).
 >
-> Với thông tin cần nhớ **xuyên suốt mọi phiên** kể cả sau `/clear` (quy ước dự án, kinh nghiệm xử lý lỗi lặp lại) — ghi vào file `CLAUDE.md` thay vì trông cậy vào context window, xem [[Explore, Plan, Code, Commit#3. Code (Viết mã)|tip CLAUDE.md]].
+> Với thông tin cần nhớ **xuyên suốt mọi phiên** kể cả sau `/clear` (quy ước dự án, kinh nghiệm xử lý lỗi lặp lại) — ghi vào file `CLAUDE.md` thay vì trông cậy vào context window, xem [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]].
 
 ### Mẹo tiết kiệm context
 
@@ -174,5 +174,5 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Khái niệm nền: [[AI Agent]]
-- Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]]
+- Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
 - Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Skills]]

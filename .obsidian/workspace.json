@@ -8,44 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6a55b066d5143918",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Claude Code"
-            }
-          },
-          {
-            "id": "7fe3dd0869a8c1db",
-            "type": "leaf",
-            "state": {
-              "type": "3d-graph-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "3d graph"
-            }
-          },
-          {
-            "id": "ffd3552989ec92fa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Explore, Plan, Code, Commit"
-            }
-          },
-          {
             "id": "76a371a24c379283",
             "type": "leaf",
             "state": {
@@ -54,9 +16,19 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "ddbd4cae0157f2b3",
+            "type": "leaf",
+            "state": {
+              "type": "3d-graph-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "3d graph"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -251,27 +223,28 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "ffd3552989ec92fa",
+  "active": "ddbd4cae0157f2b3",
   "lastOpenFiles": [
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+    "AI Agent.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md.tmp.7384.5f3b42b341f3",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md.tmp.7384.64d27a240cb4",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7384.52cc2456dc65",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7384.d272e01b03b4",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7384.ae4b290661cb",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7384.8fab40235ab2",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md.tmp.7384.1180310e720a",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7732.1fdc2def12be",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7732.bee68e471cd2",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7732.a71873a998d1",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.7732.2069a526bb16",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7732.dc69125e4c5e",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7732.6dd01fdfd27e",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.7732.5c1b6eadb5cc",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.5292aa48a73a",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.2dbcf245851c",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md.tmp.10284.10712c012fc8",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md",
-    "AI Agent.md",
     "2026-08-15.md",
     "CLAUDE.md",
     "Sử dụng Claude hiệu quả.md",
@@ -288,7 +261,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Word.md",
     "Claude Ecosystem/Nền tảng cốt lõi.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Outlook.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for PowerPoint.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Slack.md"
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for PowerPoint.md"
   ]
 }

@@ -44,7 +44,7 @@ Sau khi duyệt xong Plan, chọn **"Approve"** để Claude lần lượt thự
 - **Cung cấp bộ test suite** (unit/integration test) để Claude liên tục tự kiểm tra lại code; Claude cũng có thể tự viết bộ test này.
 
 > [!tip] Tối ưu bộ nhớ với CLAUDE.md
-> Nếu Claude liên tục mắc cùng một lỗi hoặc quên quy tắc dự án, yêu cầu Claude ghi giải pháp vào file `CLAUDE.md` — file này đóng vai trò bộ nhớ dài hạn, lưu quy ước cấu trúc và kinh nghiệm xử lý lỗi cho các phiên làm việc sau.
+> Nếu Claude liên tục mắc cùng một lỗi hoặc quên quy tắc dự án, yêu cầu Claude ghi giải pháp vào file `CLAUDE.md` — file này đóng vai trò bộ nhớ dài hạn, lưu quy ước cấu trúc và kinh nghiệm xử lý lỗi cho các phiên làm việc sau. Chi tiết ở [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]].
 
 ## 4. Commit (Lưu trữ)
 
@@ -112,4 +112,4 @@ Sau khi review xong, thay vì thực hiện thủ công từng bước riêng l�
 ## Liên kết
 
 - Thuộc: [[Claude Code]]
-- Xem thêm: [[Plan Mode]], [[Skills]], [[Connectors (MCP)]]
+- Xem thêm: [[Plan Mode]], [[Skills]], [[Connectors (MCP)]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
