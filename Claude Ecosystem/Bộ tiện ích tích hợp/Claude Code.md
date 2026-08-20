@@ -175,4 +175,4 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Khái niệm nền: [[AI Agent]]
 - Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
-- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Quản lý MCP Server trong Claude Code]], [[Skills]], [[Subagents (Tác vụ phụ)]]
+- Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Hooks]], [[Quản lý MCP Server trong Claude Code]], [[Skills]], [[Subagents (Tác vụ phụ)]]
