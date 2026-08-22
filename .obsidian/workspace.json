@@ -21,10 +21,14 @@
             "id": "81606d5c8cc3b8b0",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Platform/Extended Thinking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Extended Thinking"
             }
           },
           {
@@ -42,7 +46,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -76,7 +80,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Platform",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +104,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -237,11 +242,19 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "25a35c1ed517a082",
+  "active": "81606d5c8cc3b8b0",
   "lastOpenFiles": [
+    "Claude Ecosystem.md",
+    "Claude Ecosystem/Claude Platform.md",
+    "Claude Ecosystem/Claude Platform/SDKs.md",
+    "Claude Ecosystem/Claude Platform/Extended Thinking.md",
+    "Claude Ecosystem/Claude Platform/Extended Thinking.md.tmp.24628.a525e8925993",
+    "Claude Ecosystem/Claude Platform/Model Tiers.md",
+    "Claude Ecosystem/Claude Platform/Extended Thinking.md.tmp.24628.c4cf6efe3038",
+    "Claude Ecosystem/Claude Platform/Extended Thinking.md.tmp.24628.c0190d4a31c7",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.20504.6ce76ea9ee59",
     "Claude Ecosystem/Claude Platform/Tool Runner.md",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
     "Claude Ecosystem/Claude Platform/Tool Runner.md.tmp.20504.3c4965135ea5",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.20504.494f624eff17",
@@ -249,14 +262,7 @@
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.20504.2de3e038f9d5",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.14f7769468ee",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.c0f6d56c301b",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.d9815ddb19b7",
-    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.8052.9bb8bacf18c3",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.5b11e0d4a251",
-    "Claude Ecosystem/Claude Platform/Model Tiers.md",
-    "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.d201dbbfaed4",
-    "Claude Ecosystem/Claude Platform.md",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
-    "Claude Ecosystem/Claude Platform/SDKs.md",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
@@ -274,7 +280,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md",
     "2026-08-15.md",
     "CLAUDE.md",
-    "Sử dụng Claude hiệu quả.md",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]
