@@ -14,6 +14,7 @@ Thư viện hỗ trợ sẵn cho các ngôn ngữ lập trình phổ biến (Pyt
 - Đóng gói sẵn: xử lý auth, retry, streaming response, định dạng request/response...
 - Giảm boilerplate code so với gọi REST API trực tiếp.
 - Có phiên bản riêng cho **Claude Agent SDK** — xây dựng agent tự động (không chỉ gọi chat đơn thuần).
+- Tích hợp sẵn [[Tool Runner]] — tự động hóa vòng lặp gọi tool + tự sinh JSON Schema từ code, khỏi viết tay.
 
 ## Theo ngôn ngữ
 

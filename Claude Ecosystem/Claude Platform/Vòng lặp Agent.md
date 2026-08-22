@@ -12,7 +12,7 @@ up: "[[Claude Platform]]"
 
 Cơ chế biến Claude từ một mô hình hỏi-đáp đơn thuần (1 request → 1 response) thành một **Agent tự vận hành**: Claude tự đóng cả hai vai trong một vòng lặp nhắn tin, không cần con người can thiệp giữa chừng — tự phân tích việc cần làm, chọn tool, đọc kết quả, và lặp lại đến khi xong.
 
-Đây chính là cách các primitive **Tool use** (nhắc ở [[Claude Platform#Góc nhìn kiến trúc 3 tầng|Primitives]]) được lắp ráp thành hành vi agent thực sự.
+Đây chính là cách [[Tool Use (Function Calling)|Tool use]] (nhắc ở [[Claude Platform#Góc nhìn kiến trúc 3 tầng|Primitives]]) được lắp ráp thành hành vi agent thực sự.
 
 ## 5 bước
 
@@ -94,11 +94,13 @@ Kiến trúc vòng lặp **giữ nguyên 100%** khi lên production (ví dụ: m
 - **Cơ chế:** gửi tin nhắn kèm tools → chạy tool khi được yêu cầu → trả `tool_result` → dừng khi `stop_reason == "end_turn"`.
 - **Phân chia vai trò:** bạn làm chủ vòng lặp + tools; Claude làm chủ reasoning (suy luận khi nào cần tool, diễn giải kết quả).
 - **Mở rộng:** cùng một mẫu áp dụng từ demo nhỏ đến hệ thống tự động hóa quy mô lớn.
-- **Managed Agents** — khi không muốn tự viết/quản lý vòng lặp, Anthropic có dịch vụ tự vận hành toàn bộ vòng lặp này trên hạ tầng của họ (xem mục Managed Agents trong [[Claude Platform]]).
+- **Không muốn tự viết vòng lặp bằng tay?** Hai mức tự động hóa: [[Tool Runner]] (vẫn chạy trong code của bạn, SDK tự lo boilerplate + sinh schema) và **Managed Agents** (Anthropic tự vận hành toàn bộ vòng lặp trên hạ tầng của họ — xem mục Managed Agents trong [[Claude Platform]]).
 
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Platform]]
+- Khái niệm nền tảng (định nghĩa tool, cấu trúc khai báo, tool_choice...): [[Tool Use (Function Calling)]]
+- SDK tự động hóa toàn bộ vòng lặp này: [[Tool Runner]]
 - Cơ chế bên dưới: `response.content` có thể chứa block `tool_use` — xem ví dụ đọc block trong [[TypeScript]]
 - Ví dụ hạ tầng giữ vòng lặp thay code tự viết: nhắc ở mục Managed Agents trong [[Claude Platform]]
 - Ứng dụng thực tế: [[Claude Code]] (CLI agent), [[Hooks]] (can thiệp vào vòng lặp)
