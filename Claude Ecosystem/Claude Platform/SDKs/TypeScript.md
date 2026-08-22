@@ -32,7 +32,7 @@ Hướng dẫn thực hành gọi [[REST API|Claude API]] bằng gói `@anthropi
 
 `client.messages.create()` có 3 trường bắt buộc:
 
-- `model` — model xử lý yêu cầu (ví dụ `claude-opus-5`; model ID thay đổi theo thời gian, không hardcode "mãi mãi").
+- `model` — model xử lý yêu cầu (ví dụ `claude-opus-5`; model ID thay đổi theo thời gian, không hardcode "mãi mãi"). Cách chọn giữa các cấp model: xem [[Model Tiers]].
 - `max_tokens` — giới hạn độ dài phản hồi tối đa.
 - `messages` — mảng hội thoại, mỗi phần tử có `role` (`"user"`/`"assistant"`) và `content` (nội dung tin nhắn).
 
@@ -79,4 +79,4 @@ for (const block of response.content) {
 ## Liên kết
 
 - Thuộc nhóm: [[SDKs]]
-- Xem thêm: [[REST API]], [[Console]]
+- Xem thêm: [[REST API]], [[Console]], [[Model Tiers]]

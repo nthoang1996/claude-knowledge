@@ -34,7 +34,7 @@ response = client.messages.create(
 draft = response.content
 ```
 
-- **`model`** — chọn dòng model theo độ phức tạp tác vụ (Haiku cho việc đơn giản/nhanh/rẻ).
+- **`model`** — chọn dòng model theo độ phức tạp tác vụ (Haiku cho việc đơn giản/nhanh/rẻ). Chi tiết các cấp model và cách chọn: xem [[Model Tiers]].
 - **`max_tokens`** — chặn phản hồi quá dài, tránh phát sinh chi phí ngoài ý muốn.
 - **`system`** — thiết lập vai trò/quy chuẩn hành văn cho Claude, tách biệt với nội dung yêu cầu thực tế.
 - **`messages`** — mảng hội thoại; `role: "user"` mang nội dung ticket cần xử lý.
@@ -42,5 +42,5 @@ draft = response.content
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Platform]]
-- Xem thêm: [[SDKs]], [[Console]]
-- Chi tiết tham số/model/pricing: xem skill `claude-api` khi cần tra cứu sâu.
+- Xem thêm: [[SDKs]], [[Console]], [[Model Tiers]]
+- Chi tiết tham số/pricing đầy đủ: xem skill `claude-api` khi cần tra cứu sâu.

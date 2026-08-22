@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform.md",
+                "file": "Claude Ecosystem/Claude Platform/Model Tiers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Platform"
+              "title": "Model Tiers"
             }
           },
           {
@@ -242,23 +242,25 @@
   },
   "active": "e2fec1541fdb77d3",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.d201dbbfaed4",
+    "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.e9f87419a39f",
+    "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.316ff849f8f4",
+    "Claude Ecosystem/Claude Platform.md",
+    "Claude Ecosystem/Claude Platform/Model Tiers.md",
+    "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.6ea95c5842af",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.d0c843fb7ea1",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.12896.328cca4f0a15",
     "Claude Ecosystem/Claude Platform/SDKs",
     "Claude Ecosystem/Claude Platform/SDKs.md",
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.40cb8700a9fe",
-    "Claude Ecosystem/Claude Platform.md",
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.c466cb10c721",
     "Claude Ecosystem/Claude Platform.md.tmp.21688.9ab6d9f8ccb4",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/REST API.md.tmp.21688.bc2acac1bd3c",
-    "Claude Ecosystem/Claude Platform.md.tmp.21688.36308986dd1c",
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
-    "Claude Ecosystem/Claude Platform",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.a27552b0d76c",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
     "AI Agent.md",
@@ -276,7 +278,6 @@
     "Sử dụng Claude hiệu quả/Ứng dụng thực tế.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Artifacts.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Research.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp.md",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]

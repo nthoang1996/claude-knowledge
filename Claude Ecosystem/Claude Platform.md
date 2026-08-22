@@ -36,7 +36,7 @@ graph LR
     P["Primitives<br/>(khối nền code gọi trực tiếp)"] --> I["Infrastructure<br/>(hạ tầng khi scale)"] --> C["Controls<br/>(quan sát & vận hành)"]
 ```
 
-- **Primitives** — các thành phần nguyên bản gọi qua [[REST API]]/[[SDKs]]: Messages API, Tool use, xử lý tệp, tìm kiếm web, thực thi code, tích hợp [[Connectors (MCP)|MCP servers]], skills. Định hình logic/khả năng tương tác cơ bản.
+- **Primitives** — các thành phần nguyên bản gọi qua [[REST API]]/[[SDKs]]: Messages API (chọn model — xem [[Model Tiers]]), Tool use, xử lý tệp, tìm kiếm web, thực thi code, tích hợp [[Connectors (MCP)|MCP servers]], skills. Định hình logic/khả năng tương tác cơ bản.
 - **Infrastructure** — đường ống & đệm giúp lên quy mô lớn: Managed agents, retry tự động, hàng đợi (queues), observability. Giữ hệ thống ổn định khi lượng gọi API tăng vọt.
 - **Controls** — công cụ quan sát/điều chỉnh khi đã production: dashboards theo dõi chi phí/hiệu năng, evals đánh giá chất lượng phản hồi. Thể hiện rõ ngay trên [[Console]].
 
@@ -66,3 +66,4 @@ Mọi tính năng AI phức tạp hơn sau này (tóm tắt, phân loại, soạ
 
 - Thuộc: [[Claude Ecosystem]]
 - Phân biệt với: [[Nền tảng cốt lõi]] (tính năng workspace trong Claude.ai/Claude Code, không phải hạ tầng dev)
+- Xem thêm: [[Model Tiers]] (chọn model phù hợp)
