@@ -21,15 +21,17 @@ graph TD
     Root --> A["Nền tảng cốt lõi<br/>(Workspace & Data)"]
     Root --> B["Công cụ tìm kiếm & nghiên cứu"]
     Root --> C["Bộ tiện ích tích hợp<br/>(Apps Integration)"]
+    Root --> D["Claude Platform<br/>(Developer Platform)"]
 ```
 
-*Sơ đồ chi tiết từng nhóm nằm trong note tương ứng: [[Nền tảng cốt lõi]], [[Công cụ tìm kiếm & nghiên cứu]], [[Bộ tiện ích tích hợp]].*
+*Sơ đồ chi tiết từng nhóm nằm trong note tương ứng: [[Nền tảng cốt lõi]], [[Công cụ tìm kiếm & nghiên cứu]], [[Bộ tiện ích tích hợp]], [[Claude Platform]].*
 
-## Ba nhóm chính
+## Bốn nhóm chính
 
 - [[Nền tảng cốt lõi]] (Workspace & Data)
 - [[Công cụ tìm kiếm & nghiên cứu]]
 - [[Bộ tiện ích tích hợp]] (Apps Integration)
+- [[Claude Platform]] (Developer Platform)
 
 ## Liên kết
 
