@@ -173,6 +173,7 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 ## Liên kết
 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
+- Vai trò CLI trong hệ sinh thái dev: [[Claude Platform]]
 - Khái niệm nền: [[AI Agent]]
 - Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
 - Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Hooks]], [[Quản lý MCP Server trong Claude Code]], [[Skills]], [[Subagents (Tác vụ phụ)]]

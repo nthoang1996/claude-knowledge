@@ -4,39 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "bda8f37f04c9de40",
+        "id": "d3ff174516525e7a",
         "type": "tabs",
         "children": [
           {
-            "id": "76a371a24c379283",
+            "id": "e2fec1541fdb77d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
+                "file": "Claude Ecosystem/Claude Platform.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Subagents (Tác vụ phụ)"
+              "title": "Claude Platform"
             }
           },
           {
-            "id": "093679f8a24f4f3c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Quản lý MCP Server trong Claude Code"
-            }
-          },
-          {
-            "id": "9aab8de0824b4719",
+            "id": "907bb9d1153bc9f1",
             "type": "leaf",
             "state": {
               "type": "3d-graph-view",
@@ -46,35 +32,20 @@
             }
           },
           {
-            "id": "54a4d620bcf9d81b",
+            "id": "c011f57aac8c8013",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+                "file": "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Code"
-            }
-          },
-          {
-            "id": "84db81889e683717",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Hooks"
+              "title": "TypeScript"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -269,25 +240,29 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "84db81889e683717",
+  "active": "e2fec1541fdb77d3",
   "lastOpenFiles": [
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.a27552b0d76c",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.4089e9725ca0",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.aee279734bff",
+    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
+    "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.d0c843fb7ea1",
+    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.12896.328cca4f0a15",
+    "Claude Ecosystem/Claude Platform/SDKs",
+    "Claude Ecosystem/Claude Platform/SDKs.md",
+    "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.40cb8700a9fe",
+    "Claude Ecosystem/Claude Platform.md",
+    "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.c466cb10c721",
+    "Claude Ecosystem/Claude Platform.md.tmp.21688.9ab6d9f8ccb4",
+    "Claude Ecosystem/Claude Platform/REST API.md",
+    "Claude Ecosystem/Claude Platform/REST API.md.tmp.21688.bc2acac1bd3c",
+    "Claude Ecosystem/Claude Platform.md.tmp.21688.36308986dd1c",
+    "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+    "Claude Ecosystem/Claude Platform",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.a440546daaa3",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.2540.a27552b0d76c",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md.tmp.3156.03d594e9f8f0",
-    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md.tmp.3156.766be520686d",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md.tmp.20072.2cdc6566baa3",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md.tmp.20072.3d9c6f2087a2",
     "AI Agent.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20072.db5113884259",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20072.1c3708d48f96",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md.tmp.20072.cb9636a56a0c",
     "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
@@ -302,12 +277,7 @@
     "Claude Ecosystem/Nền tảng cốt lõi/Artifacts.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Research.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Design.md",
-    "Claude Ecosystem.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Excel.md",
     "Untitled 1.canvas",
-    "Untitled.canvas",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Word.md"
+    "Untitled.canvas"
   ]
 }
