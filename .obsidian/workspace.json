@@ -49,10 +49,14 @@
             "id": "81606d5c8cc3b8b0",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Vòng lặp Agent"
             }
           }
         ],
@@ -253,6 +257,12 @@
   },
   "active": "81606d5c8cc3b8b0",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.14f7769468ee",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.c0f6d56c301b",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.d9815ddb19b7",
+    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.8052.9bb8bacf18c3",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.8052.5b11e0d4a251",
     "Claude Ecosystem/Claude Platform/Model Tiers.md",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.d201dbbfaed4",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.e9f87419a39f",
@@ -262,11 +272,7 @@
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.d0c843fb7ea1",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.12896.328cca4f0a15",
-    "Claude Ecosystem/Claude Platform/SDKs",
     "Claude Ecosystem/Claude Platform/SDKs.md",
-    "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.40cb8700a9fe",
-    "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.c466cb10c721",
-    "Claude Ecosystem/Claude Platform.md.tmp.21688.9ab6d9f8ccb4",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
@@ -287,7 +293,6 @@
     "Sử dụng Claude hiệu quả.md",
     "Sử dụng Claude hiệu quả/Ứng dụng thực tế.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Artifacts.md",
-    "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Research.md",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]

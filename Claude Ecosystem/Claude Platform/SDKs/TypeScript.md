@@ -74,9 +74,9 @@ for (const block of response.content) {
 **2 điểm quan trọng:**
 
 - **`system` prompt** — định hình vai trò/tính cách cho Claude (ở đây: reviewer cấp cao, trả lời cô đọng trong 1 đoạn), tách biệt với nội dung yêu cầu ở `messages`.
-- **`response.content` là mảng các khối (blocks)**, không phải một chuỗi. Ngoài `text`, Claude còn có thể trả về `tool_use`, `thinking`... nên luôn cần lặp qua từng block và kiểm tra `block.type === "text"` trước khi đọc `.text`.
+- **`response.content` là mảng các khối (blocks)**, không phải một chuỗi. Ngoài `text`, Claude còn có thể trả về `tool_use`, `thinking`... nên luôn cần lặp qua từng block và kiểm tra `block.type === "text"` trước khi đọc `.text`. Khi có block `tool_use`, đó là dấu hiệu Claude đang tham gia [[Vòng lặp Agent]] chứ không chỉ trả lời đơn thuần.
 
 ## Liên kết
 
 - Thuộc nhóm: [[SDKs]]
-- Xem thêm: [[REST API]], [[Console]], [[Model Tiers]]
+- Xem thêm: [[REST API]], [[Console]], [[Model Tiers]], [[Vòng lặp Agent]]
