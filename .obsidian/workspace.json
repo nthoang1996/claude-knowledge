@@ -44,8 +44,19 @@
               "icon": "lucide-file",
               "title": "TypeScript"
             }
+          },
+          {
+            "id": "81606d5c8cc3b8b0",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -240,13 +251,13 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "e2fec1541fdb77d3",
+  "active": "81606d5c8cc3b8b0",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/Model Tiers.md",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.d201dbbfaed4",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.e9f87419a39f",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.316ff849f8f4",
     "Claude Ecosystem/Claude Platform.md",
-    "Claude Ecosystem/Claude Platform/Model Tiers.md",
     "Claude Ecosystem/Claude Platform/Model Tiers.md.tmp.2060.6ea95c5842af",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.d0c843fb7ea1",
@@ -257,7 +268,6 @@
     "Claude Ecosystem/Claude Platform/SDKs.md.tmp.12896.c466cb10c721",
     "Claude Ecosystem/Claude Platform.md.tmp.21688.9ab6d9f8ccb4",
     "Claude Ecosystem/Claude Platform/REST API.md",
-    "Claude Ecosystem/Claude Platform/REST API.md.tmp.21688.bc2acac1bd3c",
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
