@@ -72,7 +72,8 @@ Chi tiết cách nối `messages` qua nhiều lượt để tạo thành agent h
 ## Các loại tool
 
 - **Custom tools** — tự định nghĩa và tự thực thi trong code của bạn; phổ biến nhất.
-- **Server-side/built-in tools** — Anthropic host & thực thi sẵn (web search, code execution, bash, text editor, computer use...): Claude gọi nhưng hạ tầng Anthropic chạy, không phải code của bạn.
+- **Server-side/built-in tools** — Anthropic host & thực thi sẵn (web search, code execution, bash, text editor, computer use...): Claude gọi nhưng hạ tầng Anthropic chạy, không phải code của bạn. Chi tiết: [[Built-in Tools (Server Tools)]].
+- **Client tools** — vẫn thực thi trên máy/hạ tầng của bạn như custom tool, nhưng dùng schema dựng sẵn từ SDK (ví dụ Memory, Bash) thay vì tự viết `input_schema` từ đầu. Chi tiết: [[Client Tools]].
 - **MCP connectors** — tool lấy từ MCP server bên ngoài, xem [[Connectors (MCP)]].
 
 ## tool_choice — điều khiển việc chọn tool
@@ -133,4 +134,6 @@ Ví dụ: một **Compliance Agent** (kiểm định tuân thủ pháp lý) dùn
 - Thuộc nhóm: [[Claude Platform]]
 - Cơ chế lắp ráp nhiều lượt gọi tool thành hành vi agent: [[Vòng lặp Agent]]
 - Kết nối tool từ server ngoài: [[Connectors (MCP)]]
+- Tool Anthropic tự host & thực thi sẵn: [[Built-in Tools (Server Tools)]]
+- Tool chạy trên máy bạn nhưng dùng schema dựng sẵn từ SDK: [[Client Tools]]
 - SDK tự sinh `input_schema` từ code, khỏi gõ tay: [[Tool Runner]]
