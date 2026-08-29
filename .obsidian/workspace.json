@@ -4,63 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d3ff174516525e7a",
+        "id": "0ae236828ee8f390",
         "type": "tabs",
         "children": [
           {
-            "id": "907bb9d1153bc9f1",
-            "type": "leaf",
-            "state": {
-              "type": "3d-graph-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "3d graph"
-            }
-          },
-          {
-            "id": "b96d8b7023aeb49b",
+            "id": "17733fef5dffe1ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform.md",
+                "file": "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Platform"
-            }
-          },
-          {
-            "id": "81606d5c8cc3b8b0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Platform/Client Tools.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Client Tools"
-            }
-          },
-          {
-            "id": "25a35c1ed517a082",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Tool Use (Function Calling)"
+              "title": "MCP Connector (API)"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Tool",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -256,26 +217,33 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "b96d8b7023aeb49b",
+  "active": "17733fef5dffe1ad",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.b1e81f666338",
+    "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
+    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
     "Claude Ecosystem/Claude Platform/Client Tools.md",
-    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md.tmp.5244.6cb5fc607269",
-    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md.tmp.5244.0f67699a1923",
-    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.5244.5d41ce3472fc",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.5244.0e4f8077e2c4",
-    "Claude Ecosystem/Claude Platform/Client Tools.md.tmp.5244.7e64e1bdbfb2",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md.tmp.5244.fcae7c55f081",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.5244.b5e59dfc4480",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.5244.a4b9b2fae90d",
+    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.bffa49c776bb",
+    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md.tmp.18140.a3d944ab6cd8",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
+    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md.tmp.18140.084ac8632cae",
+    "2026-08-29.md",
+    "Untitled.canvas",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.45b0155f3a79",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.006eece13d99",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.ef0537cf0fdc",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.13392.3ee32ec602a3",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.fb061ea25d88",
+    "Claude Ecosystem/Claude Platform.md.tmp.13392.dab2ded939fb",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.9a0b63f824b4",
+    "Claude Ecosystem/Claude Platform.md",
+    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
     "Claude Ecosystem/Claude Platform/Extended Thinking.md",
     "Claude Ecosystem.md",
-    "Claude Ecosystem/Claude Platform.md",
     "Claude Ecosystem/Claude Platform/SDKs.md",
-    "Claude Ecosystem/Claude Platform/Extended Thinking.md.tmp.24628.a525e8925993",
     "Claude Ecosystem/Claude Platform/Model Tiers.md",
-    "Claude Ecosystem/Claude Platform/Extended Thinking.md.tmp.24628.c4cf6efe3038",
     "Claude Ecosystem/Claude Platform/Tool Runner.md",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
@@ -283,17 +251,11 @@
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
     "AI Agent.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md",
-    "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md",
-    "Untitled 1.canvas",
-    "Untitled.canvas"
+    "Untitled 1.canvas"
   ]
 }

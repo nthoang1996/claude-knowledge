@@ -15,6 +15,22 @@ up: "[[Nền tảng cốt lõi]]"
 - Cho phép Claude đọc/thao tác dữ liệu thực tế của người dùng thay vì chỉ trả lời dựa trên kiến thức tĩnh.
 - Là nền tảng để các tiện ích tích hợp khác (Slack, Excel, Word...) hoạt động được.
 
+## Vì sao cần MCP, đã có [[Tool Use (Function Calling)|Tool]] và [[Skills]] rồi?
+
+Nhìn thoáng qua, MCP giống như một lớp API chồng lên API sẵn có. Khác biệt nằm ở **ai là người bảo trì đoạn code tích hợp**:
+
+- **Tự viết Custom Tool** cho từng dịch vụ (Asana, Google Calendar, Slack...): viết được, nhưng phải tự bảo trì mãi mãi — mỗi khi dịch vụ đó đổi API, bạn phải tự sửa lại wrapper của mình.
+- **MCP**: chuyển gánh nặng bảo trì đó sang cho chính nhà cung cấp dịch vụ. Asana/Slack/Google... tự publish MCP Server của họ (tool + schema + auth đi kèm) theo giao thức chuẩn — khi họ đổi API, họ tự cập nhật server, phía mình không cần sửa gì.
+
+### Ba khái niệm dễ nhầm: Tool vs [[Skills|Skill]] vs MCP
+
+| | [[Tool Use (Function Calling)\|Tool]] | [[Skills\|Skill]] | MCP |
+| --- | --- | --- | --- |
+| Kết nối tới | Hệ thống **nội bộ của bạn** (CSDL, project tracker, API riêng) | Không phải tích hợp — là **quy trình/hướng dẫn** | Dịch vụ **của bên thứ ba** |
+| Ai bảo trì | Bạn — bạn viết nên bạn tự sửa khi API đổi | Bạn (chỉ là cập nhật hướng dẫn, không phải code tích hợp) | Nhà cung cấp dịch vụ (Asana tự viết và tự bảo trì MCP Server của Asana) |
+
+> Ghi nhớ: **Tool** là cho đồ của bạn, **Skill** là cho quy trình của bạn, **MCP** là cho đồ của người khác.
+
 ## Cách hoạt động
 
 Mô hình Client - Server:
@@ -54,3 +70,4 @@ Ví dụ: thay vì tự export CSV từ Postgres rồi tải lên chatbox, kết
 - Xem thêm: [[Projects]], [[Skills]], [[Artifacts]]
 - Liên quan tới: [[Bộ tiện ích tích hợp]]
 - Ứng dụng thực tế trong Claude Code (lệnh, phân loại, scope): [[Quản lý MCP Server trong Claude Code]]
+- Chi tiết kỹ thuật gọi qua Messages API (`mcp_servers`, `mcp_toolset`, introspection): [[MCP Connector (API)]]
