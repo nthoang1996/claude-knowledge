@@ -11,17 +11,24 @@
             "id": "17733fef5dffe1ad",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "17ec0abf7193b414",
+            "type": "leaf",
+            "state": {
+              "type": "3d-graph-view",
+              "state": {},
               "icon": "lucide-file",
-              "title": "MCP Connector (API)"
+              "title": "3d graph"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,10 +224,17 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "17733fef5dffe1ad",
+  "active": "17ec0abf7193b414",
   "lastOpenFiles": [
-    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.b1e81f666338",
+    "Claude Ecosystem/Claude Platform/Context Management.md",
+    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.dcd67d7f643e",
+    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.41293e538fc6",
+    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.8b5937b89462",
+    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.30f80f2ec09c",
+    "Claude Ecosystem/Claude Platform.md.tmp.23216.8e8e1b62e002",
+    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.4fc5679afd3c",
     "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
+    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.b1e81f666338",
     "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
     "Claude Ecosystem/Claude Platform/Client Tools.md",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
@@ -231,13 +245,6 @@
     "2026-08-29.md",
     "Untitled.canvas",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.45b0155f3a79",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.006eece13d99",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.ef0537cf0fdc",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.13392.3ee32ec602a3",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.fb061ea25d88",
-    "Claude Ecosystem/Claude Platform.md.tmp.13392.dab2ded939fb",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.13392.9a0b63f824b4",
     "Claude Ecosystem/Claude Platform.md",
     "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
     "Claude Ecosystem/Claude Platform/Extended Thinking.md",
@@ -255,7 +262,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
-    "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md",
     "Untitled 1.canvas"
   ]
 }
