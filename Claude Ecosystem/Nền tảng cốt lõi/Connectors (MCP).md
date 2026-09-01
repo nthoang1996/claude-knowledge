@@ -70,4 +70,5 @@ Ví dụ: thay vì tự export CSV từ Postgres rồi tải lên chatbox, kết
 - Xem thêm: [[Projects]], [[Skills]], [[Artifacts]]
 - Liên quan tới: [[Bộ tiện ích tích hợp]]
 - Ứng dụng thực tế trong Claude Code (lệnh, phân loại, scope): [[Quản lý MCP Server trong Claude Code]]
+- Ứng dụng thực tế trong Cowork (bật/tắt, nhóm connector): [[Thêm & Quản lý Connectors (Cowork)]]
 - Chi tiết kỹ thuật gọi qua Messages API (`mcp_servers`, `mcp_toolset`, introspection): [[MCP Connector (API)]]

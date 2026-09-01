@@ -15,7 +15,7 @@
       }
     },
     {
-      "query": "path:\"Claude Ecosystem/Bộ tiện ích tích hợp.md\" OR path:\"Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md\" OR path:\"Claude Ecosystem/Nền tảng cốt lõi.md\" OR path:\"Sử dụng Claude hiệu quả/Bắt đầu với Claude.md\" OR path:\"Sử dụng Claude hiệu quả/Ứng dụng thực tế.md\" OR path:\"Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md\"",
+      "query": "path:\"Claude Ecosystem/Bộ tiện ích tích hợp.md\" OR path:\"Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu.md\" OR path:\"Claude Ecosystem/Nền tảng cốt lõi.md\" OR path:\"Claude Ecosystem/Claude Platform.md\" OR path:\"Claude Ecosystem/Claude Cowork.md\" OR path:\"Sử dụng Claude hiệu quả/Bắt đầu với Claude.md\" OR path:\"Sử dụng Claude hiệu quả/Ứng dụng thực tế.md\" OR path:\"Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md\"",
       "color": {
         "a": 1,
         "rgb": 10233776
@@ -41,6 +41,20 @@
         "a": 1,
         "rgb": 14721072
       }
+    },
+    {
+      "query": "path:\"Claude Ecosystem/Claude Platform/\"",
+      "color": {
+        "a": 1,
+        "rgb": 38536
+      }
+    },
+    {
+      "query": "path:\"Claude Ecosystem/Claude Cowork/\"",
+      "color": {
+        "a": 1,
+        "rgb": 4149685
+      }
     }
   ],
   "collapse-display": false,
@@ -53,6 +67,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.7132754626224413,
+  "scale": 1.4019828977760982,
   "close": true
 }

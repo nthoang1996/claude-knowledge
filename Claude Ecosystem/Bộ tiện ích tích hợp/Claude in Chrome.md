@@ -31,3 +31,4 @@ Tiện ích mở rộng (extension) thêm thanh bên Claude trực tiếp vào t
 
 - Thuộc nhóm: [[Bộ tiện ích tích hợp]]
 - Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude for Excel]], [[Claude for PowerPoint]], [[Claude for Word]], [[Claude for Outlook]]
+- Vai trò trong Cowork (khi app không có Connector): [[Thêm & Quản lý Connectors (Cowork)]]

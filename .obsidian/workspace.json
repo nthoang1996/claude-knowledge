@@ -4,24 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "2489cae9f9ff3ced",
+        "id": "b097424bea070b4e",
         "type": "tabs",
         "children": [
           {
-            "id": "97cee223996d01b6",
+            "id": "99493cbaa085ab05",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "2e189995837cb120",
+            "type": "leaf",
+            "state": {
+              "type": "3d-graph-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "3d graph"
+            }
+          },
+          {
+            "id": "7556af87cd9db2bb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform/REST API.md",
+                "file": "Claude Ecosystem/Claude Cowork/Thực hành Bản tóm tắt Thư mục.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "REST API"
+              "title": "Thực hành Bản tóm tắt Thư mục"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -55,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "claude-a",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -217,45 +238,45 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "97cee223996d01b6",
+  "active": "7556af87cd9db2bb",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Cowork.md",
+    "Claude Ecosystem/Claude Cowork/Thực hành Bản tóm tắt Thư mục.md",
+    "Claude Ecosystem/Claude Cowork/Thực hành Bản tóm tắt Thư mục.md.tmp.2480.884b53860171",
+    "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md",
+    "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
+    "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md",
+    "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md.tmp.2480.306c3a6fdedb",
+    "Claude Ecosystem/Claude Cowork/Anatomy của một Task chuẩn.md",
+    "Claude Ecosystem/Claude Cowork/Chuyển dịch tư duy Chat sang Cowork.md",
+    "Claude Ecosystem/Claude Cowork/Chọn Thư mục & Phân quyền Đọc-Ghi.md",
+    "Claude Ecosystem/Claude Cowork/Chọn Thư mục & Phân quyền Đọc-Ghi.md.tmp.2480.ea5168eb5c4e",
+    "Claude Ecosystem/Claude Cowork/Cài đặt & Khởi chạy.md",
+    "Claude Ecosystem/Claude Cowork/So sánh 3 chế độ làm việc (Chat, Cowork, Code).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.2480.9dcffca6dd91",
+    "Claude Ecosystem/Claude Cowork.md.tmp.2480.5218a6898c20",
+    "Claude Ecosystem/Claude Cowork/So sánh 3 chế độ làm việc (Chat, Cowork, Code).md.tmp.2480.2f28c5be833f",
+    "Chuyển dịch tư duy Chat sang Cowork.md",
+    "Claude Ecosystem/Claude Cowork/Tích hợp môi trường (4 trụ cột).md",
+    "Claude Ecosystem/Claude Cowork/Anatomy của một Task chuẩn.md.tmp.2480.71ce7292f90c",
+    "Claude Ecosystem/Claude Cowork/Tích hợp môi trường (4 trụ cột).md.tmp.2480.e76d78243a0a",
+    "Claude Ecosystem/Claude Cowork/Chuyển dịch tư duy Chat sang Cowork.md.tmp.2480.f4a9d83acd1d",
+    "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md.tmp.2480.59a1bbdd5eae",
+    "Claude Ecosystem.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp.md",
+    "Claude Ecosystem/Nền tảng cốt lõi.md",
+    "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/Context Management.md",
     "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
     "AI Agent.md",
     "Claude Ecosystem/Claude Platform/Extended Thinking.md",
     "Claude Ecosystem/Claude Platform.md",
     "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md",
-    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.24976.0449c02f53eb",
-    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.24976.3b9c2e434986",
     "Claude Ecosystem/Claude Platform/Tool Runner.md",
-    "Claude Ecosystem/Claude Platform/Tool Runner.md.tmp.23936.c2af8ad00c11",
-    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.23936.522abaeceeee",
     "Claude Ecosystem/Claude Platform/Managed Agents.md",
     "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md",
-    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.aeaca6e9211c",
-    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.4fdbf168aede",
-    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.d422397c1a09",
-    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.43e18c76abd2",
-    "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md.tmp.24020.cf32407e4a82",
-    "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md.tmp.24020.7ffcc35d5ebe",
     "Sử dụng Claude hiệu quả/Ứng dụng thực tế.md",
-    "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
-    "Claude Ecosystem/Claude Platform/Client Tools.md",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
-    "2026-08-29.md",
     "Untitled.canvas",
-    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
-    "Claude Ecosystem.md",
-    "Claude Ecosystem/Claude Platform/SDKs.md",
-    "Claude Ecosystem/Claude Platform/Model Tiers.md",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
-    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
-    "Claude Ecosystem/Claude Platform/REST API.md",
-    "Claude Ecosystem/Claude Platform/Console.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
     "Untitled 1.canvas"
   ]
 }
