@@ -4,31 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "0ae236828ee8f390",
+        "id": "2489cae9f9ff3ced",
         "type": "tabs",
         "children": [
           {
-            "id": "17733fef5dffe1ad",
+            "id": "97cee223996d01b6",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "17ec0abf7193b414",
-            "type": "leaf",
-            "state": {
-              "type": "3d-graph-view",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Platform/REST API.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "3d graph"
+              "title": "REST API"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -62,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "claude-a",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -224,44 +217,45 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "17ec0abf7193b414",
+  "active": "97cee223996d01b6",
   "lastOpenFiles": [
     "Claude Ecosystem/Claude Platform/Context Management.md",
-    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.dcd67d7f643e",
-    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.41293e538fc6",
-    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.8b5937b89462",
-    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.30f80f2ec09c",
-    "Claude Ecosystem/Claude Platform.md.tmp.23216.8e8e1b62e002",
-    "Claude Ecosystem/Claude Platform/Context Management.md.tmp.23216.4fc5679afd3c",
+    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
+    "AI Agent.md",
+    "Claude Ecosystem/Claude Platform/Extended Thinking.md",
+    "Claude Ecosystem/Claude Platform.md",
+    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md",
+    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.24976.0449c02f53eb",
+    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.24976.3b9c2e434986",
+    "Claude Ecosystem/Claude Platform/Tool Runner.md",
+    "Claude Ecosystem/Claude Platform/Tool Runner.md.tmp.23936.c2af8ad00c11",
+    "Claude Ecosystem/Claude Platform/Weather Agent (Ví dụ thực hành).md.tmp.23936.522abaeceeee",
+    "Claude Ecosystem/Claude Platform/Managed Agents.md",
+    "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md",
+    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.aeaca6e9211c",
+    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.4fdbf168aede",
+    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.d422397c1a09",
+    "Claude Ecosystem/Claude Platform/Managed Agents.md.tmp.24020.43e18c76abd2",
+    "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md.tmp.24020.cf32407e4a82",
+    "Claude Ecosystem/Claude Platform/Line Counter Agent (Ví dụ thực hành).md.tmp.24020.7ffcc35d5ebe",
+    "Sử dụng Claude hiệu quả/Ứng dụng thực tế.md",
     "Claude Ecosystem/Claude Platform/MCP Connector (API).md",
-    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.b1e81f666338",
     "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md",
     "Claude Ecosystem/Claude Platform/Client Tools.md",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-    "Claude Ecosystem/Claude Platform/MCP Connector (API).md.tmp.18140.bffa49c776bb",
-    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md.tmp.18140.a3d944ab6cd8",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Quản lý MCP Server trong Claude Code.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Connectors (MCP).md.tmp.18140.084ac8632cae",
     "2026-08-29.md",
     "Untitled.canvas",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
-    "Claude Ecosystem/Claude Platform.md",
-    "Claude Ecosystem/Claude Platform/Built-in Tools (Server Tools).md",
-    "Claude Ecosystem/Claude Platform/Extended Thinking.md",
     "Claude Ecosystem.md",
     "Claude Ecosystem/Claude Platform/SDKs.md",
     "Claude Ecosystem/Claude Platform/Model Tiers.md",
-    "Claude Ecosystem/Claude Platform/Tool Runner.md",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/Console.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "AI Agent.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
     "Untitled 1.canvas"
   ]
 }

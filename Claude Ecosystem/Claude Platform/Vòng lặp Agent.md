@@ -36,7 +36,7 @@ graph TD
 
 - Claude **không tự chạy tool** — chỉ *yêu cầu* gọi tool qua `tool_use`; việc thực thi thật luôn nằm ở code của người phát triển.
 - Vòng lặp có thể lặp nhiều vòng (nhiều lần gọi tool nối tiếp) trước khi đến `end_turn` — không giới hạn ở 1 lần gọi tool duy nhất.
-- Đây là nền tảng của mọi hệ thống agent phức tạp hơn (Claude Code, Managed Agents...) — chỉ khác ở việc ai giữ vòng lặp (code tự viết vs. hạ tầng managed).
+- Đây là nền tảng của mọi hệ thống agent phức tạp hơn (Claude Code, [[Managed Agents]]...) — chỉ khác ở việc ai giữ vòng lặp (code tự viết vs. hạ tầng managed).
 
 ## Ví dụ thực hành (Python)
 
@@ -94,7 +94,7 @@ Kiến trúc vòng lặp **giữ nguyên 100%** khi lên production (ví dụ: m
 - **Cơ chế:** gửi tin nhắn kèm tools → chạy tool khi được yêu cầu → trả `tool_result` → dừng khi `stop_reason == "end_turn"`.
 - **Phân chia vai trò:** bạn làm chủ vòng lặp + tools; Claude làm chủ reasoning (suy luận khi nào cần tool, diễn giải kết quả).
 - **Mở rộng:** cùng một mẫu áp dụng từ demo nhỏ đến hệ thống tự động hóa quy mô lớn.
-- **Không muốn tự viết vòng lặp bằng tay?** Hai mức tự động hóa: [[Tool Runner]] (vẫn chạy trong code của bạn, SDK tự lo boilerplate + sinh schema) và **Managed Agents** (Anthropic tự vận hành toàn bộ vòng lặp trên hạ tầng của họ — xem mục Managed Agents trong [[Claude Platform]]).
+- **Không muốn tự viết vòng lặp bằng tay?** Hai mức tự động hóa: [[Tool Runner]] (vẫn chạy trong code của bạn, SDK tự lo boilerplate + sinh schema) và [[Managed Agents]] (Anthropic tự vận hành toàn bộ vòng lặp lẫn sandbox thực thi trên hạ tầng của họ).
 
 ## Liên kết
 
@@ -102,5 +102,5 @@ Kiến trúc vòng lặp **giữ nguyên 100%** khi lên production (ví dụ: m
 - Khái niệm nền tảng (định nghĩa tool, cấu trúc khai báo, tool_choice...): [[Tool Use (Function Calling)]]
 - SDK tự động hóa toàn bộ vòng lặp này: [[Tool Runner]]
 - Cơ chế bên dưới: `response.content` có thể chứa block `tool_use` — xem ví dụ đọc block trong [[TypeScript]]
-- Ví dụ hạ tầng giữ vòng lặp thay code tự viết: nhắc ở mục Managed Agents trong [[Claude Platform]]
+- Ví dụ hạ tầng giữ vòng lặp thay code tự viết: [[Managed Agents]]
 - Ứng dụng thực tế: [[Claude Code]] (CLI agent), [[Hooks]] (can thiệp vào vòng lặp)

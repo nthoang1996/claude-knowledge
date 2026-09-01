@@ -37,7 +37,7 @@ graph LR
 ```
 
 - **Primitives** — các thành phần nguyên bản gọi qua [[REST API]]/[[SDKs]]: Messages API (chọn model — xem [[Model Tiers]]; suy luận trước khi trả lời — xem [[Extended Thinking]]), [[Tool Use (Function Calling)|Tool use]] (cơ chế lặp nhiều lượt: xem [[Vòng lặp Agent]]), xử lý tệp, tìm kiếm web, thực thi code, tích hợp [[Connectors (MCP)|MCP servers]], [[Skills]], giữ ngữ cảnh gọn cho agent chạy dài — xem [[Context Management]]. Định hình logic/khả năng tương tác cơ bản.
-- **Infrastructure** — đường ống & đệm giúp lên quy mô lớn: Managed agents, retry tự động, hàng đợi (queues), observability. Giữ hệ thống ổn định khi lượng gọi API tăng vọt.
+- **Infrastructure** — đường ống & đệm giúp lên quy mô lớn: [[Managed Agents]], retry tự động, hàng đợi (queues), observability. Giữ hệ thống ổn định khi lượng gọi API tăng vọt.
 - **Controls** — công cụ quan sát/điều chỉnh khi đã production: dashboards theo dõi chi phí/hiệu năng, evals đánh giá chất lượng phản hồi. Thể hiện rõ ngay trên [[Console]].
 
 ## Triết lý cốt lõi: từ "hỏi-đáp" sang "tích hợp vào sản phẩm"
@@ -45,7 +45,7 @@ graph LR
 Giá trị thực sự của Claude Platform không nằm ở việc dựng thêm một chatbot độc lập, mà là **đưa Claude vào đúng vị trí trong sản phẩm/luồng nghiệp vụ đã có** (ví dụ: thêm nút "Tạo bản nháp" ngay trong hệ thống Helpdesk sẵn có — xem ví dụ ở [[REST API]]).
 
 - **Không thay thế cả giao diện** — chỉ chèn AI vào một bước cụ thể của luồng hiện tại, không cần xây UI chat mới.
-- **Managed Agents** — khi cần agent tự động phức tạp, tầng [[#Góc nhìn kiến trúc 3 tầng|Infrastructure]] không chỉ cấp model mà còn tự vận hành hạ tầng chạy agent đó.
+- **[[Managed Agents]]** — khi cần agent tự động phức tạp, tầng [[#Góc nhìn kiến trúc 3 tầng|Infrastructure]] không chỉ cấp model mà còn tự vận hành hạ tầng chạy agent đó.
 - **Mục tiêu cuối** — biến AI từ công cụ hỏi-đáp rời rạc thành **một phần hữu cơ trong sản phẩm**.
 
 ### Từ script thử nghiệm đến tính năng sản phẩm
@@ -67,3 +67,4 @@ Mọi tính năng AI phức tạp hơn sau này (tóm tắt, phân loại, soạ
 - Thuộc: [[Claude Ecosystem]]
 - Phân biệt với: [[Nền tảng cốt lõi]] (tính năng workspace trong Claude.ai/Claude Code, không phải hạ tầng dev)
 - Xem thêm: [[Model Tiers]] (chọn model phù hợp)
+- Hạ tầng agent quy mô lớn: [[Managed Agents]]

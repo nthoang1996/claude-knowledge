@@ -52,3 +52,4 @@ const finalMessage = await runner.untilDone();
 - Tự động hóa cơ chế lặp thủ công mô tả ở: [[Vòng lặp Agent]]
 - Tự sinh schema cho: [[Tool Use (Function Calling)]]
 - Có sẵn trong: [[SDKs]]
+- Ví dụ thực hành từng bước bằng code: [[Weather Agent (Ví dụ thực hành)]]
