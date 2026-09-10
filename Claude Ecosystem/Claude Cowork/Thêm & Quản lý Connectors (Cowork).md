@@ -37,4 +37,4 @@ Với hệ thống nội bộ, trang nhà cung cấp hoặc portal cần đăng 
 
 - Thuộc nhóm: [[Claude Cowork]]
 - Khái niệm nền (giao thức MCP): [[Connectors (MCP)]]
-- Xem thêm: [[Tích hợp môi trường (4 trụ cột)]], [[Claude in Chrome]]
+- Xem thêm: [[Tích hợp môi trường (4 trụ cột)]], [[Claude in Chrome]], [[Lên lịch Tác vụ (Scheduled Tasks)]], [[Cloud Cowork (Mobile & Web)]]

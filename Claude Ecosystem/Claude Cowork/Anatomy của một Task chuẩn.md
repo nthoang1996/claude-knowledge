@@ -22,4 +22,4 @@ Ví dụ prompt chuẩn dành cho Cowork:
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Bản chất & Triết lý]], [[Tích hợp môi trường (4 trụ cột)]]
+- Xem thêm: [[Bản chất & Triết lý]], [[Tích hợp môi trường (4 trụ cột)]], [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Progress Panel (Bảng tiến độ)]], [[Công thức Prompt chuẩn (Deliverable + Inputs + Nuances)]]

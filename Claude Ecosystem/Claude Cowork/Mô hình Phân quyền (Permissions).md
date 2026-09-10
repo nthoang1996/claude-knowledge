@@ -33,4 +33,4 @@ Là chìa khóa để trải nghiệm "**Ủy quyền (Delegating), không chỉ
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Bản chất & Triết lý]], [[Chọn Thư mục & Phân quyền Đọc-Ghi]], [[Thêm & Quản lý Connectors (Cowork)]]
+- Xem thêm: [[Bản chất & Triết lý]], [[Chọn Thư mục & Phân quyền Đọc-Ghi]], [[Thêm & Quản lý Connectors (Cowork)]], [[Cloud Cowork (Mobile & Web)]]
