@@ -36,6 +36,7 @@ graph TD
     Root --> J["Thực hành: Bản tóm tắt<br/>Thư mục"]
     Root --> K["Lên lịch Tác vụ<br/>(Scheduled Tasks)"]
     Root --> L["Cloud Cowork<br/>(Mobile & Web)"]
+    Root --> M["Tích lũy Giá trị<br/>(Compounding Value)"]
 ```
 
 ## Các nhánh chính
@@ -59,6 +60,7 @@ graph TD
 - [[Thực hành Bản tóm tắt Thư mục]]
 - [[Lên lịch Tác vụ (Scheduled Tasks)]]
 - [[Cloud Cowork (Mobile & Web)]]
+- [[Tích lũy Giá trị theo Thời gian (Compounding Value)]]
 
 ## Tổng kết (Bringing It Together)
 

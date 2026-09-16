@@ -32,4 +32,4 @@ graph TD
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Chuyển dịch tư duy Chat sang Cowork]], [[Tích hợp môi trường (4 trụ cột)]], [[Anatomy của một Task chuẩn]], [[Mô hình Phân quyền (Permissions)]], [[Nhịp điệu Làm việc (Work Rhythm)]]
+- Xem thêm: [[Chuyển dịch tư duy Chat sang Cowork]], [[Tích hợp môi trường (4 trụ cột)]], [[Anatomy của một Task chuẩn]], [[Mô hình Phân quyền (Permissions)]], [[Nhịp điệu Làm việc (Work Rhythm)]], [[Tích lũy Giá trị theo Thời gian (Compounding Value)]]

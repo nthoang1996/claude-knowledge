@@ -11,10 +11,14 @@
             "id": "e954012986c43719",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tích lũy Giá trị theo Thời gian (Compounding Value)"
             }
           }
         ]
@@ -215,8 +219,14 @@
   },
   "active": "e954012986c43719",
   "lastOpenFiles": [
-    "Claude Ecosystem/Claude Cowork/Nghiệm thu Sản phẩm (Review the Deliverable).md",
+    "Claude Ecosystem/Claude Cowork/Công thức Prompt chuẩn (Deliverable + Inputs + Nuances).md",
     "Claude Ecosystem/Claude Cowork/Điều chỉnh Hướng đi Mid-task (Steer & Interrupt).md",
+    "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md.tmp.14664.ba65fca1e28b",
+    "Claude Ecosystem/Claude Cowork.md.tmp.14664.6e4ec7380ddb",
+    "Claude Ecosystem/Claude Cowork.md.tmp.14664.1e154d9c8920",
+    "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
+    "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md.tmp.14664.77c491886f9e",
+    "Claude Ecosystem/Claude Cowork/Nghiệm thu Sản phẩm (Review the Deliverable).md",
     "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.f490253755c6",
     "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.d6896bc7df79",
     "Claude Ecosystem/Claude Cowork.md.tmp.25452.577c56b96a95",
@@ -224,11 +234,6 @@
     "Claude Ecosystem/Claude Cowork/Nghiệm thu Sản phẩm (Review the Deliverable).md.tmp.25452.a7912a638e4c",
     "Claude Ecosystem/Claude Cowork/Cơ chế Câu hỏi Làm rõ (Clarifying Questions).md",
     "Claude Ecosystem/Claude Cowork/Progress Panel (Bảng tiến độ).md.tmp.25452.7c0766b13e6d",
-    "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.7ba0147a04df",
-    "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.85194d3824ca",
-    "Claude Ecosystem/Claude Cowork.md.tmp.25452.c446b0f7838c",
-    "Claude Ecosystem/Claude Cowork.md.tmp.25452.a8312a2723b5",
-    "Claude Ecosystem/Claude Cowork/Công thức Prompt chuẩn (Deliverable + Inputs + Nuances).md",
     "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md",
     "Claude Ecosystem/Claude Cowork/Cloud Cowork (Mobile & Web).md",
     "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md",
@@ -249,7 +254,6 @@
     "Claude Ecosystem/Claude Cowork/Tích hợp môi trường (4 trụ cột).md",
     "Claude Ecosystem.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp.md",
-    "Claude Ecosystem/Nền tảng cốt lõi.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
