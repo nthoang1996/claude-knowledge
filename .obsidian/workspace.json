@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1a10b2a04289c032",
+        "id": "dc5d145449559798",
         "type": "tabs",
         "children": [
           {
-            "id": "e954012986c43719",
+            "id": "e58f6e5a4ee09bd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
+                "file": "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tích lũy Giá trị theo Thời gian (Compounding Value)"
+              "title": "Thực hành Thiết lập Global Instructions & Project"
             }
           }
         ]
@@ -217,23 +217,30 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "e954012986c43719",
+  "active": "e58f6e5a4ee09bd0",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md",
+    "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md.tmp.26496.0483a8153f09",
+    "Claude Ecosystem/Claude Cowork.md.tmp.26496.b7dd704ad34a",
+    "Claude Ecosystem/Claude Cowork.md.tmp.26496.0f8661b93d9d",
+    "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
+    "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md.tmp.26496.04b8d4d935f7",
+    "Claude Ecosystem/Claude Cowork/Mô hình Áp dụng Projects (3 Use Cases).md",
+    "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md.tmp.26496.a49061ae368f",
+    "Chuyển dịch tư duy Chat sang Cowork.md",
+    "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md.tmp.26496.a22390fabefe",
+    "Claude Ecosystem/Claude Cowork.md.tmp.26496.e620b473d1c1",
+    "Claude Ecosystem/Claude Cowork.md.tmp.26496.52636a43f474",
+    "Claude Ecosystem/Claude Cowork/Mô hình Áp dụng Projects (3 Use Cases).md.tmp.26496.9df66feeb2a9",
+    "Claude Ecosystem/Claude Cowork/So sánh 3 chế độ làm việc (Chat, Cowork, Code).md",
+    "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md.tmp.26496.cc0aa1815a4d",
+    "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md",
+    "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
+    "Claude Ecosystem/Nền tảng cốt lõi/Projects.md",
     "Claude Ecosystem/Claude Cowork/Công thức Prompt chuẩn (Deliverable + Inputs + Nuances).md",
     "Claude Ecosystem/Claude Cowork/Điều chỉnh Hướng đi Mid-task (Steer & Interrupt).md",
-    "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md.tmp.14664.ba65fca1e28b",
-    "Claude Ecosystem/Claude Cowork.md.tmp.14664.6e4ec7380ddb",
-    "Claude Ecosystem/Claude Cowork.md.tmp.14664.1e154d9c8920",
-    "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
-    "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md.tmp.14664.77c491886f9e",
     "Claude Ecosystem/Claude Cowork/Nghiệm thu Sản phẩm (Review the Deliverable).md",
-    "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.f490253755c6",
-    "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md.tmp.25452.d6896bc7df79",
-    "Claude Ecosystem/Claude Cowork.md.tmp.25452.577c56b96a95",
-    "Claude Ecosystem/Claude Cowork.md.tmp.25452.7475e6fe9445",
-    "Claude Ecosystem/Claude Cowork/Nghiệm thu Sản phẩm (Review the Deliverable).md.tmp.25452.a7912a638e4c",
     "Claude Ecosystem/Claude Cowork/Cơ chế Câu hỏi Làm rõ (Clarifying Questions).md",
-    "Claude Ecosystem/Claude Cowork/Progress Panel (Bảng tiến độ).md.tmp.25452.7c0766b13e6d",
     "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md",
     "Claude Ecosystem/Claude Cowork/Cloud Cowork (Mobile & Web).md",
     "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md",
@@ -247,13 +254,6 @@
     "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md",
     "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
     "Claude Ecosystem/Claude Cowork/Chuyển dịch tư duy Chat sang Cowork.md",
-    "Claude Ecosystem/Claude Cowork/Chọn Thư mục & Phân quyền Đọc-Ghi.md",
-    "Claude Ecosystem/Claude Cowork/Cài đặt & Khởi chạy.md",
-    "Claude Ecosystem/Claude Cowork/So sánh 3 chế độ làm việc (Chat, Cowork, Code).md",
-    "Chuyển dịch tư duy Chat sang Cowork.md",
-    "Claude Ecosystem/Claude Cowork/Tích hợp môi trường (4 trụ cột).md",
-    "Claude Ecosystem.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]

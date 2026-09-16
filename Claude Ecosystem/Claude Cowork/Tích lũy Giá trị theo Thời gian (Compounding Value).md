@@ -15,8 +15,8 @@ Cowork không "quên" sau mỗi phiên — bối cảnh cung cấp một lần s
 
 | Khối | Claude học được gì | Giá trị mở ra |
 | --- | --- | --- |
-| **Global instructions** | Bạn là ai, phong cách làm việc | Mọi tác vụ tự căn chỉnh đúng vai trò/định dạng/sở thích, không cần nhắc lại |
-| **Projects** | Bối cảnh của một luồng công việc cụ thể | Claude hoạt động như thành viên thực thụ trong phạm vi dự án — nắm tệp, lịch sử, quyết định trước đó. Xem [[Projects]] |
+| **Global instructions** | Bạn là ai, phong cách làm việc | Mọi tác vụ tự căn chỉnh đúng vai trò/định dạng/sở thích, không cần nhắc lại. Chi tiết cách thiết lập: [[Global Instructions & Bộ nhớ theo Ngữ cảnh]] |
+| **Projects** | Bối cảnh của một luồng công việc cụ thể | Claude hoạt động như thành viên thực thụ trong phạm vi dự án — nắm tệp, lịch sử, quyết định trước đó. Chi tiết 4 thành phần & cơ chế bộ nhớ: [[Projects trong Cowork (4 Thành phần & Bộ nhớ)]] |
 | **Skills** | Quy trình chuẩn cho một loại việc | Chạy đúng template, đúng quy trình, đúng tiêu chuẩn chất lượng của đội. Xem [[Skills]] |
 | **Plugins** | Chuyên môn đặc thù ngành/vai trò | Biến Claude từ generalist thành specialist, chia sẻ được cho cả đội/công ty |
 

@@ -37,6 +37,10 @@ graph TD
     Root --> K["Lên lịch Tác vụ<br/>(Scheduled Tasks)"]
     Root --> L["Cloud Cowork<br/>(Mobile & Web)"]
     Root --> M["Tích lũy Giá trị<br/>(Compounding Value)"]
+    Root --> N["Global Instructions &<br/>Bộ nhớ theo Ngữ cảnh"]
+    Root --> O["Projects trong Cowork<br/>(4 Thành phần & Bộ nhớ)"]
+    Root --> P["Mô hình Áp dụng Projects<br/>(3 Use Cases)"]
+    Root --> Q["Thực hành: Thiết lập<br/>Global Instructions & Project"]
 ```
 
 ## Các nhánh chính
@@ -61,6 +65,10 @@ graph TD
 - [[Lên lịch Tác vụ (Scheduled Tasks)]]
 - [[Cloud Cowork (Mobile & Web)]]
 - [[Tích lũy Giá trị theo Thời gian (Compounding Value)]]
+- [[Global Instructions & Bộ nhớ theo Ngữ cảnh]]
+- [[Projects trong Cowork (4 Thành phần & Bộ nhớ)]]
+- [[Mô hình Áp dụng Projects (3 Use Cases)]]
+- [[Thực hành Thiết lập Global Instructions & Project]]
 
 ## Tổng kết (Bringing It Together)
 
