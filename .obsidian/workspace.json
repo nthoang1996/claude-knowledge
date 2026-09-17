@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
+                "file": "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thực hành Thiết lập Global Instructions & Project"
+              "title": "Skills"
+            }
+          },
+          {
+            "id": "437e3d67477bfa8d",
+            "type": "leaf",
+            "state": {
+              "type": "3d-graph-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "3d graph"
             }
           }
         ]
@@ -55,7 +65,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Lazy",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -219,21 +229,22 @@
   },
   "active": "e58f6e5a4ee09bd0",
   "lastOpenFiles": [
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.3bb0a12fd753",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.6a36acaa006b",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.0f4109047c33",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.3fdaa8ed8f40",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.bbe9284654cc",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.08718a042dee",
+    "Claude Ecosystem/Nền tảng cốt lõi/Skills.md.tmp.24720.66950662aecf",
+    "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
     "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md",
     "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md.tmp.26496.0483a8153f09",
     "Claude Ecosystem/Claude Cowork.md.tmp.26496.b7dd704ad34a",
     "Claude Ecosystem/Claude Cowork.md.tmp.26496.0f8661b93d9d",
-    "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
     "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md.tmp.26496.04b8d4d935f7",
     "Claude Ecosystem/Claude Cowork/Mô hình Áp dụng Projects (3 Use Cases).md",
-    "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md.tmp.26496.a49061ae368f",
     "Chuyển dịch tư duy Chat sang Cowork.md",
-    "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md.tmp.26496.a22390fabefe",
-    "Claude Ecosystem/Claude Cowork.md.tmp.26496.e620b473d1c1",
-    "Claude Ecosystem/Claude Cowork.md.tmp.26496.52636a43f474",
-    "Claude Ecosystem/Claude Cowork/Mô hình Áp dụng Projects (3 Use Cases).md.tmp.26496.9df66feeb2a9",
     "Claude Ecosystem/Claude Cowork/So sánh 3 chế độ làm việc (Chat, Cowork, Code).md",
-    "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md.tmp.26496.cc0aa1815a4d",
     "Claude Ecosystem/Claude Cowork/Global Instructions & Bộ nhớ theo Ngữ cảnh.md",
     "Claude Ecosystem/Claude Cowork/Tích lũy Giá trị theo Thời gian (Compounding Value).md",
     "Claude Ecosystem/Nền tảng cốt lõi/Projects.md",

@@ -25,6 +25,18 @@ Một Skill là **một thư mục đóng gói sẵn**, gồm hướng dẫn (in
 
 > Ví von: Skill giống một **SOP (Standard Operating Procedure)** dành riêng cho Claude — chuẩn hóa đầu ra AI trên toàn ứng dụng mà không cần lặp lại prompt dài dòng mỗi lần gọi.
 
+### 4 thành phần bên trong (không bắt buộc đủ cả 4)
+
+| Thành phần | Vai trò | Ví dụ |
+| --- | --- | --- |
+| **Instructions** (`SKILL.md`) | Tệp cốt lõi — Skill dùng để làm gì, khi nào kích hoạt, từng bước thực hiện ra sao (viết như runbook cho nhân viên mới) | Bản thân file `SKILL.md` |
+| **Assets** | Nguyên liệu thô để dựng sản phẩm đầu ra | Logo, slide master, font, brand template |
+| **References** | Ví dụ đầu ra mẫu/style guide để Claude hiểu thế nào là "đạt chuẩn" | Style guide, thư viện điều khoản mã nguồn |
+| **Scripts** | Mã tự động hoá cho tác vụ lặp lại hoặc đòi hỏi chính xác tuyệt đối | Script so sánh dữ liệu, định dạng chart/tài liệu |
+
+- **Linh hoạt, không cần đủ bộ:** Skill đơn giản chỉ cần `SKILL.md`; phức tạp hơn thì thêm Assets; đầy đủ nhất mới gồm cả 4. Tuỳ độ phức tạp của công việc mà chọn thành phần phù hợp.
+- **Nguyên tắc tối giản:** chỉ đưa vào những gì thật sự cần cho tác vụ — không nhồi thêm tài nguyên thừa, vì mọi thứ trong thư mục đều tốn context khi được nạp (xem [[#Lazy loading — tối ưu context window|Lazy loading]]).
+
 ## Phân biệt với Tool
 
 Dễ nhầm vì cả hai đều là thứ Claude "gọi ra khi cần", nhưng phục vụ hai mục đích khác nhau:
@@ -105,10 +117,31 @@ response = client.beta.messages.create(
 - **`container.skills`** — mảng, cho phép gắn **nhiều Skill cùng lúc** vào một request. Mỗi phần tử gồm `skill_id` (lấy từ bước upload) và `version` (ví dụ `"latest"`).
 - **Kết hợp Skill + Tool:** Skill cung cấp *quy trình* (`SKILL.md`), còn Tool (`code_execution`) là *công cụ thực thi* — Claude dùng Code Execution để chạy script mà quy trình trong Skill mô tả, xử lý dữ liệu thực tế (activity log) truyền vào `messages`. Đây là minh hoạ rõ nhất cho phần [[#Phân biệt với Tool|phân biệt Skill/Tool]] ở trên: một bên định nghĩa cách làm, một bên thực thi hành động.
 
+## Skill trong Claude Code (CLI)
+
+Ở tầng **sản phẩm** (Claude Code CLI, VSCode extension...), Skill vận hành theo cùng bản chất "SOP đóng gói" như trên nhưng cơ chế cụ thể khác tầng API (không dùng `container.skills`):
+
+- **Nơi đặt Skill:** thư mục `.claude/skills/<tên-skill>/SKILL.md` ở cấp **project** (theo repo, đi cùng codebase) hoặc `~/.claude/skills/` ở cấp **user** (dùng chung mọi project). Skill đi kèm plugin được namespace dạng `plugin:skill`.
+- **Kích hoạt tự động (implicit):** Claude tự đối chiếu mô tả tác vụ hiện tại với phần `description` của từng Skill đã cài — khớp thì tự nạp và làm theo, không cần người dùng gọi tên.
+- **Kích hoạt thủ công (explicit):** gõ trực tiếp `/<tên-skill>` (slash command) hoặc yêu cầu bằng lời ("dùng skill X cho việc này").
+- **Skill trùng tên ở nhiều phạm vi:** nếu vừa có skill chung (unscoped) vừa có skill riêng theo thư mục (scoped, hiển thị dạng `apps/web:deploy`), ưu tiên bản gắn với thư mục đang thao tác — cụ thể hơn thắng.
+- **Chạy nền (background):** một số Skill tự chạy trong subagent riêng và trả kết quả sau dưới dạng thông báo, thay vì chặn phiên làm việc hiện tại chờ xong mới trả lời — không gọi lại skill đó trong lúc chờ.
+
+## Tạo & quản lý Skill qua hội thoại (Claude.ai)
+
+Ở tầng claude.ai (Chat/Projects), không cần tự tay tạo thư mục/viết `SKILL.md` — có thể nhờ chính Claude dựng Skill ngay trong hội thoại:
+
+- **Cách tạo:** yêu cầu kiểu *"Tôi muốn tạo một skill cho [quy trình lặp lại mà tôi đã chán phải giải thích lại], hãy hỏi tôi những gì bạn cần biết"*. Claude sẽ hỏi ngược lại các câu cốt lõi: Skill dùng để làm gì? Khi nào nên tự kích hoạt? Đầu ra chuẩn trông như thế nào? Cần tài nguyên/mẫu sẵn nào? — càng cung cấp cụ thể (đính kèm file mẫu, ví dụ thực tế) thì Skill sinh ra càng sát nhu cầu. Kết quả: Claude tự sinh trọn thư mục Skill (`SKILL.md` + assets/references/scripts tương ứng), sẵn sàng cài đặt.
+- **Quản lý & chỉnh sửa:** Skill đã cài nằm trong mục **Customize**; muốn cải tiến chỉ cần ra lệnh bằng ngôn ngữ tự nhiên (ví dụ *"thêm bước cảnh báo nếu hợp đồng trên $100K bị chậm tiến độ 2 giai đoạn"*) — Claude tự cập nhật đúng file trong thư mục Skill đó, không cần sửa tay.
+- **Phạm vi toàn cục:** khác với Skill cấp *project* trong [[#Skill trong Claude Code (CLI)|Claude Code]] (chỉ áp dụng trong repo chứa `.claude/skills/`), Skill tạo ở claude.ai hoạt động đồng nhất ở **mọi phiên chat, kể cả trong các Project riêng** — không cần bật lại theo từng project, cứ tác vụ khớp mô tả là tự kích hoạt.
+
 ## Giá trị trong Production
 
 - **Chuẩn hóa đầu ra:** user prompt chỉ cần một dòng (truyền dữ liệu thô), Claude tự bám khung `SKILL.md` để trả về kết quả đủ mục, đúng văn phong, đúng cách xử lý các trường hợp đặc biệt (ví dụ blocker trong báo cáo) — không lệch dù ai gọi, gọi bao nhiêu lần.
 - **Tự động hóa, bỏ thao tác copy-paste prompt mẫu:** cả team dùng chung một Skill nên nhận kết quả cùng cấu trúc/thứ tự mục mà không ai phải tự nhớ và dán lại prompt chuẩn mỗi lần.
+- **Đóng gói tri thức team thành thứ AI thực thi được:** Skill là cách "mã hoá" quy chuẩn/kinh nghiệm làm việc vốn chỉ nằm trong đầu người vào dạng Claude đọc và làm theo được — nhờ đó AI không chỉ trả lời chung chung mà có thể **đại diện làm việc đúng chuẩn của team** (giá trị này rõ nhất khi Claude đóng vai trò đồng nghiệp thực thụ, xem [[Claude Cowork]]).
+
+> Prompt thường chỉ trả lời **"cần làm gì"**; một Skill đầy đủ trả lời thêm **"làm như thế nào, dùng nguyên liệu gì, đối chiếu tiêu chuẩn nào, và tự động hoá bằng công cụ gì"** — tương ứng 4 thành phần Instructions/Assets/References/Scripts ở trên.
 
 ## Khi nào nên dùng Skill
 
@@ -119,15 +152,18 @@ Cân nhắc dùng Skill khi **cách thức thực hiện quan trọng ngang vớ
 | Nội dung | Chi tiết cần nhớ |
 | --- | --- |
 | Bản chất | Đóng gói *cách thức* thực hiện (`SKILL.md` + resources) — dạy Claude quy trình/quy chuẩn, không phải khả năng hành động. |
+| 4 thành phần | Instructions (`SKILL.md`, bắt buộc) + Assets + References + Scripts (tùy chọn, thêm khi cần, tối giản). |
 | Khác Tool | Tool = *what Claude can do*, Skill = *how you want it done*. |
 | Nạp context | Lazy loading — chỉ nạp tên/mô tả lúc đầu, nạp toàn bộ nội dung khi Claude xác định cần dùng. |
 | Vòng đời API | `client.beta.skills.create` (upload 1 lần, nhận `skill.id`) → gắn vào `container.skills` (kèm `version`) trong các `messages.create` sau, cần cờ `betas`. |
+| Trong Claude Code | Đặt ở `.claude/skills/` (project) hoặc `~/.claude/skills/` (user); kích hoạt tự động theo mô tả hoặc thủ công qua `/tên-skill`; scoped skill (theo thư mục) ưu tiên hơn unscoped khi trùng tên. |
+| Trong claude.ai | Tạo bằng hội thoại (Claude tự hỏi các câu cốt lõi rồi sinh thư mục Skill); quản lý/sửa ở mục Customize bằng lệnh tự nhiên; phạm vi **toàn cục** — dùng chung mọi chat và mọi Project. |
 | Kết hợp Tool | Skill mô tả quy trình, Tool (ví dụ `code_execution`) thực thi hành động cụ thể trong quy trình đó. |
 | Khi nào dùng | Cách làm quan trọng ngang kết quả — cần chuẩn hóa lặp lại nhất quán trên toàn hệ thống. |
 
 ## Liên kết
 
 - Thuộc nhóm: [[Nền tảng cốt lõi]]
-- Xem thêm: [[Projects]], [[Artifacts]], [[Connectors (MCP)]]
+- Xem thêm: [[Projects]], [[Artifacts]], [[Connectors (MCP)]], [[Claude Cowork]]
 - Ở góc nhìn hạ tầng dev, Skill là một trong các *Primitives* của [[Claude Platform]]
 - Phân biệt với [[Tool Use (Function Calling)|Tool]]: Tool = khả năng hành động, Skill = quy trình/quy chuẩn
