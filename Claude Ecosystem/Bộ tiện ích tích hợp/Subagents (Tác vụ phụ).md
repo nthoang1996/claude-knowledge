@@ -61,4 +61,4 @@ Subagent được định nghĩa dưới dạng file Markdown chứa YAML frontm
 
 - Thuộc nhóm: [[Claude Code]]
 - Áp dụng khi: [[Claude Code#Mẹo tiết kiệm context|Mẹo tiết kiệm context]]
-- Xem thêm: [[Skills]]
+- Xem thêm: [[Skills]], [[Plugins]] (Subagent có thể được đóng gói cùng Skills và Connectors)
