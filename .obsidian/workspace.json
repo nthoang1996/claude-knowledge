@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
+                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Claude trong M365 (Cơ chế tích hợp).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude in Chrome"
+              "title": "Claude trong M365 (Cơ chế tích hợp)"
             }
           },
           {
@@ -272,9 +272,17 @@
   },
   "active": "3454984535c0fd9d",
   "lastOpenFiles": [
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude trong M365 (Cơ chế tích hợp).md.tmp.24476.e3a2dd3c2c36",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Excel.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude trong M365 (Cơ chế tích hợp).md.tmp.24476.ef25f7fdb299",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude trong M365 (Cơ chế tích hợp).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Outlook.md.tmp.24476.6f6b23eb2069",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Word.md.tmp.24476.10be4aaf5b4c",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for PowerPoint.md.tmp.24476.a2a8812f270e",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Excel.md.tmp.24476.493488ff1502",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
     "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md.tmp.23836.550192c6c6fa",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md.tmp.23836.a6d69eaabc01",
     "Claude Ecosystem/Claude Cowork/Tự xây dựng Plugin (Cowork).md",
     "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md.tmp.23836.c686e1818342",
@@ -282,11 +290,6 @@
     "Claude Ecosystem/Claude Cowork/Cài đặt & Tùy biến Plugins (Cowork).md",
     "Claude Ecosystem/Claude Cowork/Cài đặt & Tùy biến Plugins (Cowork).md.tmp.5388.004c4527b430",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.5388.3b13153fa0ee",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.5388.254dfb4cf77d",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.5388.59bfbcba16f5",
-    "Claude Ecosystem/Claude Cowork.md.tmp.5388.af29367a716d",
-    "Claude Ecosystem/Claude Cowork.md.tmp.5388.df3457cfdc28",
-    "Claude Ecosystem/Claude Cowork/Tự xây dựng Plugin (Cowork).md.tmp.5388.3dbc53d30be9",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
@@ -305,8 +308,6 @@
     "Claude Ecosystem/Claude Cowork/Nhịp điệu Làm việc (Work Rhythm).md",
     "Claude Ecosystem/Claude Cowork/Cloud Cowork (Mobile & Web).md",
     "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md",
-    "Claude Ecosystem/Claude Cowork/Lên lịch Tác vụ (Scheduled Tasks).md",
-    "Progress Panel (Bảng tiến độ).md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
