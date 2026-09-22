@@ -21,6 +21,7 @@ graph TD
     C --> C6["Claude for Outlook"]
     C --> C7["Claude in Chrome"]
     C --> C8["Claude Code<br/>(Lập trình)"]
+    C --> C9["Claude trong M365<br/>(Cơ chế tích hợp)"]
 ```
 
 - [[Claude for Slack]] — @Claude
@@ -31,6 +32,7 @@ graph TD
 - [[Claude for Outlook]]
 - [[Claude in Chrome]]
 - [[Claude Code]] — Lập trình
+- [[Claude trong M365 (Cơ chế tích hợp)]] — cơ chế add-in & cross-app context chung cho Word/Excel/PowerPoint/Outlook
 
 ## Liên kết
 
