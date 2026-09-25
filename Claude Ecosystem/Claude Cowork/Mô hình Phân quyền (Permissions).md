@@ -21,6 +21,14 @@ Chọn một thư mục thì Claude tự động có quyền đọc/ghi trong th
 
 > Claude **LUÔN LUÔN** hỏi ý kiến trước khi xóa vĩnh viễn một tệp tin — quy tắc bắt buộc, không thể tắt hay bỏ qua trong cấu hình, áp dụng bất kể đang chọn chế độ phê duyệt nào.
 
+## Tự phòng ngừa rủi ro (bổ sung ngoài Guardrail hệ thống)
+
+Guardrail bất biến ở trên chỉ chặn được việc Claude tự xóa/gửi/chia sẻ mà không hỏi — rủi ro lớn nhất còn lại nằm ở phía con người: **bấm nhầm nút "Yes/Confirm"** khi được hỏi. Nên tự dựng thêm 3 lớp phòng ngừa:
+
+- **Tách biệt thư mục làm việc** — chỉ trỏ Cowork vào thư mục riêng cho từng việc, không cấp quyền vào các thư mục tổng (`Documents`, `Downloads`, `Desktop`). Xem chi tiết ở [[Chọn Thư mục & Phân quyền Đọc-Ghi]].
+- **Backup dữ liệu quan trọng trước khi bắt đầu** — sao lưu các dữ liệu không thể thay thế (hợp đồng, dữ liệu gốc...) ra một nơi *ngoài tầm với* của Claude (cloud storage, ổ cứng rời, thư mục khác). Có bản sao độc lập thì một lần bấm nhầm không gây thiệt hại thật.
+- **Thử nghiệm trên bản sao trước** — với workflow/tự động hóa mới (ví dụ script chạy định kỳ), chạy thử trên dữ liệu mẫu/bản sao trước; chỉ trỏ vào thư mục dữ liệu thật (live folder) sau khi đã xác nhận quy trình chạy đúng.
+
 ## Các điểm kiểm soát khác
 
 - **Connectors & MCP** — quyết định ứng dụng nào Claude được phép truy cập, và tần suất xin phép của từng connector.
@@ -33,4 +41,4 @@ Là chìa khóa để trải nghiệm "**Ủy quyền (Delegating), không chỉ
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Bản chất & Triết lý]], [[Chọn Thư mục & Phân quyền Đọc-Ghi]], [[Thêm & Quản lý Connectors (Cowork)]], [[Cloud Cowork (Mobile & Web)]]
+- Xem thêm: [[Bản chất & Triết lý]], [[Chọn Thư mục & Phân quyền Đọc-Ghi]], [[Thêm & Quản lý Connectors (Cowork)]], [[Cloud Cowork (Mobile & Web)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]], [[Giám sát Real-time khi Cowork chạy (Watch the Run)]], [[Khi nào KHÔNG nên dùng Cowork (Giới hạn Sử dụng)]]

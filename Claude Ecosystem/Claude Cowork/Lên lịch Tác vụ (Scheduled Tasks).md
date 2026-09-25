@@ -43,4 +43,4 @@ Nơi khởi tạo tác vụ quyết định nơi nó chạy — tạo ở Deskto
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Thêm & Quản lý Connectors (Cowork)]], [[Cloud Cowork (Mobile & Web)]]
+- Xem thêm: [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Thêm & Quản lý Connectors (Cowork)]], [[Cloud Cowork (Mobile & Web)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]]

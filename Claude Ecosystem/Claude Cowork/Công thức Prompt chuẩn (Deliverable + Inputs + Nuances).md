@@ -39,4 +39,4 @@ Bỏ trống bất kỳ thành phần nào (không nêu định dạng, không c
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Anatomy của một Task chuẩn]], [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Nhịp điệu Làm việc (Work Rhythm)]], [[Cơ chế Câu hỏi Làm rõ (Clarifying Questions)]]
+- Xem thêm: [[Anatomy của một Task chuẩn]], [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Nhịp điệu Làm việc (Work Rhythm)]], [[Cơ chế Câu hỏi Làm rõ (Clarifying Questions)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]]

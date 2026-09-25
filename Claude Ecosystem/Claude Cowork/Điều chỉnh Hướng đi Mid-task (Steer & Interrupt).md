@@ -30,4 +30,4 @@ Luôn quan sát [[Progress Panel (Bảng tiến độ)]] trong lúc Cowork chạ
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Progress Panel (Bảng tiến độ)]], [[Nhịp điệu Làm việc (Work Rhythm)]], [[Cơ chế Câu hỏi Làm rõ (Clarifying Questions)]]
+- Xem thêm: [[Progress Panel (Bảng tiến độ)]], [[Nhịp điệu Làm việc (Work Rhythm)]], [[Cơ chế Câu hỏi Làm rõ (Clarifying Questions)]], [[Giám sát Real-time khi Cowork chạy (Watch the Run)]]

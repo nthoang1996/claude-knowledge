@@ -26,4 +26,4 @@ Có thể ngồi quan sát Cowork chạy từng bước theo thời gian thực,
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Cowork]]
-- Xem thêm: [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Anatomy của một Task chuẩn]], [[Điều chỉnh Hướng đi Mid-task (Steer & Interrupt)]]
+- Xem thêm: [[Tiêu chí chọn Task phù hợp (3 Patterns)]], [[Anatomy của một Task chuẩn]], [[Điều chỉnh Hướng đi Mid-task (Steer & Interrupt)]], [[Giám sát Real-time khi Cowork chạy (Watch the Run)]]
