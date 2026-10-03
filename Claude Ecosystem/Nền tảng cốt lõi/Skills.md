@@ -165,6 +165,7 @@ Cân nhắc dùng Skill khi **cách thức thực hiện quan trọng ngang vớ
 
 - Thuộc nhóm: [[Nền tảng cốt lõi]]
 - Xem thêm: [[Projects]], [[Artifacts]], [[Connectors (MCP)]], [[Claude Cowork]]
+- Chạy thử Skill trước khi chia sẻ cho người khác: [[Đánh giá Skill & Plugin bằng Evals]]
 - Nhiều Skill + Connectors + Subagents đóng gói thành bộ chia sẻ cho cả team: [[Plugins]]
 - Ở góc nhìn hạ tầng dev, Skill là một trong các *Primitives* của [[Claude Platform]]
 - Phân biệt với [[Tool Use (Function Calling)|Tool]]: Tool = khả năng hành động, Skill = quy trình/quy chuẩn

@@ -120,6 +120,7 @@ Ngoài bộ chuyên môn theo vai trò, plugin ở [[Claude Code]] là cơ chế
 ## Lưu ý
 
 - Plugin gom cả Connectors, Hooks, script nên có thể **truy cập dữ liệu và chạy lệnh** — chỉ cài từ nguồn tin cậy, kiểm tra nội dung trước khi cài.
+- Trước khi chia sẻ, chạy thử plugin như một người dùng khác (từ ngữ khác, đầu vào khác, edge case) — xem [[Đánh giá Skill & Plugin bằng Evals]].
 - Cập nhật plugin ở một nơi thì cả team hưởng bản mới — nên quản lý phiên bản rõ ràng (`version` trong manifest).
 
 ## Recap

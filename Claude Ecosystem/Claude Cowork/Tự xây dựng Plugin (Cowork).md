@@ -28,10 +28,10 @@ graph LR
 ## Lộ trình: bắt đầu nhỏ
 
 1. **Skill đầu tiên** cho công việc **lặp lại nhiều nhất** (chọn theo [[Tiêu chí chọn Task phù hợp (3 Patterns)]]).
-2. **Bổ sung dần** các skill tiếp theo — mỗi skill chạy thử trên tài liệu thật trước khi thêm skill mới.
+2. **Bổ sung dần** các skill tiếp theo — mỗi skill chạy thử trên tài liệu thật trước khi thêm skill mới (cách thử: [[Đánh giá Skill & Plugin bằng Evals]]).
 3. Khi có khoảng **3–4 skills kèm các connectors quan trọng** → đã là plugin hoàn chỉnh, đáng chia sẻ cho cả team.
 
-Cách chia sẻ plugin cho team (phân phối qua tổ chức) thuộc bài sau — chưa ghi trong vault này.
+Cách chia sẻ plugin cho team (phân phối qua tổ chức): xem [[Phân phối Plugin cho Tổ chức (Distribution)]].
 
 ## Trước khi tạo: kiểm tra Directory
 
@@ -62,4 +62,5 @@ Cách nhanh nhất để **tìm và cài plugin phù hợp** mà không phải t
 
 - Thuộc nhóm: [[Claude Cowork]]
 - Khái niệm nền: [[Plugins]], [[Skills]]
+- Bước tiếp theo trước khi chia sẻ: [[Đánh giá Skill & Plugin bằng Evals]]
 - Xem thêm: [[Cài đặt & Tùy biến Plugins (Cowork)]], [[Tích lũy Giá trị theo Thời gian (Compounding Value)]], [[Thêm & Quản lý Connectors (Cowork)]]
