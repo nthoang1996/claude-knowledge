@@ -21,6 +21,14 @@ Nhấn `Shift + Tab` vài lần trong lúc thao tác để xoay vòng qua các c
 - **Hỏi lại khi mơ hồ** — nếu gặp điểm chưa rõ trong yêu cầu, Claude chủ động hỏi lại (clarifying questions) thay vì tự đoán.
 - **Xuất ra kế hoạch chi tiết** — kết thúc quá trình khảo sát bằng một bản kế hoạch từng bước (step-by-step plan) để người dùng duyệt trước khi cho phép chỉnh sửa thật.
 
+## Nguyên tắc: xác định phạm vi trước khi làm
+
+Trước khi viết/sửa bất kỳ dòng code hay tài liệu nào, hãy để Claude lập kế hoạch trước — chốt **phạm vi công việc (scope)** rồi mới thực thi.
+
+- **Đọc kỹ kế hoạch** — đừng đọc lướt; kế hoạch càng chi tiết, rõ ràng thì càng ít bất ngờ/lỗi khi thực thi.
+- **Chỉnh sửa kế hoạch ngay** — thấy sai hoặc thiếu thì yêu cầu bổ sung/điều chỉnh trước khi cho chạy.
+- **Lợi ích cốt lõi** — tinh chỉnh một bản kế hoạch nhanh hơn nhiều so với để Claude chạy tự do rồi phải dọn dẹp hậu quả của những thay đổi ngoài ý muốn.
+
 ## Trường hợp phù hợp nhất
 
 - Xây dựng tính năng phức tạp, nhiều bước (multi-step implementations).

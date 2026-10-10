@@ -61,6 +61,7 @@ Khi hội thoại và các thao tác (đọc file, chạy lệnh) tiến gần g
 Ngoài auto-compaction, người dùng có thể chủ động kiểm soát context bằng slash command:
 
 - **`/compact`** — chủ động kích hoạt nén toàn bộ dữ liệu tính đến hiện tại, giữ lại bản tóm tắt. Dùng khi chuyển sang phần việc mới *trong cùng dự án*, muốn giải phóng bộ nhớ nhưng vẫn giữ mạch công việc trước đó.
+  - **Steering — thêm chỉ thị sau `/compact`**: gõ `/compact` trần thì Claude tự quyết giữ gì, dễ bỏ sót chi tiết quan trọng và *drift off course* ở bước sau. Viết thêm hướng dẫn ngay sau lệnh để chỉ rõ cần giữ lại gì, ví dụ: `/compact Focus on the --version flag implementation` (đã xong phần debug, giờ chỉ giữ ngữ cảnh về cờ `--version`). Phần chữ sau `/compact` chính là "tay lái" giữ đúng ngữ cảnh trong tác vụ dài.
 - **`/clear`** — xóa sạch 100% lịch sử, đưa về trạng thái ban đầu. Dùng khi kết thúc hẳn một tác vụ/tính năng và bắt đầu việc mới hoàn toàn độc lập, tránh nhiễu bởi thông tin cũ.
 - **`/context`** — hiển thị báo cáo tình trạng bộ nhớ hiện tại: kích thước đã dùng, các phân vùng tiêu tốn nhiều dung lượng nhất, kèm biểu đồ trực quan.
 
@@ -82,6 +83,38 @@ Ngoài auto-compaction, người dùng có thể chủ động kiểm soát cont
 - **Viết prompt cụ thể** — prompt ngắn nhưng mơ hồ tốn bộ nhớ hơn về lâu dài, vì thiếu chỉ dẫn buộc Claude phải tự đọc nhiều file và suy luận mở rộng để đoán ý; chỉ dẫn chi tiết ngay từ đầu giúp Claude đi thẳng vào vấn đề.
 - **Quản lý [[Connectors (MCP)|MCP server]]** — mặc định mỗi MCP server nạp toàn bộ tool của nó vào context dù không dùng đến; nên tắt bớt server không liên quan đến dự án hiện tại, hoặc cân nhắc dùng [[Skills]] — cơ chế tương tự nhưng không nạp sẵn toàn bộ công cụ ngay từ đầu. Chi tiết cách thêm/bật-tắt/giới hạn scope: [[Quản lý MCP Server trong Claude Code]].
 - **[[Subagents (Tác vụ phụ)|Ủy quyền cho Subagent]]** — chạy song song, sở hữu context window độc lập với Agent chính; phù hợp cho tác vụ tra cứu chỉ cần nhận kết quả cuối, subagent tự tìm kiếm rồi chỉ trả về bản tóm tắt, giữ context chính luôn gọn.
+
+### Rewind — quay lại khi Claude đi sai hướng
+
+Thay vì viết prompt giải thích để kéo Claude về đúng hướng, hãy lùi về thời điểm trước khi sai.
+
+- **Checkpoint** — mỗi lần gửi prompt, hệ thống tự tạo 1 điểm kiểm soát; có thể lùi về bất kỳ mốc nào trước đó.
+- **Kích hoạt** — nhấn `Esc` 2 lần khi khung nhập đang trống để mở menu Rewind.
+
+| Tùy chọn | Tác dụng |
+| --- | --- |
+| Restore code and conversation | Lùi cả mã nguồn lẫn chat về checkpoint |
+| Restore conversation | Chỉ lùi lịch sử chat, giữ nguyên code hiện tại |
+| Restore code | Chỉ lùi file về trạng thái cũ, giữ nguyên chat |
+| Summarize from here | Tóm tắt các tin nhắn *sau* checkpoint — dọn đoạn thảo luận lề, giải phóng context |
+| Summarize up to here | Tóm tắt phần chat *trước* checkpoint — nén giai đoạn thiết lập dài nhưng giữ nguyên chi tiết triển khai phía sau |
+
+> [!note] Hai tùy chọn Summarize là dạng `/compact` có chọn vùng, xem thêm [[#Lệnh quản lý context thủ công]].
+
+### Tăng tự chủ: Goal & Loop
+
+Hai tính năng giúp Claude tự làm việc qua nhiều bước mà không cần giám sát từng tin nhắn.
+
+- **`/goal <điều kiện>`** — định nghĩa chính xác thế nào là "done"; Claude tiếp tục chạy nhiều lượt (turns) cho đến khi một evaluator nhanh xác nhận đạt điều kiện, không dừng ở lần đầu *tự nghĩ* là xong. Ví dụ: `/goal all tests in src/billing pass, and the type checker reports zero errors`. Hủy bằng `/goal clear`.
+  - Evaluator chỉ đọc được **transcript** → điều kiện phải kiểm chứng được từ output lệnh Claude đã chạy (kết quả test, type check...).
+- **`/loop`** — tự chạy lại một prompt theo khoảng thời gian cố định, hoặc tự điều chỉnh nhịp giữa các lượt. Dùng để theo dõi trạng thái bên ngoài (CI run, deploy) rồi hành động tiếp khi trạng thái đổi. Dừng bằng `Esc`.
+
+### Chạy song song với Git Worktrees
+
+Mở nhiều session Claude cùng thao tác trên **một thư mục code** thì chúng ghi đè/can thiệp file của nhau → code conflicts (như 2 tay lái tranh nhau 1 chiếc xe).
+
+- **Git Worktree** — cấp cho mỗi session một *file tree* độc lập (cùng repo), các agent làm song song mà không *clobber each other's changes*. Khi session kết thúc, worktree tạm tự được dọn.
+- **`.worktreeinclude`** — file ở thư mục gốc repo, liệt kê các file bị `.gitignore` cần tự động copy sang mỗi worktree mới (vd: `.env`, local config — cần để chạy được dự án nhưng không commit lên Git).
 
 ## Nguyên tắc dùng hiệu quả
 

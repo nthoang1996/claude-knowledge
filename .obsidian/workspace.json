@@ -8,62 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e58f6e5a4ee09bd0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Thêm & Quản lý Connectors (Cowork)"
-            }
-          },
-          {
-            "id": "3454984535c0fd9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Phân phối Plugin cho Tổ chức (Distribution)"
-            }
-          },
-          {
-            "id": "998db0a0be8b1a54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Claude Cowork/Tiêu chí chọn Task phù hợp (3 Patterns).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Tiêu chí chọn Task phù hợp (3 Patterns)"
-            }
-          },
-          {
-            "id": "c1cfee7e92efd2df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Subagents (Tác vụ phụ)"
-            }
-          },
-          {
             "id": "437e3d67477bfa8d",
             "type": "leaf",
             "state": {
@@ -71,6 +15,20 @@
               "state": {},
               "icon": "lucide-file",
               "title": "3d graph"
+            }
+          },
+          {
+            "id": "a9cc8c707f828a76",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Claude Code"
             }
           }
         ],
@@ -270,21 +228,24 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "3454984535c0fd9d",
+  "active": "a9cc8c707f828a76",
   "lastOpenFiles": [
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20784.8457c78111a4",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20784.ee70dcde7861",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md.tmp.20784.89c44a26e6fe",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Plan Mode.md.tmp.20784.31382d16473a",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
+    "Claude Ecosystem/Claude Cowork/Tiêu chí chọn Task phù hợp (3 Patterns).md",
+    "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md",
     "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md.tmp.24168.4ae424b6cf04",
     "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md.tmp.24168.effd1146cae4",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md.tmp.24168.71829be5fbb9",
     "Claude Ecosystem/Claude Cowork.md.tmp.24168.763dda94a942",
     "Claude Ecosystem/Claude Cowork.md.tmp.24168.4bc0bf4b8473",
     "Claude Ecosystem/Claude Cowork/Tự xây dựng Plugin (Cowork).md.tmp.24168.710013d57d41",
-    "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md",
     "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md.tmp.24168.e189caf2bfe7",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
-    "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md.tmp.15980.62817759967c",
-    "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md.tmp.15980.e55a9dda1321",
-    "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md.tmp.15980.2adfa28e03bb",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.15980.35f6a37ff95b",
     "Claude Ecosystem.md",
     "Claude Ecosystem/Claude Cowork.md",
     "Claude Ecosystem/Claude Cowork/Khi nào KHÔNG nên dùng Cowork (Giới hạn Sử dụng).md",
@@ -299,15 +260,12 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
     "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
     "Claude Ecosystem/Claude Cowork/Tự xây dựng Plugin (Cowork).md",
-    "Claude Ecosystem/Claude Cowork/Tiêu chí chọn Task phù hợp (3 Patterns).md",
     "Claude Ecosystem/Claude Cowork/Cài đặt & Tùy biến Plugins (Cowork).md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
     "Claude Ecosystem/Claude Cowork/Thực hành Thiết lập Global Instructions & Project.md",
     "Claude Ecosystem/Claude Cowork/Projects trong Cowork (4 Thành phần & Bộ nhớ).md",
     "Claude Ecosystem/Claude Cowork/Mô hình Áp dụng Projects (3 Use Cases).md",
-    "Chuyển dịch tư duy Chat sang Cowork.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
