@@ -174,6 +174,7 @@ Trước khi thêm dòng nào, phân loại quy tắc:
 - **Hook chặn cứng** — [[Hooks#Cơ chế chặn (Blocking) với PreToolUse|PreToolUse]] chạy ngay trước khi Claude thực thi lệnh Bash/tool; nếu khớp mẫu cấm (vd: `git push origin main`) thì từ chối, bất kể Claude vô tình hay cố ý.
 - **Câu hỏi lọc** — *"Nếu Claude quên quy tắc này một lần, dự án có hỏng nặng không?"* Có → viết Hook. Không → `CLAUDE.md` (hoặc bỏ nếu quá hiển nhiên).
 - **Nên kết hợp cả hai** — Hook chặn hành động; một dòng ngắn trong `CLAUDE.md` giải thích lý do giúp Claude tránh thử đi thử lại lệnh bị chặn và biết đường thay thế (vd: "tạo branch + PR thay vì push `main`").
+- **Còn quy trình nhiều bước theo tác vụ?** — không thuộc `CLAUDE.md` lẫn Hook mà thuộc [[Skills]]; xem bảng so sánh 3 bề mặt (CLAUDE.md / Skill / Hook) trong note [[Skills]].
 - **Lợi ích kép** — `CLAUDE.md` gọn hơn, tập trung vào quy tắc phong cách; an toàn được đảm bảo 100% bằng code. Ngoài Hook, có thể dùng thêm permission deny rules trong settings để chặn cứng tool/lệnh cụ thể.
 
 ### Diễn đạt quy tắc (Phrasing)

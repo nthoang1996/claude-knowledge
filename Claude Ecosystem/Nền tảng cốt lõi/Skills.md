@@ -58,6 +58,27 @@ Khi có hàng chục Skill được cấp cùng lúc, Claude không nạp toàn 
 
 Nhờ vậy context window luôn gọn nhẹ dù có rất nhiều Skill được đăng ký — tiết kiệm token, giảm chi phí, và giữ độ chính xác phản hồi (không bị nhiễu bởi hàng chục hướng dẫn không liên quan).
 
+### Tổ chức side files: giữ `SKILL.md` ngắn gọn (lean)
+
+Lazy loading không chỉ áp dụng giữa các Skill mà còn **bên trong một thư mục Skill**. Skill không bó hẹp trong một file — thư mục là một "hộp công cụ" gồm file chính + side files:
+
+```text
+verify-skill/
+├── SKILL.md       # bản đồ: làm gì, khi nào kích hoạt, link tới file phụ
+├── reference.md   # kiến thức chuyên sâu / quy chuẩn phức tạp
+└── check.sh       # script kiểm tra (test, lint, diff...)
+```
+
+| File | Vai trò | Cách Claude dùng |
+| --- | --- | --- |
+| `SKILL.md` | "Bản đồ chỉ đường": tổng quan **cần làm gì** và **khi nào** kích hoạt | Nạp khi Skill được chọn |
+| `reference.md` | Chi tiết chuyên sâu, quy chuẩn phức tạp | `SKILL.md` chỉ **link tới**; Claude **chỉ đọc khi thực sự cần** |
+| `check.sh` (scripts) | Thực thi kiểm tra: test, lint, diff... | Claude **chạy (execute)** script, **không đọc** mã nguồn vào context → tiết kiệm context |
+
+- **Nguyên tắc:** `SKILL.md` luôn lean; kiến thức sâu đẩy sang `reference.md`, thao tác kiểm tra đẩy sang script.
+- **Lợi ích:** Claude không bị "ngợp" thông tin → chính xác, mượt hơn; dễ bảo trì/mở rộng (sửa đúng file phụ, không phình `SKILL.md`).
+- Với Skill xác minh (mục "Skill nên xây đầu tiên" bên dưới): `SKILL.md` nêu quy trình + trigger, `reference.md` giữ tiêu chuẩn chi tiết, `check.sh` chạy test/lint.
+
 ## Upload & tái sử dụng Skill (API)
 
 Ở tầng developer, Skill được quản lý qua Beta SDK — upload một lần, gọi lại nhiều lần bằng ID:
@@ -143,9 +164,82 @@ response = client.beta.messages.create(
 
 > Prompt thường chỉ trả lời **"cần làm gì"**; một Skill đầy đủ trả lời thêm **"làm như thế nào, dùng nguyên liệu gì, đối chiếu tiêu chuẩn nào, và tự động hoá bằng công cụ gì"** — tương ứng 4 thành phần Instructions/Assets/References/Scripts ở trên.
 
+## Skill nên xây đầu tiên: tự xác minh công việc (Verifying your own work)
+
+Khi dự án lớn dần, các thao tác kiểm tra lặp đi lặp lại xuất hiện ngày càng nhiều (chạy test, lint, kiểm tra định dạng API, xác minh cấu trúc file...). Trong mọi ứng dụng của Skill, **Skill tự kiểm tra/xác minh kết quả** là loại đáng đầu tư xây trước nhất.
+
+**Vì sao ưu tiên:**
+
+- **Tăng độ tin cậy:** rủi ro lớn nhất khi giao việc cho AI là kết quả *trông có vẻ đúng* nhưng ẩn lỗi (hallucination, thiếu sót nhỏ).
+- **Đóng vòng lặp tự sửa lỗi (self-correction loop):** làm xong → tự gọi Skill xác minh → phát hiện lỗi → tự sửa → kiểm tra lại, *trước khi* bàn giao cho người dùng.
+- **Tiết kiệm thời gian:** không phải tự chạy kiểm tra thủ công rồi mới bảo AI sửa.
+
+```mermaid
+flowchart LR
+    A[Thực hiện tác vụ] --> B[Gọi Skill xác minh]
+    B --> C{Đạt chuẩn?}
+    C -- Không --> D[Tự sửa lỗi]
+    D --> B
+    C -- Có --> E[Bàn giao kết quả]
+```
+
+**Cách thiết kế (áp dụng 4 thành phần ở trên):**
+
+- **Instructions:** checklist rõ ràng — kiểm tra những gì, tiêu chí đạt/không đạt, khi lỗi thì báo cáo và sửa thế nào.
+- **Scripts:** để các phép kiểm tra *xác định được* (test, lint, validate schema, so sánh số liệu) chạy bằng script thay vì "nhờ model tự đánh giá" — kết quả khách quan, lặp lại được.
+- **References:** tiêu chuẩn/ví dụ đầu ra đạt chuẩn để đối chiếu (style guide, template).
+- **Mô tả (`description`) phải nêu rõ thời điểm kích hoạt** (ví dụ "sau khi hoàn thành việc chỉnh sửa/tạo mới ...") để Claude tự gọi đúng lúc.
+
+### Vấn đề của cách kiểm tra thủ công
+
+Sau khi AI làm xong (ví dụ refactor code), người dùng phải *tự nhớ* để chạy test suite, đọc lại file diff... Quy trình này phụ thuộc hoàn toàn vào trí nhớ con người — quên một lần là code lỗi/kém chất lượng lọt qua.
+
+### Luồng tự động của Verification Skill
+
+Dựa vào **trigger description** của Skill, không cần nhắc:
+
+1. **Tự kích hoạt:** Claude vừa sửa code xong → hành động khớp mô tả Skill → Skill tự chạy.
+2. **Chạy test suite:** thực thi toàn bộ bài kiểm thử.
+3. **Đọc & phân tích file diff:** so sánh code mới với code cũ.
+4. **Kiểm tra độ tin cậy của test:** bắt trường hợp AI "gian lận" — nới lỏng/sửa chính bài test chỉ để báo xanh (pass).
+5. **Báo cáo:** kết luận Pass/Fail rõ ràng kèm bằng chứng cụ thể.
+
+### Định nghĩa "Hoàn thành" (Definition of Done)
+
+- **"Xong" KHÔNG phải:** đọc diff thấy code *có vẻ* đúng.
+- **"Xong" phải là:** các hàng rào kiểm tra (gates) **đã được thực thi thật**, kết quả được quan sát và báo cáo minh bạch.
+
+**Lưu ý:**
+
+- Skill xác minh chỉ bắt được loại lỗi mà checklist/script *đã định nghĩa* — không thay thế review của con người với quyết định quan trọng; nên bổ sung dần tiêu chí mỗi khi gặp lỗi mới.
+- Kiểm thử chính Skill xác minh (có bắt đúng lỗi không, có báo sai không) bằng [[Đánh giá Skill & Plugin bằng Evals]].
+
+## Skill vs CLAUDE.md vs Hook — đặt quy tắc ở đâu?
+
+Trong Claude Code có 3 "bề mặt" (instruction surfaces) để đặt hướng dẫn/quy tắc — dễ nhầm khi thiết lập:
+
+| Bề mặt | Bản chất | Áp dụng | Đặt gì | Ví dụ |
+| --- | --- | --- | --- | --- |
+| [[CLAUDE.md Bộ nhớ dự án\|CLAUDE.md]] | **Quy chuẩn chung** (conventions) — lời dặn | Liên tục, **mọi lúc** | Phong cách, định dạng, cấu trúc dự án | Cách đặt tên biến/file; vị trí đặt module |
+| **Skill** | **Quy trình & tài liệu** (procedures/reference) — lời dặn | **Theo tác vụ** (nạp khi cần) | Quy trình nhiều bước, kiến thức chuyên sâu cho một loại việc | Tự xác minh code; checklist trước khi tạo PR |
+| [[Hooks\|Hook]] | **Rào cản cứng** (hard rules) — **code chạy thật** | **100%**, không bỏ qua được | Quy tắc an toàn sống còn | Chặn push thẳng lên `main`; chặn xóa database |
+
+- **`CLAUDE.md` và Skill là lời dặn (instructions):** Claude đọc, hiểu và cố tuân theo — mức tuân thủ cao nhưng vẫn dựa vào việc AI "tự giác".
+- **Hook là code thực thi:** script do hệ thống chạy độc lập; khi Claude định làm hành động nguy hiểm, Hook can thiệp và **chặn (block)** ngay.
+
+**Quy tắc chọn nơi đặt:**
+
+1. Claude quên/bỏ qua là **không thể chấp nhận** → **Hook**.
+2. Quy trình riêng cho **một dạng bài toán** → **Skill**.
+3. Thói quen/phong cách áp dụng cho **toàn bộ codebase** → **CLAUDE.md**.
+
+> Kết hợp tốt: Hook chặn hành động nguy hiểm, Skill chứa quy trình đúng để làm thay thế, `CLAUDE.md` giữ vài dòng phong cách chung. Chi tiết về diễn đạt và bẫy file quá dài: xem [[CLAUDE.md Bộ nhớ dự án]].
+
 ## Khi nào nên dùng Skill
 
 Cân nhắc dùng Skill khi **cách thức thực hiện quan trọng ngang với kết quả đầu ra** — tức là có một quy chuẩn/định dạng cố định cần lặp lại nhất quán (báo cáo định kỳ, checklist review, release notes...). Nếu chỉ cần Claude *làm được* một việc (truy vấn, gọi API, thực thi hành động) mà không đòi hỏi quy chuẩn trình bày cố định, đó là việc của [[Tool Use (Function Calling)|Tool]] chứ không phải Skill.
+
+**Quy tắc ngón tay cái (rule of thumb):** nếu đã phải gõ cùng một chuỗi hướng dẫn nhiều bước **từ 2 lần trở lên**, đó là lúc đóng gói thành Skill. Áp dụng cho mọi việc lặp lại của team, không riêng kiểm thử code: Release checklist, Migration recipe (quy trình chuyển đổi dữ liệu), Pre-PR check (rà soát trước khi tạo PR)...
 
 ## Recap
 
@@ -155,10 +249,14 @@ Cân nhắc dùng Skill khi **cách thức thực hiện quan trọng ngang vớ
 | 4 thành phần | Instructions (`SKILL.md`, bắt buộc) + Assets + References + Scripts (tùy chọn, thêm khi cần, tối giản). |
 | Khác Tool | Tool = *what Claude can do*, Skill = *how you want it done*. |
 | Nạp context | Lazy loading — chỉ nạp tên/mô tả lúc đầu, nạp toàn bộ nội dung khi Claude xác định cần dùng. |
+| Side files | `SKILL.md` giữ ngắn (bản đồ: làm gì + khi nào); `reference.md` chỉ đọc khi cần; script (`check.sh`) được chạy chứ không nạp mã vào context. |
 | Vòng đời API | `client.beta.skills.create` (upload 1 lần, nhận `skill.id`) → gắn vào `container.skills` (kèm `version`) trong các `messages.create` sau, cần cờ `betas`. |
 | Trong Claude Code | Đặt ở `.claude/skills/` (project) hoặc `~/.claude/skills/` (user); kích hoạt tự động theo mô tả hoặc thủ công qua `/tên-skill`; scoped skill (theo thư mục) ưu tiên hơn unscoped khi trùng tên. |
 | Trong claude.ai | Tạo bằng hội thoại (Claude tự hỏi các câu cốt lõi rồi sinh thư mục Skill); quản lý/sửa ở mục Customize bằng lệnh tự nhiên; phạm vi **toàn cục** — dùng chung mọi chat và mọi Project. |
 | Kết hợp Tool | Skill mô tả quy trình, Tool (ví dụ `code_execution`) thực thi hành động cụ thể trong quy trình đó. |
+| Skill đầu tiên nên xây | Skill **tự xác minh công việc** (test/lint/checklist) → Claude tự kiểm tra và sửa lỗi trước khi bàn giao (self-correction loop); "xong" = gates đã chạy thật, kể cả kiểm tra AI không nới lỏng test để pass. |
+| Đặt quy tắc ở đâu | Phong cách toàn codebase → `CLAUDE.md`; quy trình theo tác vụ → Skill; bắt buộc 100%/an toàn sống còn → Hook (code chặn thật, không phải lời dặn). |
+| Khi nào tạo Skill | Gõ cùng chuỗi hướng dẫn nhiều bước ≥ 2 lần (release checklist, migration recipe, pre-PR check...). |
 | Khi nào dùng | Cách làm quan trọng ngang kết quả — cần chuẩn hóa lặp lại nhất quán trên toàn hệ thống. |
 
 ## Liên kết
@@ -169,3 +267,4 @@ Cân nhắc dùng Skill khi **cách thức thực hiện quan trọng ngang vớ
 - Nhiều Skill + Connectors + Subagents đóng gói thành bộ chia sẻ cho cả team: [[Plugins]]
 - Ở góc nhìn hạ tầng dev, Skill là một trong các *Primitives* của [[Claude Platform]]
 - Phân biệt với [[Tool Use (Function Calling)|Tool]]: Tool = khả năng hành động, Skill = quy trình/quy chuẩn
+- Nơi đặt quy tắc cứng/mềm: [[Hooks]], [[CLAUDE.md Bộ nhớ dự án]]

@@ -69,4 +69,4 @@ Hook ở event `PostToolUse` + matcher `Edit | MultiEdit | Write` → mỗi khi 
 ## Liên kết
 
 - Thuộc: [[Claude Code]]
-- Liên quan: [[CLAUDE.md Bộ nhớ dự án]], [[Claude Code#Cơ chế phân quyền (Permissions)|Permissions]]
+- Liên quan: [[CLAUDE.md Bộ nhớ dự án]], [[Skills]] (Hook = code chặn cứng; CLAUDE.md/Skill = lời dặn), [[Claude Code#Cơ chế phân quyền (Permissions)|Permissions]]
