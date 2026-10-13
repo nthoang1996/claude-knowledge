@@ -124,7 +124,7 @@ Mở nhiều session Claude cùng thao tác trên **một thư mục code** thì
 
 ## Cơ chế phân quyền (Permissions)
 
-Quyết định mức độ tự chủ của Claude Code và mức độ giám sát của người dùng, gồm 3 chế độ:
+Quyết định mức độ tự chủ của Claude Code và mức độ giám sát của người dùng. Có tổng cộng 6 chế độ (thêm `Auto`, `Don't Ask`, `Bypass Permissions`), chi tiết và cách chọn: [[Permission Modes]]. Ba chế độ tương tác chính:
 
 - **Default** — xin phép trước mọi lần sửa file hoặc chạy lệnh terminal; an toàn tối đa, duyệt từng thao tác.
 - **Auto-accept edits** — tự do sửa file không cần hỏi, nhưng lệnh shell/terminal vẫn phải được duyệt; tăng tốc code/refactor mà vẫn chặn lệnh nguy hiểm.
