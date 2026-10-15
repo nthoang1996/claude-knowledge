@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
+                "file": "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hooks"
+              "title": "Agent SDK"
             }
           }
         ],
@@ -94,7 +94,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "stop_hook_active",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -258,20 +258,24 @@
   },
   "active": "eeb5882515d1e4c8",
   "lastOpenFiles": [
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.228f8e8d7e9c",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.fbc322d636ad",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.9f8ac774d959",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.920432110c43",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md.tmp.14596.ff2a0fd09fd7",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md.tmp.14596.35801aa944ce",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md.tmp.14596.06869ceccdde",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Tự động hóa Claude Code (Routines & Headless).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Tự động hóa Claude Code (Routines & Headless).md.tmp.14596.f1b7720ab2b6",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md.tmp.14596.e93faa3016ab",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md.tmp.14596.ed657b7c2ea4",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md.tmp.14596.bd550b8f83ad",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md.tmp.14596.5e56135148aa",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md.tmp.14596.f94e6269d109",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md.tmp.14596.75e5ec6195c3",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Routines.md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Tự động hóa Claude Code (Routines & Headless).md.tmp.14596.bb269a2b4ead",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.85ba75177104",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.b04ff97f620f",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.71e1279d1aa6",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.23828.3e00c005c15d",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md.tmp.22740.9d9ab944b9bf",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md.tmp.22740.8a82c145677a",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md.tmp.22740.595b0bf11787",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
@@ -290,10 +294,6 @@
     "Claude Ecosystem/Claude Cowork/Mô hình Phân quyền (Permissions).md",
     "Claude Ecosystem/Claude Cowork/Chọn Thư mục & Phân quyền Đọc-Ghi.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude trong M365 (Cơ chế tích hợp).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude for Excel.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude in Chrome.md",
-    "Claude Ecosystem/Claude Cowork/Thêm & Quản lý Connectors (Cowork).md",
-    "Claude Ecosystem/Claude Cowork/Tự xây dựng Plugin (Cowork).md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
