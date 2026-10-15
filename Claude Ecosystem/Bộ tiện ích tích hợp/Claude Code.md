@@ -211,4 +211,5 @@ Ngoài phạm vi mã nguồn, có thể chọn môi trường dựa trên mục 
 - Quy trình làm việc: [[Plan Mode]], [[Explore, Plan, Code, Commit]], [[CLAUDE.md Bộ nhớ dự án|CLAUDE.md]]
 - Xem thêm: [[Claude for Slack]], [[Claude Design]], [[Claude in Chrome]], [[Connectors (MCP)]], [[Hooks]], [[Quản lý MCP Server trong Claude Code]], [[Skills]], [[Subagents (Tác vụ phụ)]]
 - Tự động hóa không cần ngồi canh: [[Tự động hóa Claude Code (Routines & Headless)]]
+- Tự động hóa quy trình PR trên GitHub: [[Claude Code trong Pull Request (GitHub)]]
 - Phân biệt với chế độ khác: [[So sánh 3 chế độ làm việc (Chat, Cowork, Code)]]

@@ -43,7 +43,7 @@ graph LR
 
 - **Headless mode** — `claude -p "prompt"` chạy một lần, không giao diện, dễ pipe vào script/cron/CI; cần môi trường riêng của bạn thì dùng thay Routines. Chi tiết xem [[Headless Mode (claude -p)]].
 - **Agent SDK** — thư viện (Python/TypeScript) nhúng động cơ Claude Code vào ứng dụng, gọi qua hàm `query` và xử lý luồng message. Chi tiết xem [[Agent SDK]].
-- **Tích hợp CI** — thường dùng qua GitHub Actions / GitLab CI để review PR, sửa lỗi, sinh changelog.
+- **Tích hợp CI** — thường dùng qua GitHub Actions / GitLab CI để review PR, sửa lỗi, sinh changelog. Chi tiết cho PR xem [[Claude Code trong Pull Request (GitHub)]].
 
 ```bash
 # Ví dụ headless: chạy trong CI, chỉ cho đọc + chạy test, trả JSON
@@ -62,5 +62,5 @@ claude -p "Review diff và liệt kê lỗi tiềm ẩn" \
 ## Liên kết
 
 - Thuộc: [[Claude Code]]
-- Chi tiết: [[Routines]], [[Headless Mode (claude -p)]], [[Agent SDK]]
+- Chi tiết: [[Routines]], [[Headless Mode (claude -p)]], [[Agent SDK]], [[Claude Code trong Pull Request (GitHub)]]
 - Liên quan: [[Hooks]], [[Permission Modes]], [[Subagents (Tác vụ phụ)]], [[SDKs]], [[Lên lịch Tác vụ (Scheduled Tasks)]]
