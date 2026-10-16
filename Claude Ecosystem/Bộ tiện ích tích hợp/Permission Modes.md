@@ -78,6 +78,11 @@ graph LR
 
 <!-- -->
 
+> [!tip] Chạy unattended: chọn Auto thay vì Bypass
+> Auto vẫn có lớp classifier chặn thao tác nguy hiểm, Bypass thì không có gì. Nhưng Auto chỉ bảo vệ khỏi *danger*, không đảm bảo *correctness* → mức xác minh sau lượt chạy vẫn phải tương xứng với rope đã cấp. Xem [[Xác minh tương xứng (Proportional Verification)]].
+
+<!-- -->
+
 > [!note] Danh sách chặn/cho phép của Auto liên tục thay đổi
 > Hành vi cụ thể của classifier được Anthropic cập nhật thường xuyên — tham khảo docs chính thức định kỳ thay vì coi danh sách trên là cố định.
 

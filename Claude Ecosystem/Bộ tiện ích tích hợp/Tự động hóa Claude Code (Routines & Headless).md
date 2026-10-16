@@ -58,9 +58,10 @@ claude -p "Review diff và liệt kê lỗi tiềm ẩn" \
 - Dùng [[Hooks]] để áp đặt quy tắc cứng (chặn lệnh nguy hiểm, bắt buộc test pass với `Stop`).
 - Đặt giới hạn (số lượt, chi phí, timeout) và ghi log để kiểm toán.
 - Chỉ tự động hóa việc đã **kiểm chứng thủ công** trước — đúng triết lý "đã tin mới tự động".
+- **Giám sát càng ít, xác minh càng sâu** — lượt unattended phải dựng lại bức tranh từ log/diff/test trước khi ship. Xem [[Xác minh tương xứng (Proportional Verification)]].
 
 ## Liên kết
 
 - Thuộc: [[Claude Code]]
-- Chi tiết: [[Routines]], [[Headless Mode (claude -p)]], [[Agent SDK]], [[Claude Code trong Pull Request (GitHub)]]
+- Chi tiết: [[Routines]], [[Headless Mode (claude -p)]], [[Agent SDK]], [[Claude Code trong Pull Request (GitHub)]], [[Xác minh tương xứng (Proportional Verification)]]
 - Liên quan: [[Hooks]], [[Permission Modes]], [[Subagents (Tác vụ phụ)]], [[SDKs]], [[Lên lịch Tác vụ (Scheduled Tasks)]]

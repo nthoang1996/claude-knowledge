@@ -112,6 +112,7 @@ Ngoài bộ chuyên môn theo vai trò, plugin ở [[Claude Code]] là cơ chế
 - **Manifest** `.claude-plugin/plugin.json` — khai báo tên, phiên bản, mô tả của plugin.
 - **Marketplace** — kho/danh mục plugin (thường là một repo Git). Thêm kho bằng `/plugin marketplace add <nguồn>`, cài plugin bằng `/plugin install <tên>@<marketplace>`.
 - **Namespace:** Skill của plugin gọi dưới dạng `plugin:skill`, tránh trùng tên với skill khác (xem [[Skills#Skill trong Claude Code (CLI)|Skill trong Claude Code]]).
+- **Vì sao dùng:** thay cho việc copy-paste thư mục `.claude` giữa các máy (dễ lệch phiên bản) bằng một gói có `version`, cài/cập nhật bằng lệnh. Cấu trúc thư mục, lệnh `/plugin`, scope cài, test bằng `--plugin-dir`: xem [[Plugin trong Claude Code (Chia sẻ cho Team)]].
 
 ## Khi nào nên đóng gói thành Plugin
 
@@ -140,5 +141,6 @@ Ngoài bộ chuyên môn theo vai trò, plugin ở [[Claude Code]] là cơ chế
 ## Liên kết
 
 - Thuộc nhóm: [[Nền tảng cốt lõi]]
+- Chi tiết: [[Plugin trong Claude Code (Chia sẻ cho Team)]]
 - Thành phần bên trong: [[Skills]], [[Connectors (MCP)]], [[Subagents (Tác vụ phụ)]]
 - Xem thêm: [[Cài đặt & Tùy biến Plugins (Cowork)]], [[Hooks]], [[Claude Code]], [[Claude Cowork]], [[Tích lũy Giá trị theo Thời gian (Compounding Value)]]

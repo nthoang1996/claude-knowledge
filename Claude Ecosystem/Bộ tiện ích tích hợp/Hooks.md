@@ -126,6 +126,7 @@ graph LR
 
 > [!tip] Bức tranh toàn cảnh
 > `PreToolUse` chặn nguy hiểm → `PostToolUse` dọn dẹp/định dạng → `Stop` ép đạt chất lượng.
+> Công thức "test là cổng chặn" (PostToolUse lint/type-check + Stop chạy test, script mẫu): xem [[Xác minh tương xứng (Proportional Verification)#Test là cổng chặn, không phải lời hứa (a gate, not a promise)|Xác minh tương xứng]].
 
 ### Ví dụ điển hình: Auto-format với PostToolUse
 
