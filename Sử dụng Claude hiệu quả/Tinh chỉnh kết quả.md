@@ -4,7 +4,7 @@ tags:
 aliases:
   - Tinh chỉnh kết quả
   - Getting Better Results
-  - AI Fluency
+  - 4D
 up: "[[Sử dụng Claude hiệu quả]]"
 ---
 
@@ -26,6 +26,8 @@ Khung năng lực để làm việc hiệu quả với AI:
 - **Description (Mô tả)** — diễn đạt yêu cầu rõ ràng, đủ ngữ cảnh.
 - **Discernment (Sự sáng suốt)** — đánh giá được kết quả đúng/sai, biết khi nào cần nghi ngờ.
 - **Diligence (Sự cẩn trọng)** — kiểm chứng lại dữ liệu, không tin tuyệt đối vào output.
+
+Chi tiết từng năng lực và cách áp dụng theo mode: [[Bộ khung 4D]]. Định nghĩa AI Fluency (4E) và 3 hình thức tương tác Automation / Augmentation / Agency: [[AI Fluency]].
 
 ## Liên kết
 

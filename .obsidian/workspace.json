@@ -61,12 +61,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md",
+                "file": "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Plugin trong Claude Code (Chia sẻ cho Team)"
+              "title": "AI Fluency"
             }
           }
         ],
@@ -266,23 +266,25 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "686693ff560302cb",
+  "active": "4607b84d0160cd2d",
   "lastOpenFiles": [
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.29429f18d7f4",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.24328.91e3e377a4eb",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.0446d2405ea7",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.9c84be708551",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.24328.10ba5daeb36f",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.24328.077833f243fd",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.a27a6428691a",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.3f79750e3ca1",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.e75f513b9dfc",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.16668.cbb309029b71",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins.md.tmp.16668.18a22a9fe15a",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.b1fffbe7a00a",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md.tmp.3936.86f9a9a32c04",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md.tmp.3936.7942918a376d",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md.tmp.3936.66a0014847ae",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md.tmp.3936.a464bc6293f2",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code trong Pull Request (GitHub).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Tự động hóa Claude Code (Routines & Headless).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md",
@@ -302,8 +304,6 @@
     "Claude Ecosystem/Claude Cowork.md",
     "Claude Ecosystem/Claude Cowork/Khi nào KHÔNG nên dùng Cowork (Giới hạn Sử dụng).md",
     "Claude Ecosystem/Claude Cowork/Giám sát Real-time khi Cowork chạy (Watch the Run).md",
-    "Claude Ecosystem/Claude Cowork/Tích hợp môi trường (4 trụ cột).md",
-    "Claude Ecosystem/Claude Cowork/Bản chất & Triết lý.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
