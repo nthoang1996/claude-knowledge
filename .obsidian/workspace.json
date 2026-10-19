@@ -18,6 +18,34 @@
             }
           },
           {
+            "id": "f6a4c5728696f2c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tool Use (Function Calling)"
+            }
+          },
+          {
+            "id": "8d2b71c7e1b56b1f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Claude Ecosystem/Claude Platform/Tool Runner.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tool Runner"
+            }
+          },
+          {
             "id": "047befc3eba394c1",
             "type": "leaf",
             "state": {
@@ -46,31 +74,21 @@
             }
           },
           {
-            "id": "eeb5882515d1e4c8",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "4607b84d0160cd2d",
+            "id": "4942bf9ef7cb9f76",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
+                "file": "Generative AI và LLM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI Fluency"
+              "title": "Generative AI và LLM"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -104,7 +122,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Progress",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -266,23 +284,27 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "4607b84d0160cd2d",
+  "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
+    "Generative AI và LLM.md.tmp.12472.91e2484ea269",
+    "Generative AI và LLM.md.tmp.12472.d360ae63b664",
+    "Generative AI và LLM.md.tmp.12472.a518fd35d3a9",
+    "Generative AI và LLM.md",
+    "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md.tmp.23892.9965b9f72834",
+    "Generative AI và LLM.md.tmp.23892.9da338df4bde",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
+    "Claude Ecosystem/Claude Platform/Tool Runner.md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.29429f18d7f4",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.24328.91e3e377a4eb",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.0446d2405ea7",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.9c84be708551",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.24328.10ba5daeb36f",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.24328.077833f243fd",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.a27a6428691a",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.3f79750e3ca1",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md",
-    "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md.tmp.16668.e75f513b9dfc",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code trong Pull Request (GitHub).md",
@@ -291,7 +313,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Headless Mode (claude -p).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Routines.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Hooks.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
@@ -301,9 +322,6 @@
     "Claude Ecosystem/Claude Cowork/Tiêu chí chọn Task phù hợp (3 Patterns).md",
     "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md",
     "Claude Ecosystem.md",
-    "Claude Ecosystem/Claude Cowork.md",
-    "Claude Ecosystem/Claude Cowork/Khi nào KHÔNG nên dùng Cowork (Giới hạn Sử dụng).md",
-    "Claude Ecosystem/Claude Cowork/Giám sát Real-time khi Cowork chạy (Watch the Run).md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
