@@ -79,12 +79,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generative AI và LLM.md",
+                "file": "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Generative AI và LLM"
+              "title": "Delegation (Ủy thác)"
             }
           }
         ],
@@ -286,23 +286,24 @@
   },
   "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md.tmp.25252.7e916402bc63",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md.tmp.25252.d2904d2dfea9",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md.tmp.25252.5b75cac19b1d",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.25252.8dd0fcb1993b",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.25252.4fc7feda61ea",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md.tmp.25252.c668590bb2e9",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D",
+    "Generative AI và LLM.md",
     "Generative AI và LLM.md.tmp.12472.91e2484ea269",
     "Generative AI và LLM.md.tmp.12472.d360ae63b664",
     "Generative AI và LLM.md.tmp.12472.a518fd35d3a9",
-    "Generative AI và LLM.md",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md.tmp.23892.9965b9f72834",
-    "Generative AI và LLM.md.tmp.23892.9da338df4bde",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Claude Platform/Tool Runner.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.29429f18d7f4",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.24328.91e3e377a4eb",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.0446d2405ea7",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md.tmp.24328.9c84be708551",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.24328.10ba5daeb36f",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
@@ -321,7 +322,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Subagents (Tác vụ phụ).md",
     "Claude Ecosystem/Claude Cowork/Tiêu chí chọn Task phù hợp (3 Patterns).md",
     "Claude Ecosystem/Claude Cowork/Phân phối Plugin cho Tổ chức (Distribution).md",
-    "Claude Ecosystem.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
