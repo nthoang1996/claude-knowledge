@@ -32,5 +32,5 @@ Một prompt hiệu quả nên có đủ 3 phần:
 ## Liên kết
 
 - Thuộc: [[Sử dụng Claude hiệu quả]]
-- Xem thêm: [[Tinh chỉnh kết quả]], [[Ứng dụng thực tế]]
+- Xem thêm: [[Tinh chỉnh kết quả]], [[Prompt Engineering]], [[Ứng dụng thực tế]]
 - Kiến thức nền về công nghệ phía sau Claude: [[Generative AI và LLM]]

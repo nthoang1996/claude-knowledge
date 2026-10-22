@@ -21,13 +21,15 @@ graph TD
 
     Root --> A["Bắt đầu với Claude"]
     Root --> B["Tinh chỉnh kết quả"]
+    Root --> D["Prompt Engineering"]
     Root --> C["Ứng dụng thực tế"]
 ```
 
-## Ba nhánh chính
+## Các nhánh chính
 
 - [[Bắt đầu với Claude]]
 - [[Tinh chỉnh kết quả]]
+- [[Prompt Engineering]]
 - [[Ứng dụng thực tế]]
 
 ## Liên kết

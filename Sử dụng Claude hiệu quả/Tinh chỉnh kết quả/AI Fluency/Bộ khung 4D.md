@@ -26,7 +26,7 @@ graph TD
 | Năng lực | Ý chính | Ứng dụng / keyword |
 | --- | --- | --- |
 | **Delegation** → [[Delegation (Ủy thác)]] | Quyết định việc nào giao AI, việc nào tự làm | Tránh 2 thái cực: ỷ lại (giao cả việc chiến lược/đạo đức) và bảo thủ (tự làm việc lặp lại AI làm tốt hơn) |
-| **Description** | Truyền đạt bối cảnh, vai trò, mục tiêu, ràng buộc rõ ràng | Prompt chuẩn, context đầu vào, `CLAUDE.md`, System Prompt |
+| **Description** → [[Description (Mô tả)]] | Truyền đạt bối cảnh, vai trò, mục tiêu, ràng buộc rõ ràng | Product / Process / Performance, prompt chuẩn, context đầu vào, `CLAUDE.md`, System Prompt |
 | **Discernment** | Đánh giá output/hành vi AI bằng góc nhìn phản biện | Phát hiện hallucination, logic sai, bias, code đẹp nhưng lỗi ngầm; xem `git diff` thay vì chỉ đọc summary |
 | **Diligence** | Dùng AI có trách nhiệm, an toàn, tuân thủ | Review bảo mật, cổng kiểm soát tự động (Hooks, test exit code 2), bảo vệ dữ liệu nhạy cảm, chịu trách nhiệm cuối cùng |
 
@@ -45,5 +45,5 @@ Model AI thay đổi liên tục, nhưng 4D là kỹ năng nền không lỗi th
 ## Liên kết
 
 - Thuộc: [[AI Fluency]]
-- Chi tiết: [[Delegation (Ủy thác)]]
+- Chi tiết: [[Delegation (Ủy thác)]], [[Description (Mô tả)]]
 - Liên quan: [[Tinh chỉnh kết quả]], [[Hooks]], [[CLAUDE.md Bộ nhớ dự án]], [[Xác minh tương xứng (Proportional Verification)]]

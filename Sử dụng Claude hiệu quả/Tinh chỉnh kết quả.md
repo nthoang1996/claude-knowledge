@@ -32,4 +32,4 @@ Chi tiết từng năng lực và cách áp dụng theo mode: [[Bộ khung 4D]].
 ## Liên kết
 
 - Thuộc: [[Sử dụng Claude hiệu quả]]
-- Xem thêm: [[Bắt đầu với Claude]], [[Ứng dụng thực tế]]
+- Xem thêm: [[Bắt đầu với Claude]], [[Prompt Engineering]], [[Ứng dụng thực tế]]
