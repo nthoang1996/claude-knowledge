@@ -76,5 +76,5 @@ graph TD
 ## Liên kết
 
 - Thuộc: [[Bộ khung 4D]]
-- Cùng cấp: [[Delegation (Ủy thác)]] (quyết định giao gì → Description nói cách giao), Discernment, Diligence — xem bảng trong [[Bộ khung 4D]]
+- Cùng cấp: [[Delegation (Ủy thác)]] (quyết định giao gì → Description nói cách giao), [[Discernment (Thẩm định)]] (mặt đối ứng: nhận về, đánh giá output), Diligence — xem bảng trong [[Bộ khung 4D]]
 - Liên quan: [[AI Fluency]], [[Công thức Prompt chuẩn (Deliverable + Inputs + Nuances)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]], [[Anatomy của một Task chuẩn]]

@@ -79,12 +79,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sử dụng Claude hiệu quả/Prompt Engineering.md",
+                "file": "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Discernment (Thẩm định).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Prompt Engineering"
+              "title": "Discernment (Thẩm định)"
             }
           }
         ],
@@ -286,24 +286,26 @@
   },
   "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Discernment (Thẩm định).md.tmp.6072.97e989a4c345",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Discernment (Thẩm định).md.tmp.6072.03c486b10987",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Discernment (Thẩm định).md.tmp.6072.1beaa39907a3",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Discernment (Thẩm định).md",
+    "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Description (Mô tả).md.tmp.6072.cd53b4c0150c",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.6072.61a7da52ccdb",
+    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.6072.a3bcfeba1b77",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md",
     "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.30696.3fb3e0be9925",
     "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.30696.c6b401c4e4e1",
     "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.30696.ec048343b0ae",
     "Claude Ecosystem/Claude Cowork/Công thức Prompt chuẩn (Deliverable + Inputs + Nuances).md",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md",
     "Generative AI và LLM.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Description (Mô tả).md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md.tmp.30696.dd28c98ea9c3",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md.tmp.30696.2c1b30820fd2",
-    "Sử dụng Claude hiệu quả.md.tmp.30696.d6ee12647baf",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.30696.45d6f16ec35d",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Description (Mô tả).md.tmp.31016.9e0cce2b1a61",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.31016.b5150425b8fd",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D.md.tmp.31016.df922ebb26fc",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Description (Mô tả).md.tmp.31016.2926e8eb16d3",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code.md",
     "Claude Ecosystem/Claude Platform/Tool Runner.md",
@@ -311,7 +313,6 @@
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Plugins/Plugin trong Claude Code (Chia sẻ cho Team).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Explore, Plan, Code, Commit.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/Xác minh tương xứng (Proportional Verification).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Claude Code trong Pull Request (GitHub).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Tự động hóa Claude Code (Routines & Headless).md",
     "Claude Ecosystem/Bộ tiện ích tích hợp/Agent SDK.md",
@@ -321,7 +322,6 @@
     "Claude Ecosystem/Bộ tiện ích tích hợp/Permission Modes.md",
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Nền tảng cốt lõi/Skills.md",
-    "Claude Ecosystem/Bộ tiện ích tích hợp/CLAUDE.md Bộ nhớ dự án.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
