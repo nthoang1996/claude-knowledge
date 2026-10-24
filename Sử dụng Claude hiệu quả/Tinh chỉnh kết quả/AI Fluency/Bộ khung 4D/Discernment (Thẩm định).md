@@ -86,5 +86,5 @@ AI dù tiên tiến đến đâu vẫn **cần sự giám sát của con ngườ
 ## Liên kết
 
 - Thuộc: [[Bộ khung 4D]]
-- Cùng cấp: [[Delegation (Ủy thác)]], [[Description (Mô tả)]] (mặt đối ứng: gửi đi ↔ nhận về), Diligence — xem bảng trong [[Bộ khung 4D]]
+- Cùng cấp: [[Delegation (Ủy thác)]], [[Description (Mô tả)]] (mặt đối ứng: gửi đi ↔ nhận về), [[Diligence (Cẩn trọng)]]
 - Liên quan: [[AI Fluency]], [[Tinh chỉnh kết quả]], [[Xác minh tương xứng (Proportional Verification)]]

@@ -72,6 +72,21 @@ graph LR
 - Ba hình thức **không loại trừ nhau** — một dự án thường trộn cả ba; chọn theo mức rủi ro và độ rõ ràng của việc.
 - Càng lên Agency, **Discernment + Diligence** càng quan trọng vì AI chạy lâu, ít người giám sát từng bước → cần guardrail (permission, hook, review kết quả).
 
+## Tổng kết khóa học
+
+Key takeaways chốt lại toàn bộ khung AI Fluency:
+
+- **Thành thạo AI là kỹ năng rèn luyện, không đạt sau một đêm** — phát triển qua *intentional practice* (thực hành có chủ đích) cả 4 năng lực; 4D áp dụng xuyên suốt cả 3 mode, càng dùng càng tinh.
+- **Human + AI bổ trợ thế mạnh cho nhau** — kết quả tốt nhất không phải AI thay thế hoàn toàn hay người làm thủ công hết: AI mạnh ở tốc độ và xử lý dữ liệu, người mạnh ở tư duy phản biện, sáng tạo, sự tinh tế; chuyên môn và phán đoán của người vẫn là nền tảng (người quyết định chia việc nào cho AI).
+- **Khung không lỗi thời** — công cụ/model đổi nhanh, nhưng 4D xây từ nguyên lý gốc nên vẫn dùng được khi AI tiến hóa.
+- **AI không phải phép thuật** — là công cụ mạnh nhưng không thần thánh; mức hữu ích và an toàn phụ thuộc hoàn toàn vào cách người dùng *định hướng, giám sát và tương tác* (Delegation → Description → Discernment → Diligence).
+
+```mermaid
+graph LR
+    A["Delegation<br/>giao đúng việc"] --> B["Description<br/>mô tả rõ"] --> C["Discernment<br/>thẩm định"] --> D["Diligence<br/>chịu trách nhiệm"]
+    D -.->|"rút kinh nghiệm, lặp lại"| A
+```
+
 ## Liên kết
 
 - Thuộc: [[Tinh chỉnh kết quả]]
