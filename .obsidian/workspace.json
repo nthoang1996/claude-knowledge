@@ -79,12 +79,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md",
+                "file": "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vòng đời Request (Request Lifecycle)"
+              "title": "TypeScript"
             }
           }
         ],
@@ -286,6 +286,8 @@
   },
   "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md",
+    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md.tmp.15512.d796637ffa1d",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.74bc92f1ed4a",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.84d6f5ff130f",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.2eed0ec1c54f",
@@ -295,11 +297,8 @@
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.1d1f863fb1ea",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.09f181807c8d",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.33b254051fb2",
-    "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.56064572b3ee",
-    "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md.tmp.23540.a127a7060ddb",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/SDKs.md",
-    "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency.md",

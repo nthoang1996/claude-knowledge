@@ -44,6 +44,36 @@ const msg = await client.messages.create({
 });
 ```
 
+### `max_tokens` — trần an toàn, không phải mục tiêu
+
+- Đặt `max_tokens: 1000` **không** có nghĩa Claude cố viết đủ 1000 token. Câu hỏi đơn giản (ví dụ "Thủ đô của Việt Nam?") chỉ tốn vài chục token rồi dừng tự nhiên, `stop_reason` = `end_turn`.
+- Vai trò thật: "phanh khẩn cấp" — chặn câu trả lời quá dài hoặc model bị lặp vô tận, **giới hạn chi phí tối đa** mỗi request. Chạm trần thì ngắt cứng, `stop_reason` = `max_tokens`, câu trả lời **bị cụt**.
+- Hệ quả khi code:
+  - Đặt quá thấp → output bị cắt giữa câu/JSON/code. Luôn kiểm tra `stop_reason` trước khi dùng kết quả (xem bảng `stop_reason` ở [[Vòng đời Request (Request Lifecycle)]]).
+  - Chỉ giới hạn **output**; input bị giới hạn bởi context window. Với [[Extended Thinking]], token suy nghĩ cũng tính vào `max_tokens`.
+  - Muốn câu trả lời **ngắn hơn** → chỉ dẫn trong prompt/`system`; `max_tokens` chỉ cắt chứ không làm câu trả lời gọn hơn.
+- Tương đương Python: `client = anthropic.Anthropic()` rồi `client.messages.create(model=..., max_tokens=..., messages=[...])`, đọc kết quả bằng `response.content[0].text` (chỉ an toàn khi biết chắc block đầu là `text`).
+
+### `messages` — hội thoại nhiều lượt (stateless)
+
+- Mỗi phần tử là `{ role, content }`; `role` chỉ có `"user"` (người dùng/ứng dụng của bạn gửi) hoặc `"assistant"` (lượt Claude đã trả lời trước đó). Mảng phải **bắt đầu bằng `user`**, thường xen kẽ `user` → `assistant` → `user`.
+- API **không lưu lịch sử** → server của bạn phải giữ hội thoại (RAM/DB) và gửi lại **toàn bộ** mảng mỗi lượt để Claude "nhớ":
+
+```typescript
+const history: Anthropic.MessageParam[] = [
+  { role: "user", content: "Chào bạn, tôi tên là Nam." },
+  { role: "assistant", content: "Chào Nam! Rất vui được hỗ trợ bạn hôm nay." },
+  { role: "user", content: "Tên tôi là gì?" },
+];
+const reply = await client.messages.create({ model: "claude-opus-5", max_tokens: 1024, messages: history });
+// Lượt sau: push reply (role "assistant") + câu hỏi mới (role "user") vào history rồi gọi lại
+```
+
+- Hệ quả thực tế:
+  - Hội thoại càng dài, **input token mỗi lượt càng tăng** (tốn tiền, chậm hơn, có thể chạm context window) → cắt/tóm tắt lịch sử cũ, xem [[Context Management]].
+  - `system` prompt **không** nằm trong `messages` mà ở tham số `system` riêng.
+  - Lượt `assistant` do Claude sinh ra phải được lưu lại **nguyên vẹn** (đặc biệt khi có `tool_use`/`thinking` block) trước khi gửi tiếp. Chi tiết trường `messages`/`content` block: xem [[REST API]].
+
 ## 3. Ví dụ thực hành: Code review
 
 Dùng Claude rà lỗi code chỉ với ~20 dòng:
