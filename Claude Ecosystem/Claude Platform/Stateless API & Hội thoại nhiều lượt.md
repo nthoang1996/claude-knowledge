@@ -78,7 +78,7 @@ def chat(user_text):
 ## Quy tắc khi dựng mảng `messages`
 
 - **`role` luân phiên** `user` / `assistant`; tin đầu tiên là `user`. Các tin liên tiếp cùng role bị API gộp lại thành một.
-- **System prompt không nằm trong `messages`** — truyền riêng bằng tham số `system`, lượt nào cũng phải gửi lại.
+- **[[System Prompt]] không nằm trong `messages`** — truyền riêng bằng tham số `system`, lượt nào cũng phải gửi lại.
 - **Giữ nguyên `content` của assistant** khi nối lại, đặc biệt các block `tool_use` (và `thinking` khi dùng [[Extended Thinking]]); `tool_result` phải khớp `tool_use_id` — xem [[Vòng lặp Agent]].
 - **Lưu cả hai phía** vào DB: tin user trước khi gọi, câu trả lời hoàn chỉnh của Claude sau khi xong (kể cả khi streaming — xem [[Vòng đời Request (Request Lifecycle)]]).
 - **Client chỉ gửi tin mới + id hội thoại**; server mới là nơi dựng `messages` từ DB, để user không sửa được history và để có chỗ cắt/tóm tắt.
