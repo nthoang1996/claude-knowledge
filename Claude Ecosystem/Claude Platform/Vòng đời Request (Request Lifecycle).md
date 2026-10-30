@@ -82,7 +82,7 @@ Các điểm kỹ thuật cần nhớ:
 - Header bắt buộc: `x-api-key`, `anthropic-version`, `content-type: application/json` (SDK tự thêm — xem [[SDKs]]).
 
 > [!important] API là stateless
-> Anthropic **không nhớ** hội thoại giữa các request — ứng dụng phải gửi lại toàn bộ lịch sử ở mỗi lượt. Đó là lý do ngữ cảnh càng dài thì càng chậm và tốn token (xem [[Context Management]]).
+> Anthropic **không nhớ** hội thoại giữa các request — ứng dụng phải gửi lại toàn bộ lịch sử ở mỗi lượt. Đó là lý do ngữ cảnh càng dài thì càng chậm và tốn token (xem [[Context Management]]). Chi tiết cách dựng `messages` nhiều lượt: [[Stateless API & Hội thoại nhiều lượt]].
 
 ## Giai đoạn 2: API Gateway kiểm tra
 

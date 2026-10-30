@@ -25,6 +25,7 @@ graph TD
 - [[Claude Code]] — CLI tương tác/cấu hình dịch vụ
 - [[Console]] — bảng điều khiển quản trị trên web
 - [[Vòng đời Request (Request Lifecycle)]] — hành trình một request từ client → API → inference → UI
+- [[Stateless API & Hội thoại nhiều lượt]] — API không nhớ gì, ứng dụng phải tự gửi lại history
 
 ## Góc nhìn kiến trúc: 3 tầng
 

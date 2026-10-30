@@ -121,6 +121,7 @@ graph LR
 ## Liên kết
 
 - Thuộc nhóm: [[Claude Platform]]
+- Gốc rễ vấn đề (API stateless, phải gửi lại history): [[Stateless API & Hội thoại nhiều lượt]]
 - Suy luận nội bộ cũng chiếm ngữ cảnh: [[Extended Thinking]]
 - Cơ chế lặp gọi tool nhiều lượt liên quan trực tiếp đến việc quản lý ngữ cảnh: [[Vòng lặp Agent]], [[Tool Use (Function Calling)]]
 - Chi tiết API đầy đủ (tham số, betas, ví dụ code): skill `claude-api` khi cần tra cứu.
