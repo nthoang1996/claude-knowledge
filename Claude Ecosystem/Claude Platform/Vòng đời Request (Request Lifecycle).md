@@ -176,6 +176,7 @@ graph LR
 | `top_p` (nucleus) | Chỉ giữ nhóm token nhỏ nhất có **tổng xác suất tích luỹ ≥ p**, loại phần đuôi vô lý | Cắt nhiễu mà vẫn giữ đa dạng |
 | `top_k` | Chỉ giữ k token xác suất cao nhất | Cắt đuôi dài, dùng nâng cao |
 
+- Chi tiết use case, ví dụ code và lưu ý: [[Temperature]].
 - **Không nên chỉnh đồng thời `temperature` và `top_p`** — chọn một; mặc định thường đã đủ tốt. Một số model mới có thể hạn chế/không cho đặt các tham số lấy mẫu → kiểm tra tài liệu model đang dùng.
 - **`temperature` = 0 không đảm bảo kết quả giống hệt 100%** giữa các lần gọi (sai khác nhỏ do tính toán số học, hạ tầng). Cần ổn định tuyệt đối thì đừng dựa riêng vào tham số này — kiểm tra/validate đầu ra ở phía ứng dụng.
 - **Temperature thấp không làm hết "bịa" (hallucination)** — nó chỉ làm đầu ra nhất quán hơn, không làm thông tin đúng hơn. Với dữ kiện cần chính xác, cấp nguồn trong prompt hoặc dùng tool tra cứu ([[Tool Use (Function Calling)]]).
@@ -208,6 +209,8 @@ Hai chế độ trả về:
 | Trả về | 1 HTTP response sau khi xong hết | **SSE** (Server-Sent Events) từng đoạn |
 | Cảm nhận chờ | Lâu với câu trả lời dài | Chữ hiện dần, TTFT quyết định |
 | Phù hợp | Job nền, xử lý máy | Chat UI |
+
+Chi tiết UX, sự kiện, ví dụ code và lưu ý triển khai: [[Response Streaming]].
 
 Chuỗi sự kiện SSE: `message_start` → (`content_block_start` → nhiều `content_block_delta` → `content_block_stop`) → `message_delta` (có `stop_reason`, `usage`) → `message_stop`. Thỉnh thoảng có `ping` (giữ kết nối) và `error`.
 

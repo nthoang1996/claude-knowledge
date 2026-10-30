@@ -48,7 +48,7 @@ graph LR
 - **Context Window**: lượng token tối đa mô hình đọc + nhớ trong **một** lần xử lý (gồm cả prompt, lịch sử hội thoại và output). Càng lớn → đọc được tài liệu/codebase dài hơn; nhưng vượt giới hạn thì phần cũ bị cắt/tóm tắt, và mô hình **không nhớ** giữa các phiên nếu không có cơ chế memory riêng. Xem [[Context Management]].
 - **Emergent Capabilities**: khi tăng quy mô (dữ liệu, tham số, compute), xuất hiện năng lực mới mà mô hình nhỏ không có và không được lập trình trực tiếp (lập trình, suy luận nhiều bước, dịch ngôn ngữ phức tạp, in-context learning).
 - **Hallucination**: mô hình sinh nội dung nghe hợp lý nhưng sai/bịa — hệ quả của việc dự đoán xác suất chứ không "tra cứu sự thật". Cần kiểm chứng đầu ra quan trọng.
-- **Temperature**: tham số điều khiển độ ngẫu nhiên khi chọn token (thấp = ổn định, cao = sáng tạo).
+- **Temperature** (chi tiết: [[Temperature]]): tham số điều khiển độ ngẫu nhiên khi chọn token (thấp = ổn định, cao = sáng tạo).
 - **Knowledge cutoff**: mô hình chỉ biết dữ liệu đến một mốc huấn luyện; muốn thông tin mới cần tool (search, RAG, MCP).
 
 ## Điểm mạnh của GenAI

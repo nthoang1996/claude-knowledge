@@ -26,6 +26,8 @@ graph TD
 - [[Console]] — bảng điều khiển quản trị trên web
 - [[Vòng đời Request (Request Lifecycle)]] — hành trình một request từ client → API → inference → UI
 - [[Stateless API & Hội thoại nhiều lượt]] — API không nhớ gì, ứng dụng phải tự gửi lại history
+- [[Temperature]] — tham số cân bằng chính xác/nhất quán và sáng tạo/đa dạng khi sinh token
+- [[Response Streaming]] — nhận câu trả lời theo luồng (SSE) để chữ hiện dần, giảm thời gian chờ chữ đầu tiên (TTFT)
 - [[System Prompt]] — chỉ dẫn nền (vai trò, quy tắc, định dạng) gửi kèm mỗi request qua tham số `system`
 
 ## Góc nhìn kiến trúc: 3 tầng
