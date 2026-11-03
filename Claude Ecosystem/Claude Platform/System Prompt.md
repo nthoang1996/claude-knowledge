@@ -121,7 +121,7 @@ Không có `system` → Claude trả lời kiểu trợ lý chung chung, trung l
 ## Giới hạn cần nhớ
 
 - **Không phải ranh giới bảo mật** — secret (API key, dữ liệu nhạy cảm) **không** đưa vào system prompt; phân quyền làm ở server/tool.
-- **Không đảm bảo 100% tuân thủ** — ràng buộc quan trọng về định dạng nên kiểm chứng ở code (validate JSON, retry) hoặc dùng structured outputs.
+- **Không đảm bảo 100% tuân thủ** — ràng buộc quan trọng về định dạng nên kiểm chứng ở code (validate JSON, retry) hoặc dùng structured outputs (xem [[Structured Output (Ép đầu ra JSON thuần)]]).
 - **Có thể bị lộ** — người dùng có thể dụ model đọc lại chỉ dẫn; viết như thể nội dung đó công khai.
 - **Chi phí lặp lại mỗi lượt** — prompt càng dài càng tốn; dùng Prompt Caching.
 - **Khác Claude.ai/Claude Code** — ở đó system prompt do Anthropic/ứng dụng cài sẵn; qua API thì bạn tự viết hoàn toàn. Vai trò tương tự ở Claude Code là `CLAUDE.md` và output style.

@@ -29,6 +29,8 @@ graph TD
 - [[Temperature]] — tham số cân bằng chính xác/nhất quán và sáng tạo/đa dạng khi sinh token
 - [[Response Streaming]] — nhận câu trả lời theo luồng (SSE) để chữ hiện dần, giảm thời gian chờ chữ đầu tiên (TTFT)
 - [[System Prompt]] — chỉ dẫn nền (vai trò, quy tắc, định dạng) gửi kèm mỗi request qua tham số `system`
+- [[Structured Output (Ép đầu ra JSON thuần)]] — ép Claude trả JSON thuần (không lời dẫn, không markdown fence) để code parse trực tiếp
+- [[Prompt Evaluation (Đánh giá câu lệnh)]] — đo lường định lượng chất lượng prompt trên test set (như unit test), đảm bảo độ tin cậy trước khi deploy
 
 ## Góc nhìn kiến trúc: 3 tầng
 
@@ -43,7 +45,7 @@ graph LR
 
 - **Primitives** — các thành phần nguyên bản gọi qua [[REST API]]/[[SDKs]]: Messages API (chọn model — xem [[Model Tiers]]; suy luận trước khi trả lời — xem [[Extended Thinking]]), [[Tool Use (Function Calling)|Tool use]] (cơ chế lặp nhiều lượt: xem [[Vòng lặp Agent]]), xử lý tệp, tìm kiếm web, thực thi code, tích hợp [[Connectors (MCP)|MCP servers]], [[Skills]], giữ ngữ cảnh gọn cho agent chạy dài — xem [[Context Management]]. Định hình logic/khả năng tương tác cơ bản.
 - **Infrastructure** — đường ống & đệm giúp lên quy mô lớn: [[Managed Agents]], retry tự động, hàng đợi (queues), observability. Giữ hệ thống ổn định khi lượng gọi API tăng vọt.
-- **Controls** — công cụ quan sát/điều chỉnh khi đã production: dashboards theo dõi chi phí/hiệu năng, evals đánh giá chất lượng phản hồi. Thể hiện rõ ngay trên [[Console]].
+- **Controls** — công cụ quan sát/điều chỉnh khi đã production: dashboards theo dõi chi phí/hiệu năng, evals đánh giá chất lượng phản hồi (xem [[Prompt Evaluation (Đánh giá câu lệnh)]]). Thể hiện rõ ngay trên [[Console]].
 
 ## Triết lý cốt lõi: từ "hỏi-đáp" sang "tích hợp vào sản phẩm"
 

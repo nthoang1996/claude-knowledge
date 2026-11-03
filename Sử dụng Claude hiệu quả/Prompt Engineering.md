@@ -101,4 +101,5 @@ Nguyên tắc: **sửa prompt, không chỉ than phiền output** — cụ thể
 
 - Thuộc: [[Sử dụng Claude hiệu quả]]
 - Cùng cấp: [[Bắt đầu với Claude]], [[Tinh chỉnh kết quả]], [[Ứng dụng thực tế]]
+- Đo lường chất lượng prompt khi build ứng dụng: [[Prompt Evaluation (Đánh giá câu lệnh)]]
 - Liên quan: [[Description (Mô tả)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]], [[Extended Thinking]], [[Generative AI và LLM]]
