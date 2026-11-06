@@ -221,6 +221,8 @@ Lưu ý: điểm số chỉ đáng tin khi dataset đại diện và grader đư
 
 ## 3 kiểu chấm điểm (grader)
 
+Chi tiết cấu trúc, rubric, thiên vị của LLM judge và cách hiệu chuẩn: xem [[Grader (Hệ thống chấm điểm)]].
+
 | Grader | Cách chấm | Hợp với | Lưu ý |
 | --- | --- | --- | --- |
 | **Code-based** | Code so khớp: exact match, regex, parse được JSON, đúng schema, độ dài | Đầu ra có đáp án rõ/định dạng cố định (xem [[Structured Output (Ép đầu ra JSON thuần)]]) | Rẻ, nhanh, lặp lại được — **ưu tiên dùng khi có thể** |
@@ -250,6 +252,14 @@ Lưu ý: điểm số chỉ đáng tin khi dataset đại diện và grader đư
 - **Dịch vụ trả phí / nền tảng:** *LangSmith*, *Braintrust*, *Arize Phoenix* (tracing + eval + dashboard; Phoenix cũng có bản open-source).
 - Tự viết: script lặp qua test set, gọi `messages.create` ([[REST API]], [[SDKs]]), chấm bằng code hoặc gọi thêm Claude làm judge.
 - Cùng tư duy áp dụng cho Skill/Plugin: xem [[Đánh giá Skill & Plugin bằng Evals]] (bản "nhẹ", dùng thử thực tế, không cần code).
+
+## Ghi chú chi tiết
+
+- [[Grader (Hệ thống chấm điểm)]] — cấu trúc grader, code-based vs LLM-as-a-Judge, rubric, thiên vị & hiệu chuẩn.
+
+## Ví dụ áp dụng
+
+- [[Prompt Evaluation cho sinh code AWS]] — workflow 4 bước cho prompt sinh code AWS (golden dataset, linter + security scan + LLM judge, CI gating).
 
 ## Liên kết
 
