@@ -74,6 +74,49 @@ Khi mới có ý tưởng chung chung, nhờ chính Claude viết lại prompt:
 - Xem AI là **đối tác**, không phải máy bán hàng tự động — cùng tư duy với [[Description (Mô tả)]].
 - Nên tinh chỉnh ngay trong hội thoại thay vì viết lại từ đầu (xem [[Tinh chỉnh kết quả]]).
 
+### Iterative Refinement — prompt engineering như quy trình kỹ thuật
+
+Khi build ứng dụng (không chỉ chat), prompt engineering = **lấy prompt ban đầu rồi tối ưu dần để kết quả *đáng tin cậy hơn* (reliable) và *chất lượng cao hơn***, dựa trên **dữ liệu đo lường** chứ không phải cảm tính hay "linh cảm viết hay".
+
+- **Reliability ≠ đúng một lần:** prompt tốt phải đúng ổn định trên hàng trăm input thật (ví dụ ~99/100 lần), không phải chỉ đẹp ở lần thử tay. LLM không tất định nên cần đo trên nhiều mẫu ([[Temperature]]).
+- **Chu trình 5 bước (Iterative Improvement Process):**
+
+```mermaid
+graph LR
+    A["1. Set a goal"] --> B["2. Initial prompt"]
+    B --> C["3. Evaluate<br/>(lấy baseline)"]
+    C --> D["4. Apply techniques"]
+    D --> E["5. Re-evaluate"]
+    E -->|"chưa đạt mục tiêu"| D
+    E -->|"đạt"| F["Sẵn sàng deploy"]
+```
+
+| Bước | Việc cần làm | Đầu ra |
+| --- | --- | --- |
+| **1. Set a goal** | Định nghĩa đầu ra mong muốn *trước khi* viết prompt, nên **đo được** (ví dụ: "chỉ trả về mã Python thô, đúng cú pháp, chạy được, không kèm lời dẫn") | Mục tiêu + ngưỡng đạt (vd điểm TB > 9/10, lỗi cú pháp 0%) |
+| **2. Initial prompt** | Viết bản đầu (v0.1) đơn giản, trực diện — đừng cố hoàn hảo ngay | Prompt khởi tạo |
+| **3. Evaluate** | Chạy test suite, chấm bằng code grader + model grader ([[Grader (Hệ thống chấm điểm)]]) | **Baseline score** + điểm yếu cụ thể (vd hay sai JSON, thiếu logic) |
+| **4. Apply techniques** | Dựa trên lỗi ở bước 3, chọn kỹ thuật tương ứng, đổi **một thứ mỗi lần** | Prompt phiên bản mới |
+| **5. Re-evaluate** | Chạy lại **toàn bộ** test suite, so điểm với lần trước | Điểm mới → lặp bước 4–5 đến khi đạt mục tiêu |
+
+- **Vòng lặp lõi là bước 4 ⟲ 5:** sửa prompt → chạy eval → kiểm tra điểm; mỗi vòng phải có **cải thiện đo lường được** từ grader, không dựa cảm nhận.
+- **Bước 1 là cái khiến "đạt" có nghĩa:** không có mục tiêu/ngưỡng định trước thì không biết khi nào dừng. Mục tiêu nên gồm cả tiêu chí cứng (code grader kiểm: đúng format, parse được) lẫn tiêu chí mềm (model grader: chất lượng, đủ ý).
+- **Đối chiếu với [[Prompt Evaluation (Đánh giá câu lệnh)]]:** quy trình 5 bước ở đó thiên về *cơ chế chạy eval* (draft → dataset → chạy → chấm → sửa); chu trình ở đây là *khung quản lý tổng thể* — thêm bước đặt mục tiêu ở đầu và re-evaluate ở cuối.
+
+- **Chọn kỹ thuật theo loại lỗi** (không áp dụng tràn lan):
+
+| Loại lỗi đo được | Kỹ thuật thử trước |
+| --- | --- |
+| Sai/lệch định dạng (vd kèm lời dẫn thừa quanh code/JSON) | Ràng buộc format, few-shot, [[Structured Output (Ép đầu ra JSON thuần)\|prefill + stop sequences]] (prefill ` ```python ` ép Claude bắt đầu thẳng bằng code) |
+| Thiếu thông tin / sơ sài | Bổ sung context, yêu cầu độ chi tiết |
+| Suy luận kém, sai logic | Chain-of-thought, chia bước, [[Extended Thinking]] |
+| Lẫn chỉ dẫn với dữ liệu | XML tags |
+| Sai giọng điệu, vai trò | Role / tone + ví dụ |
+
+- **Quy tắc kỹ sư:** điểm tăng → giữ; điểm giảm → rollback; điểm tăng nhưng có case cũ tụt → hồi quy, xem lại. Lưu mỗi phiên bản prompt kèm điểm (git/bảng so sánh).
+- **Giá trị cốt lõi:** mọi thay đổi có **một con số** chứng minh nó làm AI tốt lên hay tệ đi — thay "đoán mò" bằng làm việc như kỹ sư.
+- Quy trình chi tiết 5 bước, dataset, grader, điều kiện dừng và tránh overfit: xem [[Prompt Evaluation (Đánh giá câu lệnh)]].
+
 ## Troubleshooting — khi kết quả chưa đúng
 
 | Triệu chứng | Nguyên nhân thường gặp | Cách xử lý |
@@ -101,5 +144,5 @@ Nguyên tắc: **sửa prompt, không chỉ than phiền output** — cụ thể
 
 - Thuộc: [[Sử dụng Claude hiệu quả]]
 - Cùng cấp: [[Bắt đầu với Claude]], [[Tinh chỉnh kết quả]], [[Ứng dụng thực tế]]
-- Đo lường chất lượng prompt khi build ứng dụng: [[Prompt Evaluation (Đánh giá câu lệnh)]]
+- Đo lường chất lượng prompt khi build ứng dụng: [[Prompt Evaluation (Đánh giá câu lệnh)]], [[Grader (Hệ thống chấm điểm)]]
 - Liên quan: [[Description (Mô tả)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]], [[Extended Thinking]], [[Generative AI và LLM]]

@@ -260,6 +260,7 @@ Chi tiết cấu trúc, rubric, thiên vị của LLM judge và cách hiệu chu
 ## Ví dụ áp dụng
 
 - [[Prompt Evaluation cho sinh code AWS]] — workflow 4 bước cho prompt sinh code AWS (golden dataset, linter + security scan + LLM judge, CI gating).
+- [[Prompt Evaluation cho thực đơn vận động viên]] — dựng `PromptEvaluator` cho prompt sinh thực đơn 1 ngày (dataset tự sinh, code + model grader, `max_concurrent_tasks` & rate limit 429).
 
 ## Liên kết
 
