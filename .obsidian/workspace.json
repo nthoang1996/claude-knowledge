@@ -79,12 +79,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md",
+                "file": "Sử dụng Claude hiệu quả/Prompt Engineering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Prompt Evaluation cho thực đơn vận động viên"
+              "title": "Prompt Engineering"
             }
           }
         ],
@@ -286,27 +286,28 @@
   },
   "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation (Đánh giá câu lệnh).md",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.2981ff7cd683",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.370ca07c22fc",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.9cee2b1e53cb",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.7f137949ffb4",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.0e8a965a7f50",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.372370f1cf5a",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.bd8a0db75ee5",
     "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.a711b9c0bd80",
+    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.25756.899660db4862",
+    "Claude Ecosystem/Claude Platform/Prompt Evaluation (Đánh giá câu lệnh).md",
     "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md.tmp.22784.35fae984107f",
     "Sử dụng Claude hiệu quả/Prompt Engineering.md",
     "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md.tmp.22784.817a26399150",
     "Claude Ecosystem/Claude Platform/Stateless API & Hội thoại nhiều lượt.md",
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md.tmp.22784.bdeb6c48fd2b",
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md.tmp.22784.b74ce724b51a",
     "Claude Ecosystem/Claude Platform/REST API.md",
     "Claude Ecosystem/Claude Platform/SDKs.md",
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation (Đánh giá câu lệnh).md.tmp.28996.c38c201bc156",
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md.tmp.28996.53307b4de507",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.28996.630dfc7f6f2d",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.28996.bef4e6f3137e",
     "Claude Ecosystem/Claude Cowork/Công thức Prompt chuẩn (Deliverable + Inputs + Nuances).md",
     "Sử dụng Claude hiệu quả/Bắt đầu với Claude.md",
     "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả.md",
     "Claude Ecosystem/Claude Platform/Prompt Evaluation cho sinh code AWS.md",
     "Claude Ecosystem/Claude Platform/Grader (Hệ thống chấm điểm).md",
-    "Claude Ecosystem/Claude Platform/Prompt Evaluation cho sinh code AWS.md.tmp.24100.3a8c64c5ba4d",
-    "Claude Ecosystem/Claude Platform/Grader (Hệ thống chấm điểm).md.tmp.24100.81babad0193d",
     "Claude Ecosystem/Claude Cowork/Đánh giá Skill & Plugin bằng Evals.md",
     "Claude Ecosystem/Claude Platform/Model Tiers.md",
     "Claude Ecosystem/Claude Platform/Structured Output (Ép đầu ra JSON thuần).md",

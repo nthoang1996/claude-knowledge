@@ -47,7 +47,75 @@ Liên hệ: 6 kỹ thuật này là cách cụ thể hoá 3 thành tố của [[
 - **Few-shot**: ví dụ phải **đa dạng** và **đúng định dạng đích**; bọc trong thẻ như `<example>` để tách khỏi chỉ dẫn. Cẩn thận AI bắt chước quá sát (cả chi tiết không muốn).
 - **Constraints**: ưu tiên nói **điều nên làm** thay vì chỉ liệt kê điều cấm ("viết đoạn văn liền mạch" tốt hơn "đừng dùng bullet").
 - **Chain-of-thought**: dùng cho bài toán logic, tính toán, phân tích nhiều yếu tố; có thể yêu cầu tách phần suy luận (`<thinking>`) và đáp án (`<answer>`). Với tác vụ cần suy luận sâu, xem [[Extended Thinking]].
-- **Role**: đặt vai trò ở **system prompt** hoặc đầu prompt; vai càng cụ thể (domain + cấp độ + phong cách) càng hiệu quả.
+- **Role**: đặt vai trò ở **system prompt** hoặc đầu prompt; vai càng cụ thể (domain + cấp độ + phong cách) càng hiệu quả (xem thêm nguyên tắc bên dưới).
+
+### Nguyên tắc "dòng đầu tiên" (The first line)
+
+**Dòng đầu tiên của prompt định hình gần như toàn bộ chất lượng đầu ra** — đặt vai trò/yêu cầu cốt lõi/quy tắc bất di bất dịch ở ngay đầu, chi tiết phụ để phía sau.
+
+- **Vì sao hiệu quả:** phần mở đầu giúp mô hình "vào vai" ngay (kích hoạt từ vựng, văn phong, cách suy luận của vai đó) *trước khi* đọc phần còn lại; nội dung nằm cuối dễ bị xử lý hời hợt. Đây là kinh nghiệm thực hành đã được kiểm chứng, không phải quy tắc tuyệt đối — vẫn nên đo bằng eval.
+- **So sánh:**
+
+| | Ví dụ | Vấn đề / ưu điểm |
+| --- | --- | --- |
+| Yếu | "Viết cho tôi thực đơn ăn kiêng, tính calo kỹ nhé. Tiện thể đóng vai chuyên gia dinh dưỡng." | Vai trò bị đẩy xuống cuối → output chung chung, thiếu chiều sâu |
+| Mạnh | "You are an elite sports nutritionist designing high-performance meal plans for professional athletes." (rồi mới tới chiều cao, cân nặng, dị ứng...) | Dòng 1 chốt danh tính + tiêu chuẩn; các dòng sau chỉ điền dữ kiện |
+
+- **Dòng đầu cần đạt 2 tiêu chí: Clarity + Directness**
+
+| Tiêu chí | Ý chính | Tránh | Nên viết |
+| --- | --- | --- | --- |
+| **Clarity** (rõ ràng) | Từ ngữ đơn giản, đơn nghĩa, không ẩn dụ/văn hoa → AI không phải "đoán mò" (khoa học? đời thường? quảng cáo?) | "Viết gì đó thật hay về dinh dưỡng" | "Bạn là chuyên gia dinh dưỡng, nhiệm vụ là tính chính xác thực đơn hằng ngày" |
+| **Directness** (trực diện) | Bỏ xã giao mở đầu, đặt mệnh lệnh/vai trò ngay từ chữ đầu tiên → AI định hướng đúng từ token đầu, không bị thông tin phụ làm phân tâm | "Chào bạn, làm ơn cố gắng giúp tôi..." | "Tính thực đơn 7 ngày cho vận động viên..." |
+
+- **Ví dụ Clarity (mập mờ → rõ ràng):**
+
+| | Prompt | Nhận xét |
+| --- | --- | --- |
+| Mập mờ | "I need to know about those things people put on their roofs that use sun - those solar panel things, I think they're called..." | Vòng vo, rào đón, thiếu chắc chắn → AI phải đoán chủ đề và dạng trả lời |
+| Rõ ràng | "Write three paragraphs about how solar panels work." | Nêu thẳng chủ thể (solar panels) + giới hạn đầu ra (3 đoạn) |
+
+- **3 quy tắc để đạt Clarity:**
+  1. **Từ ngữ đơn giản, thông dụng:** tránh ví von, diễn đạt ấp úng.
+  2. **Nói thẳng vào vấn đề:** cắt câu kể lể hoàn cảnh, rào trước đón sau.
+  3. **Quy định rõ phạm vi (scope):** nói rõ lượng nội dung/dạng đầu ra (*3 đoạn văn*, *5 gạch đầu dòng*, *1 bảng so sánh*) → AI không lan man hay quá dài.
+- **Directness: dùng câu mệnh lệnh thay câu hỏi**
+  - Câu hỏi thường kéo AI sang văn phong hội thoại, kể lể, dẫn dắt lan man trước khi vào trọng tâm.
+  - **Động từ hành động mạnh** (*Write, Create, Generate, Identify, List, Summarize, Compare...*) biến prompt thành một **task assignment** → AI cấu trúc câu trả lời gọn, đúng trọng tâm.
+
+| | Prompt | Nhận xét |
+| --- | --- | --- |
+| Câu hỏi + kể lể | "I was reading about renewable energy and geothermal energy sounds neat. What countries use it?" | Bối cảnh cá nhân làm loãng mục tiêu → trả lời dàn trải |
+| Mệnh lệnh trực diện | "Identify three countries that use geothermal energy. Include generation stats for each." | 2 nhiệm vụ dứt khoát (xác định 3 nước + kèm số liệu) → dễ định hình đầu ra thành 3 mục rõ ràng |
+
+- **Công thức:** `[Động từ hành động] + [đối tượng] + [phạm vi/số lượng] + [yêu cầu kèm theo]`. Ví dụ IT: "List five common causes of pod OOMKilled. Include one kubectl command to verify each."
+- **Ví dụ tổng hợp Clarity + Directness (nâng cấp prompt yếu):**
+
+| | Prompt | Nhận xét |
+| --- | --- | --- |
+| Yếu | "What should this person eat?" | Câu hỏi bâng quơ: không giao việc, thiếu chủ thể, bối cảnh, phạm vi → trả lời chung chung |
+| Cải thiện | "Generate a one-day meal plan for an athlete that meets their dietary restrictions." | Một nhiệm vụ hoàn chỉnh, đủ 3 mảnh ghép bên dưới |
+
+- **3 thành phần của một dòng lệnh tốt:**
+
+| Thành phần | Trong ví dụ | Tác dụng |
+| --- | --- | --- |
+| **Action verb** | "Generate" | Ra lệnh thực hiện việc cụ thể thay vì hỏi trống không |
+| **Deliverable** | "a one-day meal plan" | Chốt sản phẩm đầu ra → không lan sang kế hoạch dài hạn/lý thuyết chung |
+| **Constraints** | "for an athlete", "that meets their dietary restrictions" | Đối tượng + điều kiện lọc → bám sát thực tế |
+
+- **Bài học:** tối ưu prompt không phải viết dài, hoa mỹ, mà là **đóng gói mệnh lệnh gọn + động từ mạnh + đủ biên giới (constraints)** ngay dòng đầu. Cấu trúc này trùng với công thức [[Công thức Prompt chuẩn (Deliverable + Inputs + Nuances)]].
+- **Kết quả đo được:** chỉ nhờ đổi dòng đầu từ câu hỏi mơ hồ sang mệnh lệnh rõ ràng (ví dụ meal plan ở trên), điểm eval tăng **2.32 → 3.92** — chưa cần few-shot hay chain-of-thought. → Chỉ dẫn rõ ràng cho hiệu quả tức thì, và là bước đầu nên làm trong vòng lặp [[Prompt Evaluation cho thực đơn vận động viên]].
+- **Mindset:** coi AI là **trợ lý có năng lực**, không phải công cụ tìm kiếm gõ từ khóa cộc lốc, cũng đừng bắt nó "đọc vị" ý bạn. Giao việc cho trợ lý giỏi = nói rõ *làm gì* (động từ mạnh), *cho ai/cái gì* (đối tượng), *giới hạn ra sao* (constraints).
+- **Công thức dòng đầu (tóm tắt):**
+  1. Mở bằng **động từ hành động mạnh** (Generate, Create, Write, Identify).
+  2. **Đi thẳng trọng tâm**, không rào trước đón sau.
+  3. **Định nghĩa constraints** ngay trong dòng đầu.
+- **Phép thử nhanh:** người (hoặc AI) chỉ đọc dòng đầu đã biết ngay *bạn muốn làm gì và với vai nào* → đạt.
+- **Lưu ý:** bỏ xã giao không có nghĩa bỏ bối cảnh — context vẫn cần, nhưng đặt **sau** dòng đầu.
+- **Cấu trúc gợi ý:** dòng 1 = vai + mục tiêu → tiếp theo context/dữ liệu → ràng buộc → format đầu ra.
+- **Khi debug (iteration):** nếu AI lạc đề, lan man, sai trọng tâm → **kiểm tra dòng đầu tiên trước**, đưa yêu cầu cốt lõi lên đầu thay vì viết thêm câu lệnh phía sau.
+- **Lưu ý đi kèm:** với tài liệu dài, đặt *dữ liệu* lên trước và *câu hỏi* ở cuối (xem bảng "Kỹ thuật bổ trợ") — không mâu thuẫn: dòng đầu vẫn nên nêu vai/nhiệm vụ, dữ liệu dài đứng sau đó, câu hỏi cụ thể chốt cuối.
 
 ## Kỹ thuật bổ trợ
 
@@ -127,6 +195,7 @@ graph LR
 | Sai logic / bỏ sót | Việc quá lớn một lần | Chia bước, yêu cầu suy luận trước |
 | Bịa thông tin | Không có nguồn, ép phải trả lời | Cung cấp tài liệu nguồn, cho phép "không biết", yêu cầu trích dẫn |
 | Sai tông giọng | Thiếu role/tone | Gán vai + mô tả giọng điệu + ví dụ |
+| Lạc đề, lan man | Vai/yêu cầu cốt lõi nằm cuối hoặc bị chìm | Đưa lên **dòng đầu tiên** (xem nguyên tắc "dòng đầu tiên") |
 
 Nguyên tắc: **sửa prompt, không chỉ than phiền output** — cụ thể hoá điều *sai ở đâu* và *muốn thế nào*; tận dụng hội thoại để lặp (xem [[Tinh chỉnh kết quả]]).
 
