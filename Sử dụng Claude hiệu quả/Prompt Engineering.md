@@ -117,6 +117,72 @@ Liên hệ: 6 kỹ thuật này là cách cụ thể hoá 3 thành tố của [[
 - **Khi debug (iteration):** nếu AI lạc đề, lan man, sai trọng tâm → **kiểm tra dòng đầu tiên trước**, đưa yêu cầu cốt lõi lên đầu thay vì viết thêm câu lệnh phía sau.
 - **Lưu ý đi kèm:** với tài liệu dài, đặt *dữ liệu* lên trước và *câu hỏi* ở cuối (xem bảng "Kỹ thuật bổ trợ") — không mâu thuẫn: dòng đầu vẫn nên nêu vai/nhiệm vụ, dữ liệu dài đứng sau đó, câu hỏi cụ thể chốt cuối.
 
+### Nguyên tắc "cụ thể" (Being specific)
+
+**Sự cụ thể quyết định chất lượng đầu ra.** Prompt mơ hồ (vd "viết truyện ngắn về nhân vật phát hiện tài năng ẩn giấu") buộc AI tự đoán độ dài, số nhân vật, bối cảnh, cốt truyện → kết quả dễ lệch ý, phải sửa nhiều vòng.
+
+- **Hai cách thêm độ cụ thể:**
+
+| Loại | Nội dung | Ví dụ |
+| --- | --- | --- |
+| **Guidelines về đầu ra** (thuộc tính mong muốn) | Độ dài, cấu trúc, định dạng, phong cách, bối cảnh | "Viết truyện ~300 từ, ngôi thứ nhất, nhân vật là kỹ sư hệ thống, giọng hài hước" |
+| **Steps** (các bước AI phải đi qua) | Thứ tự suy nghĩ/làm trước khi ra kết quả | "B1: chọn tài năng và bối cảnh; B2: phác cốt truyện 3 phần; B3: viết hoàn chỉnh" |
+
+- **Output Quality Guidelines — 4 yếu tố kiểm soát được:**
+
+| Yếu tố | Ý chính | Ví dụ |
+| --- | --- | --- |
+| **Length** (độ dài) | Giới hạn ngắn/dài cho phù hợp nhu cầu | "Dưới 1.000 từ", "trong 3 câu", "200–300 từ" |
+| **Structure & format** | Cách trình bày nội dung | Bảng, bullet, 3 phần Mở–Thân–Kết, Markdown, JSON |
+| **Specific attributes/elements** | Chi tiết **bắt buộc phải có** trong output | "Có một hành động bộc lộ tài năng nhân vật", "ít nhất 1 nhân vật phụ", "trích số liệu cụ thể" |
+| **Tone / style** | Thái độ và ngôn từ | Chuyên nghiệp, hài hước, trang trọng, "giải thích cho học sinh cấp 1" |
+
+- **Nâng cấp ví dụ:** "Viết một câu chuyện ngắn" → "Viết câu chuyện **dưới 1.000 từ** (length), có **một hành động rõ ràng bộc lộ tài năng nhân vật** và **ít nhất một nhân vật phụ** (elements)".
+- **Ví dụ IT:** "Giải thích CI/CD **trong 5 gạch đầu dòng** (length + format), **có 1 ví dụ pipeline GitHub Actions** (element), **giọng dễ hiểu cho dev mới** (tone)".
+- Đây là loại guidelines mô tả *sản phẩm cuối trông thế nào* — khác steps (mô tả *đường đi đến sản phẩm*).
+- **Process Steps — bắt AI nghĩ theo từng bước thay vì nhảy thẳng ra kết quả:** nếu yêu cầu sản phẩm hoàn chỉnh ngay, AI thường trả lời theo "phản xạ đầu tiên" (chưa chắc tối ưu). Chia bước (Step-by-step / chain-of-thought) giúp:
+  - **Chia nhỏ bài toán:** không bị ngợp, ít bỏ sót chi tiết.
+  - **Khám phá nhiều góc nhìn:** buộc cân nhắc nhiều phương án rồi mới chọn.
+  - **Tăng chiều sâu & độ chính xác:** kết quả dựng trên nền tư duy logic, mạch lạc.
+- **Ví dụ quy trình 4 bước (truyện):** (1) brainstorm 3 tài năng tạo kịch tính → (2) chọn tài năng thú vị nhất → (3) lập dàn ý cảnh chốt → (4) brainstorm nhân vật phụ → rồi mới viết. Mẫu chung: **Phân kỳ (brainstorm nhiều phương án) → Hội tụ (chọn) → Phác khung → Viết**.
+- **Ví dụ IT:** "B1: liệt kê 3 nguyên nhân có thể gây pod OOMKilled; B2: chọn nguyên nhân khả dĩ nhất dựa trên log; B3: phác kế hoạch kiểm chứng; B4: đề xuất fix."
+- **Tóm gọn:** Output Quality Guidelines trả lời *"sản phẩm cuối trông thế nào?"*; Process Steps trả lời *"AI phải nghĩ và làm theo trình tự nào?"*.
+- **Tác động thực tế (meal plan):** thêm guidelines cụ thể vào prompt thực đơn đã nâng điểm eval **3.92 → 7.86** (thang 10, hơn gấp đôi), nối tiếp mức 2.32 → 3.92 nhờ sửa dòng đầu tiên. Cách làm: biến yêu cầu mơ hồ ("tạo thực đơn giảm cân") thành **checklist 6 tiêu chí** mà output phải đáp ứng:
+
+| # | Guideline | Tác dụng |
+| --- | --- | --- |
+| 1 | Include accurate daily calorie amount | Ép tính con số calo cụ thể, không thực đơn chung chung |
+| 2 | Show protein, fat, carb amounts | Bóc tách macros |
+| 3 | Specify when to eat each meal | Khung giờ cụ thể (vd sáng 7:30) → dùng được ngay |
+| 4 | Use only foods that fit restrictions | An toàn, cá nhân hóa (thuần chay, dị ứng...) |
+| 5 | List all portion sizes in grams | Chuẩn hóa đơn vị, dễ đi chợ/chuẩn bị |
+| 6 | Keep budget-friendly if mentioned | Phù hợp ngân sách khi người dùng có nêu |
+
+- **Bài học:** liệt kê rõ *yếu tố nào phải xuất hiện* thì AI không phải đoán → chính xác, chuyên nghiệp hơn. Cách viết gọn: gom thành danh sách gạch đầu dòng/khối `<guidelines>`; điều kiện tùy chọn dùng dạng "nếu có" (như tiêu chí 6). Quy trình đo điểm: xem [[Prompt Evaluation cho thực đơn vận động viên]].
+- **Chọn loại nào:** guidelines dùng hầu như mọi prompt; steps đáng thêm khi bài toán cần suy luận/nhiều giai đoạn (liên hệ kỹ thuật 4–5 ở trên).
+
+| Loại | Khi nào dùng | Vai trò |
+| --- | --- | --- |
+| **Output guidelines** | **Gần như mọi prompt** | "Lưới an toàn" (safety net): đầu ra đồng nhất, chính xác, dùng ngay không phải sửa |
+| **Process steps** | Bài toán phức tạp, cần chiều sâu: troubleshooting (tìm root cause), decision-making (cân nhắc phương án/rủi ro), critical thinking (đánh giá lập luận, dữ liệu đa chiều), mọi tình huống cần **xem xét nhiều góc độ** | "Bản đồ tư duy": tránh AI phiến diện, chỉ bám một yếu tố |
+
+- **Ví dụ — phân tích doanh số đội sales sụt giảm:**
+  - *Prompt chung chung* ("Phân tích lý do doanh số giảm") → AI dễ chốt một nguyên nhân duy nhất (vd nhân viên kém kỹ năng) và bỏ sót bức tranh lớn.
+  - *Có process steps* → ép đi qua 5 góc độ: (1) market metrics, (2) industry changes, (3) individual performance, (4) organizational changes, (5) customer feedback; rồi mới tổng hợp kết luận.
+  - Ví dụ IT tương tự: sự cố hệ thống chậm → duyệt lần lượt hạ tầng, code/release gần đây, tải/traffic, phụ thuộc bên ngoài, cấu hình trước khi kết luận root cause.
+- **Quy tắc ngón tay cái:** đang hỏi "đầu ra trông thế nào?" → guidelines; đang hỏi "cần cân nhắc những gì trước khi kết luận?" → steps. Bài toán đơn giản, một bước (dịch, tóm tắt ngắn) thường chỉ cần guidelines.
+- **Kết hợp cả hai trong thực tế:** steps kiểm soát *cách AI tư duy* (đúng quy trình), guidelines bảo đảm *chất lượng sản phẩm cuối* (đúng tiêu chuẩn) → giảm lan man, sai định dạng, bỏ sót ý quan trọng.
+  - Ví dụ IT: "Đọc log và thực hiện theo bước: (1) liệt kê lỗi, (2) nhóm theo nguyên nhân, (3) đề xuất fix. Kết quả: bảng 3 cột, tối đa 200 từ, không dùng thuật ngữ chưa giải thích."
+  - **Lợi ích đôi:** *Consistency* (nhất quán về hình thức, độ dài, giọng, cấu trúc — nhờ guidelines) + *Confidence* (yên tâm AI đã xét đủ yếu tố, không trả lời hời hợt/đoán mò — nhờ steps). Prompt chuyên nghiệp thường có đủ cả hai.
+  - **Ví dụ — phân tích chiến dịch marketing thất bại:**
+    - *Process steps:* (1) phân tích khách hàng mục tiêu và thông điệp; (2) đánh giá kênh phân phối và ngân sách; (3) so sánh đối thủ cùng thời điểm; (4) rút ra 3 nguyên nhân cốt lõi.
+    - *Output guidelines:* Executive Summary ≤ 500 từ; dùng bullet; giọng khách quan, chuyên nghiệp; kết bằng bảng Action Plan 3 cột (Điểm yếu – Giải pháp – Ưu tiên).
+  - **Khung mẫu:** `Nhiệm vụ → Steps (thứ tự suy nghĩ) → Output requirements (hình thức sản phẩm)`; bước cuối của steps nên là bước "chốt kết luận" để guidelines có cái để định dạng.
+  - Mẹo: ghi *steps* ở phần thân prompt, gom *guidelines* về đầu ra thành một khối riêng (vd `<requirements>`) để dễ rà soát và chỉnh từng phần.
+- **Lợi ích:** đúng ý ngay lần đầu (giảm số vòng lặp, giảm độ trễ), kết quả nhất quán và dễ kiểm soát/đo lường hơn.
+- **Cẩn trọng:** cụ thể ≠ dài dòng — chỉ ràng buộc những gì thật sự quan trọng, để AI tự do ở phần còn lại.
+- Liên hệ: cùng tinh thần "ràng buộc" của dòng đầu tiên (Action verb + Deliverable + Constraints) ở trên.
+
 ## Kỹ thuật bổ trợ
 
 | Kỹ thuật | Mô tả ngắn |
