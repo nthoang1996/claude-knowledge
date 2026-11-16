@@ -44,7 +44,7 @@ Liên hệ: 6 kỹ thuật này là cách cụ thể hoá 3 thành tố của [[
 ## Chi tiết cần nhớ cho từng kỹ thuật
 
 - **Context**: nói *tại sao* cần (lý do giúp AI suy ra quy tắc ngầm), không chỉ nói *cần gì*.
-- **Few-shot**: ví dụ phải **đa dạng** và **đúng định dạng đích**; bọc trong thẻ như `<example>` để tách khỏi chỉ dẫn. Cẩn thận AI bắt chước quá sát (cả chi tiết không muốn).
+- **Few-shot** (chi tiết: [[Few-shot Prompting (Cung cấp ví dụ mẫu)]]): ví dụ phải **đa dạng** và **đúng định dạng đích**; bọc trong thẻ như `<example>` để tách khỏi chỉ dẫn. Cẩn thận AI bắt chước quá sát (cả chi tiết không muốn).
 - **Constraints**: ưu tiên nói **điều nên làm** thay vì chỉ liệt kê điều cấm ("viết đoạn văn liền mạch" tốt hơn "đừng dùng bullet").
 - **Chain-of-thought**: dùng cho bài toán logic, tính toán, phân tích nhiều yếu tố; có thể yêu cầu tách phần suy luận (`<thinking>`) và đáp án (`<answer>`). Với tác vụ cần suy luận sâu, xem [[Extended Thinking]].
 - **Role**: đặt vai trò ở **system prompt** hoặc đầu prompt; vai càng cụ thể (domain + cấp độ + phong cách) càng hiệu quả (xem thêm nguyên tắc bên dưới).
@@ -187,7 +187,7 @@ Liên hệ: 6 kỹ thuật này là cách cụ thể hoá 3 thành tố của [[
 
 | Kỹ thuật | Mô tả ngắn |
 | --- | --- |
-| **XML tags** | Dùng `<document>`, `<instructions>`, `<example>`... để tách rõ dữ liệu / chỉ dẫn / ví dụ; Claude nhận diện cấu trúc này rất tốt |
+| **XML tags** | Dùng `<document>`, `<instructions>`, `<example>`... để tách rõ dữ liệu / chỉ dẫn / ví dụ; Claude nhận diện cấu trúc này rất tốt. Chi tiết: [[Thẻ XML (XML Tags)]] |
 | **Đặt dữ liệu dài lên trước, câu hỏi ở cuối** | Với tài liệu dài, đặt tài liệu đầu prompt và yêu cầu ở cuối cải thiện chất lượng |
 | **Prompt chaining** | Chia workflow thành nhiều prompt nối tiếp, output bước trước là input bước sau (nháp → review → chỉnh) |
 | **Cho phép nói "không biết"** | Cho AI quyền trả lời "không chắc/không đủ thông tin" để giảm bịa đặt |
@@ -244,7 +244,7 @@ graph LR
 | Sai/lệch định dạng (vd kèm lời dẫn thừa quanh code/JSON) | Ràng buộc format, few-shot, [[Structured Output (Ép đầu ra JSON thuần)\|prefill + stop sequences]] (prefill ` ```python ` ép Claude bắt đầu thẳng bằng code) |
 | Thiếu thông tin / sơ sài | Bổ sung context, yêu cầu độ chi tiết |
 | Suy luận kém, sai logic | Chain-of-thought, chia bước, [[Extended Thinking]] |
-| Lẫn chỉ dẫn với dữ liệu | XML tags |
+| Lẫn chỉ dẫn với dữ liệu | [[Thẻ XML (XML Tags)\|XML tags]] |
 | Sai giọng điệu, vai trò | Role / tone + ví dụ |
 
 - **Quy tắc kỹ sư:** điểm tăng → giữ; điểm giảm → rollback; điểm tăng nhưng có case cũ tụt → hồi quy, xem lại. Lưu mỗi phiên bản prompt kèm điểm (git/bảng so sánh).
@@ -278,6 +278,7 @@ Nguyên tắc: **sửa prompt, không chỉ than phiền output** — cụ thể
 ## Liên kết
 
 - Thuộc: [[Sử dụng Claude hiệu quả]]
+- Chi tiết con: [[Thẻ XML (XML Tags)]], [[Few-shot Prompting (Cung cấp ví dụ mẫu)]]
 - Cùng cấp: [[Bắt đầu với Claude]], [[Tinh chỉnh kết quả]], [[Ứng dụng thực tế]]
 - Đo lường chất lượng prompt khi build ứng dụng: [[Prompt Evaluation (Đánh giá câu lệnh)]], [[Grader (Hệ thống chấm điểm)]]
 - Liên quan: [[Description (Mô tả)]], [[Viết Prompt An toàn (Tránh Hiểu Lầm)]], [[Extended Thinking]], [[Generative AI và LLM]]
