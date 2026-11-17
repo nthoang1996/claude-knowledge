@@ -12,6 +12,86 @@ up: "[[Claude Platform]]"
 
 **Tool** là một hàm do lập trình viên tự viết (query CSDL, gọi API ngoài, đọc file...), được mô tả cho Claude qua tên + công dụng + tham số đầu vào. Claude tự phân tích ngữ cảnh và quyết định *khi nào* cần gọi tool nào — đây là cách Claude vượt qua giới hạn không tự truy cập được hệ thống dữ liệu nội bộ của bạn.
 
+## Vì sao cần Tool Use
+
+LLM thuần có 2 giới hạn:
+
+- **Knowledge cutoff** — dữ liệu huấn luyện dừng ở một mốc thời gian, không biết sự kiện/thông tin thời gian thực (thời tiết, giá cổ phiếu...).
+- **Cô lập với thế giới ngoài** — mặc định không tự lướt web, đọc email, tra số dư tài khoản... nếu không có "cầu nối".
+
+Hệ quả với trải nghiệm người dùng: khi bị hỏi thông tin thời gian thực (vd: "Thời tiết ở San Francisco?"), AI thuần buộc phải từ chối kiểu *"Tôi không có truy cập thông tin thời tiết cập nhật"* — nghịch lý vì người dùng tìm đến AI để có thông tin nhanh, nhưng lại bị từ chối cả những nhu cầu cơ bản hằng ngày. Đây chính là "bức tường" mà Tool Use ra đời để phá bỏ.
+
+Tool Use = trang bị "công cụ ngoại vi" cho AI (giống người dùng Google, máy tính, Excel). Ví dụ: hỏi giá cổ phiếu → tool tài chính; tìm quán cà phê gần đây → tool Maps.
+
+### Ví dụ thực hành: Đặt lịch nhắc (Reminder)
+
+Tool Use không chỉ để *tra cứu* dữ liệu (như thời tiết) mà còn **bù đắp giới hạn nhận thức thời gian** và **cho phép Claude thực hiện hành động (side-effect)** lên hệ thống ngoài. Bài toán: user nói *"Đặt nhắc lịch khám bác sĩ, đó là Thứ Năm tuần sau nữa"* → mong đợi Claude xác nhận *"OK, I will remind you."*
+
+3 thách thức ẩn bên dưới:
+
+- **Limited time awareness** — system prompt có thể cho Claude biết *ngày* hiện tại, nhưng Claude không có real-time clock → không biết giờ/phút chính xác nếu không được cấp tool kiểu `get_current_time`.
+- **Date calculation issues** — LLM là token prediction, không phải máy tính/lịch → dễ tính sai mốc tương lai phức tạp ("Thứ Năm tuần sau nữa", +45 ngày: sai ngày, năm nhuận, số ngày trong tháng).
+- **No reminder capability** — mô hình chỉ "nhận lệnh → trả lời ngay", không có background process, DB lưu trữ hay push notification → không thể tự chờ đến đúng ngày để nhắc.
+
+**Tools lấp khoảng trống (bridge):**
+
+- Bài toán thời gian & tính toán → tool xử lý date/time phía server, đổi cụm tương đối sang mốc tuyệt đối chính xác (vd `2026-11-26`), không để AI tự tính.
+- Bài toán đặt lịch → tool nối hệ thống nhắc ngoài (Google Tasks, Apple Reminders, cron job, DB); Claude chỉ phát lệnh `set_reminder(title, date_time)`, server mới thực sự lưu lịch.
+
+**Bộ 3 tool giải quyết bài toán** (mỗi tool một việc, độc lập):
+
+| Tool | Nhiệm vụ | Khắc phục |
+| --- | --- | --- |
+| `get_current_datetime` | Trả ngày giờ hiện tại từ đồng hồ server — mốc xuất phát cho mọi tính toán | Limited time awareness |
+| `add_duration_to_datetime` | Nhận mốc thời gian + khoảng tăng (+7 ngày, +2 giờ), tính bằng thư viện tin cậy (`datetime` Python, `Day.js` JS) | Date calculation issues |
+| `set_reminder` | Nhận thời điểm chính xác + nội dung, ghi vào DB / Google Calendar / hệ thống thông báo | No reminder capability |
+
+Claude tự xâu chuỗi 3 tool qua [[Vòng lặp Agent]]. Ví dụ *"Remind me in a week to buy groceries"*:
+
+```mermaid
+graph TD
+    A["1. get_current_datetime()<br/>→ 2026-11-17 20:18"] --> B["2. add_duration_to_datetime(start, days=7)<br/>→ 2026-11-24 20:18"]
+    B --> C["3. set_reminder(title='Buy groceries', time='2026-11-24 20:18')<br/>→ OK"]
+```
+
+> **Nguyên tắc vàng:** khi mô hình có giới hạn, hãy *mở rộng năng lực bằng tool* thay vì tìm cách lách giới hạn đó trong prompt. Ép AI tính lịch bằng prompt dài dòng dễ gây hallucination và tốn token; việc chính xác/có tác động thực tế nên **ủy quyền (delegate)** cho code phía server.
+>
+> Bài học: Tool vừa là "mắt" (đọc dữ liệu thời gian thực) vừa là "tay" (ghi/kích hoạt hành động) của Claude.
+
+### Flow 4 bước (Application ↔ Claude)
+
+Claude **không** tự truy cập internet hay API của bạn — server của bạn là "người thực thi". Ví dụ với câu hỏi *"Thời tiết San Francisco thế nào?"*:
+
+1. **Initial Request** — app gửi câu hỏi của user + danh sách tool (kèm mô tả), vd `get_weather(location)`.
+2. **Tool Request** — Claude nhận ra thiếu dữ liệu thời gian thực, thấy có tool phù hợp → trả về JSON có cấu trúc yêu cầu chạy `get_weather(location="San Francisco, CA")`.
+3. **Data Retrieval** — server chạy code thật (gọi API thời tiết / truy vấn DB), nhận kết quả vd `20°C, có mây`.
+4. **Final Response** — server gửi kết quả lại cho Claude → Claude kết hợp câu hỏi gốc + dữ liệu thật thành câu trả lời tự nhiên: *"Thời tiết hiện tại ở San Francisco là 20°C và có mây."*
+
+```mermaid
+sequenceDiagram
+    participant U as Người dùng
+    participant S as Server của bạn
+    participant C as Claude
+    U->>S: Hỏi
+    S->>C: 1. Câu hỏi + danh sách tools
+    C->>S: 2. Yêu cầu chạy tool X với tham số Y
+    S->>S: 3. Chạy API/DB lấy dữ liệu thật
+    S->>C: 4. Gửi kết quả tool
+    C->>S: Câu trả lời hoàn chỉnh
+    S->>U: Trả lời
+```
+
+Phân vai: **Claude = "bộ não"** (phân tích ý định, quyết định *khi nào* và *dùng tool nào, thế nào*); **server của bạn = "tay chân"** (thực sự đi lấy dữ liệu từ API/DB rồi đưa lại cho Claude).
+
+### Lợi ích cốt lõi
+
+- **Real-time information** — truy cập dữ liệu mới hơn dữ liệu huấn luyện (thời tiết, tin tức, giá chứng khoán, chuyến bay).
+- **External system integration** — nối AI với CSDL nội bộ, REST API, CRM (Salesforce), dịch vụ bên thứ ba.
+- **Dynamic responses** — câu trả lời dựa trên dữ liệu thực tại thời điểm hỏi, không cố định/lý thuyết suông.
+- **Structured interaction** — Claude biết rõ thiếu dữ liệu gì, gọi hàm nào, tham số ra sao, ở dạng JSON để server xử lý dễ.
+
+> Tool use biến Claude từ **kho tri thức tĩnh** (như bách khoa toàn thư ngừng xuất bản) thành **trợ lý năng động** làm việc được với dữ liệu sống.
+
 ## Nguyên tắc cốt lõi
 
 > **Claude KHÔNG trực tiếp chạy công cụ — code của bạn mới là nơi thực thi nó.**

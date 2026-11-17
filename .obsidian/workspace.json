@@ -79,12 +79,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md",
+                "file": "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Few-shot Prompting (Cung cấp ví dụ mẫu)"
+              "title": "Tool Use (Function Calling)"
             }
           }
         ],
@@ -286,19 +286,20 @@
   },
   "active": "4942bf9ef7cb9f76",
   "lastOpenFiles": [
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.14912.427fb6eef409",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.14912.247d6ca40b0e",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.14912.f57d2e997cbd",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.7984.976aae0e659c",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.7984.123276daf073",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.7984.738580da942b",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.7984.e42fb9d07158",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.7984.dd21259c91b2",
+    "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md",
+    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.e4311dfc1cd5",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.6f187c016690",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.93625c0740f2",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.382b63d53d33",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.c496feceac5f",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.257dfff611d6",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.21fb0893c056",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.24156.419ce67efffd",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md.tmp.26792.d98d0f4de57f",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Thẻ XML (XML Tags).md",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.26792.87959f26d39d",
-    "Sử dụng Claude hiệu quả/Prompt Engineering.md.tmp.26792.f1eebcd98bd2",
-    "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md",
     "Claude Ecosystem/Claude Cowork/Viết Prompt An toàn (Tránh Hiểu Lầm).md",
     "Sử dụng Claude hiệu quả/Prompt Engineering.md",
     "Claude Ecosystem/Claude Platform/Prompt Evaluation cho thực đơn vận động viên.md",
@@ -321,7 +322,6 @@
     "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Claude Ecosystem/Claude Platform/Vòng đời Request (Request Lifecycle).md",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
-    "Sử dụng Claude hiệu quả/Tinh chỉnh kết quả/AI Fluency/Bộ khung 4D/Delegation (Ủy thác).md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
