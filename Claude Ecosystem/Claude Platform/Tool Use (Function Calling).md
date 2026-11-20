@@ -256,7 +256,7 @@ API **stateless** — server không lưu hội thoại, bạn tự giữ mảng 
 messages.append({"role": "assistant", "content": response.content})
 ```
 
-**Nâng cấp helper:** các hàm kiểu `add_user_message(messages, text)` / `add_assistant_message(...)` viết cho chuỗi đơn thuần sẽ lỗi type hoặc làm hỏng cấu trúc khi nhận mảng block. Cho `content` nhận **cả `str` lẫn `list` multi-block** (đừng ép kiểu/bọc lại):
+**Nâng cấp helper:** các hàm kiểu `add_user_message(messages, text)` / `add_assistant_message(...)` viết cho chuỗi đơn thuần sẽ lỗi type hoặc làm hỏng cấu trúc khi nhận mảng block. Cho `content` nhận **cả `str` lẫn `list` multi-block** (đừng ép kiểu/bọc lại; bản nâng cấp nhận luôn `Message` object, xem [[Vòng lặp Agent#Refactor 3 hàm nền tảng cho `run_conversation`|Refactor 3 hàm nền tảng]]):
 
 ```python
 def add_user_message(messages, content):       # str hoặc [{"type": "tool_result", ...}]
@@ -392,6 +392,8 @@ for block in response.content:
 messages.append({"role": "assistant", "content": response.content})
 messages.append({"role": "user", "content": tool_results})  # 1 message chứa tất cả
 ```
+
+> **Phân biệt:** song song = các tool độc lập trong *1 lượt*. Khi tool sau cần kết quả của tool trước (vd `get_current_date` → `add_days`) thì Claude gọi **tuần tự qua nhiều lượt** → cần vòng lặp `while`, xem [[Vòng lặp Agent#Gọi tool tuần tự (chained / sequential tool calls)|Gọi tool tuần tự]].
 
 ## Xử lý lỗi
 
