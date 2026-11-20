@@ -46,6 +46,13 @@ Tool Use không chỉ để *tra cứu* dữ liệu (như thời tiết) mà cò
 | `add_duration_to_datetime` | Nhận mốc thời gian + khoảng tăng (+7 ngày, +2 giờ), tính bằng thư viện tin cậy (`datetime` Python, `Day.js` JS) | Date calculation issues |
 | `set_reminder` | Nhận thời điểm chính xác + nội dung, ghi vào DB / Google Calendar / hệ thống thông báo | No reminder capability |
 
+**Triển khai thực tế (Implementation):** mỗi tool chỉ là một **hàm Python thông thường** chạy trên server của bạn — bạn định nghĩa hàm (tên, mô tả, tham số) → đưa định nghĩa cho Claude → khi cần, Claude trả về tên hàm + tham số dạng structured data để app chạy hàm đó.
+
+Tool đầu tiên cần viết là `get_current_datetime`:
+
+- Chỉ dùng thư viện chuẩn `datetime` để đọc đồng hồ hệ thống và trả về chuỗi thời gian chuẩn (vd `2026-11-18 06:32:00`).
+- Là **"bước mồi" (anchor point)** cho mọi phép tính thời gian: trước khi cộng +7 ngày/+1 tháng, Claude bắt buộc gọi tool này để lấy mốc xuất phát (nếu không, "tuần tới" hoàn toàn mơ hồ vì Claude không biết "hôm nay" là ngày nào).
+
 Claude tự xâu chuỗi 3 tool qua [[Vòng lặp Agent]]. Ví dụ *"Remind me in a week to buy groceries"*:
 
 ```mermaid
@@ -107,11 +114,15 @@ Claude chỉ trả về một yêu cầu dạng JSON ("hãy chạy tool này v�
 
 ## Cấu trúc khai báo tool
 
+Claude chạy trên cloud nên **không đọc được mã Python** trên server của bạn. Sau khi viết xong hàm, bạn "dịch" nó thành **JSON Schema** — như tấm hướng dẫn sử dụng (manual) gửi kèm **mỗi lời gọi API** — để Claude biết tool làm gì, khi nào dùng và truyền tham số gì (vd hàm `get_current_datetime` ↔ schema mô tả "máy lấy giờ" và định dạng cần truyền).
+
+**JSON Schema** không phải phát minh riêng của ngành AI — đây là chuẩn lâu đời trong web dùng để validate dữ liệu; giới AI mượn lại vì nó là ngôn ngữ chung, chặt chẽ để mô tả tham số hàm. Có thể xem schema là "bản hợp đồng thông tin" giữa Claude và code của bạn.
+
 Mỗi tool là một JSON Schema gồm 3 phần:
 
 - **`name`** — tên định danh tool.
-- **`description`** — mô tả công dụng, quan trọng nhất vì Claude dựa vào đây để quyết định *có nên* và *khi nào* gọi tool này (nên viết rõ ràng, cụ thể, như hướng dẫn cho người mới — không chỉ đặt tên hàm).
-- **`input_schema`** — JSON Schema mô tả tham số đầu vào cần cung cấp.
+- **`description`** — mô tả công dụng (làm gì, khi nào nên dùng, trả về gì), quan trọng nhất vì Claude dựa vào đây để quyết định *có nên* và *khi nào* gọi tool này (nên viết rõ ràng, cụ thể, như hướng dẫn cho người mới — không chỉ đặt tên hàm).
+- **`input_schema`** — JSON Schema mô tả tham số đầu vào cần cung cấp: từng tham số kèm kiểu dữ liệu (`string`, `integer`...), tham số nào bắt buộc (`required`) và mô tả ý nghĩa để Claude truyền giá trị đúng.
 
 ```json
 {
@@ -130,7 +141,74 @@ Mỗi tool là một JSON Schema gồm 3 phần:
 }
 ```
 
+**4 nguyên tắc viết `description`** (Claude không thấy code, chỉ dựa vào ngôn ngữ tự nhiên này để suy luận):
+
+1. **Độ dài vừa đủ** — khoảng 3–4 câu súc tích: không quá ngắn (thiếu ngữ cảnh), không lan man (loãng ý chính).
+2. **When to use** — nêu rõ câu hỏi/tình huống nào của user thì nên gọi tool (la bàn để đối chiếu ý định).
+3. **What it returns** — mô tả đầu ra (chuỗi ngày giờ chuẩn, JSON thời tiết...) để Claude biết trước dạng dữ liệu nhận lại và tổng hợp câu trả lời.
+4. **Mô tả từng tham số** — mỗi argument trong `input_schema` đều giải thích nghĩa, kiểu, bắt buộc hay không → Claude không đoán mò/truyền sai kiểu.
+
 > **Nguyên nhân số 1 khiến Agent gọi sai tool (hoặc không nhận ra tool khả dụng): `description` quá mơ hồ.** Hãy mô tả cụ thể mục đích và dữ liệu trả về, không viết chung chung.
+
+### Quy ước đặt tên `_schema` (Python)
+
+Đặt biến schema theo tên hàm + hậu tố `_schema` (`get_current_datetime` → `get_current_datetime_schema`) để dễ ánh xạ code thực thi ↔ bản mô tả khi dự án có hàng chục tool.
+
+```python
+get_current_datetime_schema = {
+    "name": "get_current_datetime",  # phải khớp tuyệt đối tên hàm Python
+    "description": "Returns the current date and time formatted ...",
+    "input_schema": {
+        "type": "object",  # tham số truyền dưới dạng object (dict)
+        "properties": {
+            "date_format": {
+                "type": "string",
+                "description": "Python strftime format string",
+                "default": "%Y-%m-%d %H:%M:%S",
+            }
+        },
+        "required": [],  # có default nên không bắt buộc
+    },
+}
+```
+
+- `name` khớp tên hàm → khi Claude yêu cầu gọi tên đó, server biết chạy hàm nào.
+- `required: []` vì `date_format` đã có `default` → Claude có thể gọi không cần tham số.
+- Khi gọi API, gom các schema vào `tools=[get_current_datetime_schema, ...]`.
+
+**Request kích hoạt Tool Use** — điểm mấu chốt chỉ là thêm tham số `tools` vào `client.messages.create()`:
+
+```python
+messages = [{"role": "user", "content": "What is the exact time, formatted as HH:MM:SS?"}]
+
+response = client.messages.create(
+    model=model,
+    max_tokens=1024,
+    messages=messages,
+    tools=[get_current_datetime_schema],  # danh sách JSON Schema của các tool
+)
+```
+
+Claude đối chiếu câu hỏi (cần dữ liệu thời gian thực) với `tools`; thấy tool phù hợp thì **không trả text thường** mà trả block `tool_use` để code của bạn chạy hàm (xem [[#Cấu trúc response multi-block message]]).
+
+**Type safety với `ToolParam`:** bọc dict bằng `ToolParam({...})` (`from anthropic.types import ToolParam`; là `TypedDict` của SDK Anthropic, đúng cấu trúc tham số `tools` mong đợi). Không bắt buộc — dùng `dict` thường vẫn chạy — nhưng bền vững hơn:
+
+- **Bắt lỗi sớm (IDE/type-check time, không đợi runtime):** mypy, Pyright, VS Code/PyCharm cảnh báo ngay khi gõ sai key (`"descriptions"`), sai kiểu, hoặc thiếu field bắt buộc.
+- **Autocomplete:** gợi ý đúng key và kiểu hợp lệ khi gõ trong `ToolParam({...})`.
+- Càng hữu ích khi số tool tăng lên.
+
+### Mẹo: nhờ Claude sinh schema
+
+Gõ tay JSON schema dễ lỗi cú pháp (thiếu ngoặc, sai kiểu) → giao luôn cho Claude:
+
+1. Copy mã nguồn hàm Python.
+2. Nhờ Claude viết schema cho tool calling.
+3. Đính kèm tài liệu Tool Use của Anthropic làm chuẩn.
+4. Nhận JSON schema đúng định dạng, có `description` theo best practice.
+
+Prompt mẫu: *"Write a valid JSON schema spec for the purposes of tool calling for this function. Follow the best practices listed in the attached documentation."*
+
+Muốn khỏi viết schema hẳn: dùng [[Tool Runner]] của SDK (tự sinh schema từ code).
 
 ## Vòng đời một lượt gọi (tool_use_id)
 
@@ -144,6 +222,110 @@ graph TD
     B --> C["Gửi role: user, block tool_result<br/>tool_use_id: toolu_01ABC... (phải khớp)<br/>content: nội dung điều khoản"]
     C --> D["Claude nhận diện đúng<br/>kết quả này thuộc yêu cầu nào<br/>→ tiếp tục suy luận"]
 ```
+
+### Cấu trúc response: multi-block message
+
+Khi dùng tool, `content` của response không còn là một chuỗi đơn thuần mà là **mảng các block** gồm 2 loại:
+
+- **`type: "text"`** — văn bản thường của Claude (giải thích, câu hỏi ngược, lời dẫn trước khi gọi tool). Hướng tới **người dùng**: cho họ biết AI đang làm gì.
+- **`type: "tool_use"`** — yêu cầu gọi tool, gồm `id` (khớp với `tool_result` sau này), `name`, `input` (JSON tham số). Hướng tới **hệ thống/code của bạn**: biết chạy hàm nào, truyền gì.
+
+```json
+{
+  "role": "assistant",
+  "content": [
+    { "type": "text", "text": "Để tôi kiểm tra thời tiết Hà Nội cho bạn..." },
+    {
+      "type": "tool_use",
+      "id": "toolu_01A09q90cm1567",
+      "name": "get_weather",
+      "input": { "location": "Ha Noi", "unit": "celsius" }
+    }
+  ],
+  "stop_reason": "tool_use"
+}
+```
+
+Phía code: duyệt mảng `content`, thấy block `tool_use` → chạy hàm theo `name` + `input` → gửi lại message `role: "user"` chứa block `tool_result` (`tool_use_id` khớp `id`) → Claude trả câu trả lời cuối dạng `text`.
+
+### Quản lý lịch sử `messages`
+
+API **stateless** — server không lưu hội thoại, bạn tự giữ mảng `messages` và gửi lại đầy đủ mỗi lượt. Khi Claude trả về `tool_use`, phải append **nguyên mảng** `response.content` (cả `text` lẫn `tool_use`), không chỉ trích đoạn text:
+
+```python
+messages.append({"role": "assistant", "content": response.content})
+```
+
+**Nâng cấp helper:** các hàm kiểu `add_user_message(messages, text)` / `add_assistant_message(...)` viết cho chuỗi đơn thuần sẽ lỗi type hoặc làm hỏng cấu trúc khi nhận mảng block. Cho `content` nhận **cả `str` lẫn `list` multi-block** (đừng ép kiểu/bọc lại):
+
+```python
+def add_user_message(messages, content):       # str hoặc [{"type": "tool_result", ...}]
+    messages.append({"role": "user", "content": content})
+
+def add_assistant_message(messages, content):  # str hoặc response.content
+    messages.append({"role": "assistant", "content": content})
+```
+
+Lý do: khi gửi `tool_result`, Claude cần nhìn lại lượt trước để đối chiếu `id` của `tool_use` và mạch suy luận. Mất block `tool_use` khỏi lịch sử → API báo lỗi (không ghép được `tool_result` với yêu cầu gốc).
+
+### Flow 5 bước hoàn chỉnh (mức code)
+
+1. Gửi `messages` + `tools=[schema]`.
+2. Nhận multi-block message → **lưu ngay** vào `messages` (`role: "assistant"`).
+3. Đọc block `tool_use` (`name`, `input`, `id`) → chạy hàm thật ở backend.
+4. Append message `role: "user"` chứa `tool_result` (`tool_use_id` khớp `id`) → gửi lại **toàn bộ** `messages` (câu hỏi → response đa khối → tool_result).
+5. Nhận câu trả lời cuối dạng `text`.
+
+```python
+messages = [{"role": "user", "content": "Mấy giờ rồi?"}]
+response = client.messages.create(model=model, max_tokens=1000,
+                                  messages=messages, tools=[schema])
+
+messages.append({"role": "assistant", "content": response.content})
+
+if response.stop_reason == "tool_use":
+    block = next(b for b in response.content if b.type == "tool_use")
+    result = run_tool(block.name, block.input)
+
+    messages.append({"role": "user", "content": [{
+        "type": "tool_result",
+        "tool_use_id": block.id,   # phải khớp id ở bước 2
+        "content": str(result),
+    }]})
+
+    final = client.messages.create(model=model, max_tokens=1000,
+                                   messages=messages, tools=[schema])  # vẫn phải truyền tools
+    print(final.content[0].text)
+```
+
+Truyền tham số vào hàm thật (bước 3):
+
+- `block.input` là một **dict** `{tên_tham_số: giá_trị}` do Claude sinh theo `input_schema`. Dùng `**` (dictionary unpacking) để bung thành keyword arguments: `get_current_datetime(**block.input)` ≡ `get_current_datetime(format="HH:MM:SS")`.
+- **Đừng hardcode `response.content[1]`**: Claude có thể không kèm block `text` hoặc đổi thứ tự block → tìm theo `b.type == "tool_use"` như code trên.
+- Claude trả key thừa/thiếu hoặc sai tên so với tham số hàm → `**input` ném `TypeError: unexpected keyword argument`. Bọc `try ... except` và trả `tool_result` với `is_error: True` để Claude tự sửa.
+
+Về `tool_result` (bước 4 là "mảnh ghép cuối" khép kín vòng lặp):
+
+- Khi Claude phát `tool_use` thì nó **chưa có dữ liệu thật**, chỉ mới ra chỉ thị. Nếu code không chạy hàm và gửi kết quả về, hội thoại bị treo ở trạng thái chờ dữ liệu.
+- `content` của `tool_result` có thể là chuỗi hoặc JSON.
+- Hàm chạy lỗi thì **vẫn gửi** `tool_result` (kèm `is_error: True`) để Claude biết chuyện gì xảy ra và xử lý khéo, thay vì để API báo lỗi (xem [[#Xử lý lỗi]]).
+
+3 thuộc tính của block `tool_result` (nằm trong `content` của message `role: "user"`):
+
+| Thuộc tính | Bắt buộc? | Ý nghĩa |
+| --- | --- | --- |
+| `tool_use_id` | Có | Khớp chính xác `id` của block `tool_use` tương ứng |
+| `content` | Khuyến nghị | Kết quả hàm, thường ép thành `str` (vd `"16:33:00"` hoặc chuỗi JSON) |
+| `is_error` | Không (mặc định `False`) | `True` khi hàm lỗi (mạng, thiếu dữ liệu, sai tham số) → Claude hiểu đây là lỗi, không phải dữ liệu thật, rồi báo user hoặc đề xuất cách khác |
+
+```python
+{"type": "tool_result", "tool_use_id": "toolu_01A09q90cm1567",
+ "content": "Không thể kết nối tới dịch vụ thời gian.", "is_error": True}
+```
+
+Trước request ở bước 4, `messages` đã tích lũy đủ **3 message**: (1) `user` — câu hỏi gốc, (2) `assistant` — response đa khối chứa `tool_use`, (3) `user` — `tool_result` khớp `id`. Claude đọc lại cả 3 để biết user hỏi gì, mình đã định gọi tool nào và kết quả thật là gì → mới đủ ngữ cảnh trả câu cuối (vd *"Bây giờ là 15:04:22."*).
+
+Lưu ý: request ở bước 4 **vẫn phải truyền `tools`** vì lịch sử đang chứa block `tool_use`/`tool_result` — dù bạn chỉ kỳ vọng Claude trả text thường. Thiếu `tools`, Claude không đối chiếu được schema của các tool trong lịch sử → API có thể báo lỗi. Kết quả: Claude tổng hợp `tool_result` thành câu trả lời tự nhiên, vòng Tool Use khép kín. Code trên chỉ xử lý 1 lượt gọi; nhiều lượt liên tiếp cần bọc vào vòng lặp → [[Vòng lặp Agent]].
 
 Nhờ `tool_use_id`, Claude biết chính xác `tool_result` vừa nhận thuộc về lượt gọi tool nào — quan trọng khi có nhiều tool được gọi song song (xem [[#Gọi song song parallel tool use]]) vì lúc đó nhiều `tool_result` có thể trả về không theo đúng thứ tự gọi.
 
@@ -188,9 +370,45 @@ Muốn thêm tool thứ 3? Chỉ cần thêm 1 khai báo JSON + 1 nhánh `case` 
 
 Nếu nhiều tool độc lập nhau (như `get_weather` và `get_forecast` ở trên), Claude có thể trả về nhiều block `tool_use` trong cùng một response — giảm số vòng lặp cần thiết thay vì gọi tuần tự từng cái. Khi đó mỗi block mang `id` riêng, và từng `tool_result` gửi lại phải khớp đúng `tool_use_id` tương ứng (xem [[#Vòng đời một lượt gọi tool_use_id|phần tool_use_id]]).
 
+Xảy ra khi câu hỏi chứa nhiều tác vụ độc lập (vd *"10+10 và 30+30 bằng mấy?"*, *"Thời tiết Hà Nội và TP.HCM?"*): `response.content` gồm 1 block `text` dẫn + nhiều block `tool_use` (`toolu_01`, `toolu_02`...).
+
+Quy tắc gửi kết quả:
+
+- Tạo **một `tool_result` cho từng** `tool_use`, mỗi cái gắn đúng `tool_use_id` tương ứng.
+- **Thứ tự không bắt buộc** khớp thứ tự gọi — nhờ `tool_use_id`, Claude vẫn ghép đúng kết quả với lời gọi.
+- Gom **tất cả** `tool_result` vào **một message `role: "user"` duy nhất**, không tách thành nhiều message `user` rời.
+
+```python
+tool_results = []
+for block in response.content:
+    if block.type == "tool_use":
+        output = run_tool(block.name, block.input)
+        tool_results.append({
+            "type": "tool_result",
+            "tool_use_id": block.id,  # khớp id từng block
+            "content": str(output),
+        })
+
+messages.append({"role": "assistant", "content": response.content})
+messages.append({"role": "user", "content": tool_results})  # 1 message chứa tất cả
+```
+
 ## Xử lý lỗi
 
 Khi tool thực thi lỗi, vẫn trả `tool_result` như bình thường nhưng đánh dấu `is_error: true` kèm mô tả lỗi, để Claude tự điều chỉnh (thử cách khác, hỏi lại người dùng) thay vì làm gãy luồng hội thoại.
+
+**Validate đầu vào trong tool function:** tool chỉ là hàm Python bình thường (Flask, FastAPI...) được "đăng ký" với Claude qua schema. Vì tham số do Claude sinh từ ngôn ngữ tự nhiên nên có thể thiếu, sai định dạng ngày tháng hoặc giá trị không hợp lệ → luôn kiểm tra đầu vào:
+
+- **Chống crash** — không validate thì exception có thể làm sập cả hệ thống.
+- **Giúp Claude tự sửa sai (self-correction)** — trả về thông báo lỗi rõ ràng (vd *"Lỗi: Không tìm thấy thành phố 'San Franci' trong CSDL"*) thay vì để app văng; Claude đọc lỗi, hiểu vấn đề rồi gọi lại tool với tham số đã sửa.
+
+**3 best practices khi viết tool function:**
+
+1. **Descriptive names** — tên hàm *và* tên tham số phải nói rõ mục đích, vì Claude chọn tool dựa trên ngữ nghĩa. Tốt: `get_weather(city_name: str)`; kém: `fetch_data(arg1: str)` (dễ chọn sai tool/truyền lộn tham số).
+2. **Validate inputs** — kiểm tra rỗng (`""`), sai kiểu, sai định dạng (`YYYY-MM-DD`) rồi `raise` exception khi vi phạm → tránh crash và bảo vệ dữ liệu backend.
+3. **Meaningful error messages** — nêu đúng nguyên nhân, không dùng lỗi chung chung kiểu `Error 500`/`Invalid input`.
+
+Lỗi chi tiết đóng vai trò như *feedback prompt* (vd *"Location cannot be empty. Please specify a city name."*): hỏi "Thời tiết ở đó thế nào?" → Claude đoán gọi `get_weather(city_name="")` → code raise lỗi → Claude đọc lỗi và hỏi lại user "Bạn muốn xem thời tiết ở thành phố nào?". Lỗi mơ hồ hoặc crash im lặng thì Claude bị "mắc kẹt".
 
 ## Tích hợp vào hệ thống thực tế (Production)
 
