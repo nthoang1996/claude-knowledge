@@ -102,6 +102,23 @@ graph LR
 
 > **Bài học:** Claude tự làm **orchestrator** — bạn không viết logic "tool A hay B trước", Claude tự suy luận ở mỗi lượt theo chu trình *Nhiệm vụ → Gọi tool → Đọc kết quả → Gọi tool tiếp (nếu cần) → Kết luận*.
 
+**Test case multi-tool** — xác nhận `run_conversation` + `run_tool` chạy đúng qua nhiều lượt gọi liên tiếp, không chỉ 1 lần: *"Set a reminder for my doctors appointment. Its 177 days after Jan 1st, 2050."*
+
+1. `add_duration_to_datetime` (`2050-01-01` + 177 ngày) → `2050-06-27`.
+2. `set_reminder` (`2050-06-27`, nội dung hẹn khám bác sĩ) → xác nhận thành công → Claude trả lời cuối.
+
+- **Không cần `get_current_datetime`** vì mốc bắt đầu đã cho sẵn → Claude chỉ gọi tool thực sự cần.
+- Claude thường kèm block `text` nêu kế hoạch (tính ngày trước, đặt nhắc sau) cùng `tool_use`.
+
+**Message flow** — 4 dạng message nối tiếp trong `messages`:
+
+| Message | `role` | Nội dung |
+| --- | --- | --- |
+| Yêu cầu gốc | `user` | Câu hỏi/nhiệm vụ của người dùng |
+| Yêu cầu gọi tool | `assistant` | 1 message có thể gộp nhiều block: `text` (nêu ý định) + `tool_use` |
+| Kết quả tool | `user` | Block `tool_result` do code của bạn gửi lại |
+| Phản hồi tiếp theo | `assistant` | Gọi tiếp tool khác (→ lặp lại 2 dạng trên) **hoặc** trả lời cuối bằng `text` |
+
 **Vì sao bắt buộc dùng vòng lặp `while`:** không biết trước câu hỏi cần 1, 2 hay 5 tool liên tiếp (hoặc không cần tool nào). Code cứng kiểu "gọi 1 lần + gửi follow-up 1 lần" sẽ dừng sớm khi Claude mới đi được nửa đường → gói cả *gọi API → chạy tool → gửi `tool_result`* vào `while True`, chỉ thoát khi `stop_reason != "tool_use"` (Claude đã đủ dữ liệu, chuyển sang trả text cuối).
 
 ```python
@@ -144,7 +161,11 @@ Tách vòng lặp thành một hàm tái sử dụng, nhận và trả về mả
 ```python
 def run_conversation(messages):
     while True:
-        response = chat(messages, tools=[get_current_datetime_schema])  # 1. gửi lịch sử + schema tool
+        response = chat(messages, tools=[                 # 1. gửi lịch sử + schema tool
+            get_current_datetime_schema,
+            add_duration_to_datetime_schema,
+            set_reminder_schema,
+        ])
         add_assistant_message(messages, response)         # 2. lưu phản hồi (text + tool_use)
         print(text_from_message(response))                # 3. in text lượt này (lời dẫn hoặc câu trả lời cuối)
         if response.stop_reason != "tool_use":            # 4. điều kiện dừng
@@ -155,6 +176,7 @@ def run_conversation(messages):
 ```
 
 - **Luôn truyền `tools` ở mỗi vòng** để Claude biết các hàm khả dụng và hiểu đúng các block `tool_use`/`tool_result` trong lịch sử.
+- **Thêm tool mới — bước đầu là đưa schema vào `tools`:** đây mới là *khai báo* (Claude biết tool và có thể phát `tool_use`), chưa *thực thi*; vẫn phải nối hàm vào [[#Hàm `run_tools(message)` xử lý nhiều tool trong 1 response|bộ điều phối]], với `name` trong schema khớp chính xác tên được rẽ nhánh.
 - **`print(text_from_message(response))` ngay sau khi lưu:** lượt gọi tool thì in lời dẫn (vd *"Let me check the current time..."*); lượt cuối thì in câu trả lời cuối trước khi `break`.
 - **`run_tools(response)`** đóng gói việc tìm các block `tool_use`, gọi hàm tương ứng (`**block.input`) và tạo `tool_result` (`tool_use_id`, `content`, `is_error`) → vòng lặp chính gọn.
 - Ví dụ *"What is the exact time?"*: vòng 1 nhận `tool_use` → chạy `get_current_datetime` → thêm `tool_result`; vòng 2 Claude trả text với `stop_reason = "end_turn"` → `break`.
@@ -231,12 +253,7 @@ def run_tools(message):
 
     for tool_request in tool_requests:
         try:
-            if tool_request.name == "get_current_datetime":
-                output = get_current_datetime(**tool_request.input)
-            elif tool_request.name == "add_duration_to_datetime":
-                output = add_duration_to_datetime(**tool_request.input)
-            else:
-                raise ValueError(f"Unknown tool: {tool_request.name}")
+            output = run_tool(tool_request.name, tool_request.input)  # bộ điều phối
             tool_result_blocks.append({
                 "type": "tool_result", "tool_use_id": tool_request.id,
                 "content": str(output), "is_error": False,
@@ -254,7 +271,21 @@ def run_tools(message):
 - **`try/except` + `is_error`:** lỗi không làm sập vòng lặp — gửi `is_error: True` kèm thông báo để Claude tự xử lý (thử lại/giải thích).
   - **Vì sao vẫn phải trả `tool_result` khi tool lỗi:** mỗi `tool_use` bắt buộc có `tool_result` tương ứng ở lượt `user` kế tiếp; để exception văng ra thì app crash, bỏ sót `tool_result` thì lịch sử thiếu block → lượt gọi API sau lỗi cấu trúc.
   - **Claude nhờ đó biết:** tool call nào hỏng (`tool_use_id`), nguyên nhân (`content: "Error: ..."`), và tự quyết hướng tiếp: gọi lại với tham số khác, thử tool thay thế, hoặc giải thích cho người dùng thay vì treo.
-  - **Tách `run_tool(name, input)` làm bộ điều phối** (gọi đúng hàm với `**input`), để `try/except` trong `run_tools` gọn.
+  - **Tách `run_tool(name, input)` làm bộ điều phối** (tool router), để `try/except` trong `run_tools` gọn. Mẫu: kiểm tra tên → gọi hàm tương ứng → trả kết quả.
+
+      ```python
+      def run_tool(tool_name, tool_input):
+          if tool_name == "get_current_datetime":
+              return get_current_datetime(**tool_input)
+          elif tool_name == "add_duration_to_datetime":
+              return add_duration_to_datetime(**tool_input)
+          elif tool_name == "set_reminder":
+              return set_reminder(**tool_input)
+          else:
+              raise ValueError(f"Unknown tool: {tool_name}")
+      ```
+
+    - `**tool_input` bung dict thành keyword arguments → key phải khớp tên tham số của hàm, lệch là `TypeError`.
     - Ánh xạ `tool_request.name` → hàm Python, truyền `tool_request.input` bằng `**`; không khớp tool nào thì `raise` để `run_tools` bắt và trả `is_error: True`.
     - **Tách bạch trách nhiệm:** `run_conversation` lo vòng đời API + `messages`; `run_tools` lo duyệt block, bắt lỗi, gom `tool_result`; `run_tool` chỉ lo định tuyến tên → hàm.
     - **Thêm tool mới không sửa vòng lặp chính:** viết hàm + JSON schema → thêm nhánh vào `run_tool` → đưa schema vào `tools` của `chat`.

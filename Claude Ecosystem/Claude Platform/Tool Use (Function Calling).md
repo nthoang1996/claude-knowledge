@@ -30,7 +30,7 @@ Tool Use không chỉ để *tra cứu* dữ liệu (như thời tiết) mà cò
 3 thách thức ẩn bên dưới:
 
 - **Limited time awareness** — system prompt có thể cho Claude biết *ngày* hiện tại, nhưng Claude không có real-time clock → không biết giờ/phút chính xác nếu không được cấp tool kiểu `get_current_time`.
-- **Date calculation issues** — LLM là token prediction, không phải máy tính/lịch → dễ tính sai mốc tương lai phức tạp ("Thứ Năm tuần sau nữa", +45 ngày: sai ngày, năm nhuận, số ngày trong tháng).
+- **Date calculation issues** — LLM là token prediction, không phải máy tính/lịch → dễ tính sai mốc tương lai phức tạp ("Thứ Năm tuần sau nữa", +45 ngày, hay "14:45 thứ Sáu + 75 giờ" → đúng là 17:45 thứ Hai: dễ sai ngày/thứ, năm nhuận, số ngày trong tháng).
 - **No reminder capability** — mô hình chỉ "nhận lệnh → trả lời ngay", không có background process, DB lưu trữ hay push notification → không thể tự chờ đến đúng ngày để nhắc.
 
 **Tools lấp khoảng trống (bridge):**
@@ -45,6 +45,8 @@ Tool Use không chỉ để *tra cứu* dữ liệu (như thời tiết) mà cò
 | `get_current_datetime` | Trả ngày giờ hiện tại từ đồng hồ server — mốc xuất phát cho mọi tính toán | Limited time awareness |
 | `add_duration_to_datetime` | Nhận mốc thời gian + khoảng tăng (+7 ngày, +2 giờ), tính bằng thư viện tin cậy (`datetime` Python, `Day.js` JS) | Date calculation issues |
 | `set_reminder` | Nhận thời điểm chính xác + nội dung, ghi vào DB / Google Calendar / hệ thống thông báo | No reminder capability |
+
+> Kể cả khi hàm và JSON Schema đã được viết sẵn (như `add_duration_to_datetime`, `set_reminder` trong bài thực hành), Claude vẫn chưa dùng được cho tới khi bạn **truyền schema vào `tools`** và **nối (wire up) hàm vào bộ điều phối tool** (xem [[#Khai báo nhiều tool cùng lúc]]).
 
 **Triển khai thực tế (Implementation):** mỗi tool chỉ là một **hàm Python thông thường** chạy trên server của bạn — bạn định nghĩa hàm (tên, mô tả, tham số) → đưa định nghĩa cho Claude → khi cần, Claude trả về tên hàm + tham số dạng structured data để app chạy hàm đó.
 
@@ -349,7 +351,14 @@ Chi tiết cách nối `messages` qua nhiều lượt để tạo thành agent h
 
 Mảng `tools` không giới hạn ở 1 phần tử — khai báo càng nhiều tool, Claude càng có nhiều lựa chọn để tự đối chiếu với yêu cầu người dùng và quyết định *tool nào, theo thứ tự nào*, dựa hoàn toàn vào phần `description` của từng tool.
 
-Cấu trúc [[Vòng lặp Agent|vòng lặp]] không đổi — chỉ cần mở rộng 2 chỗ: thêm khai báo JSON vào mảng `tools`, và thêm một nhánh vào hàm điều hướng thực thi (`runTool`/`run_tool`) để `switch`/rẽ nhánh theo `name`:
+Khi **hạ tầng xử lý tool cốt lõi** đã chạy ổn (gửi `tools` → kiểm tra `stop_reason: "tool_use"` → định tuyến theo `name` → trả `tool_result`), thêm tool mới rất đơn giản: [[Vòng lặp Agent|vòng lặp]] không đổi, chỉ lặp lại cùng một khuôn mẫu 4 bước:
+
+1. **Viết hàm xử lý** logic thật (gọi API, query DB, đọc file, tính toán...) và trả về kết quả.
+2. **Khai báo schema** (`name`, `description`, `input_schema`).
+3. **Thêm schema vào mảng `tools`** (trong [[Vòng lặp Agent#Hàm `run_conversation` (đóng gói vòng lặp)|run_conversation]]) để Claude biết tool khả dụng.
+4. **Thêm nhánh vào bộ điều phối** (`runTool`/`run_tool`) để ánh xạ `name` → hàm: dùng `switch` như dưới, hoặc [[Vòng lặp Agent#Hàm `run_tools(message)` xử lý nhiều tool trong 1 response|dictionary registry]] khi có nhiều tool.
+
+> **Lợi ích mô-đun:** mỗi tool gói gọn trong *hàm + schema + 1 nhánh định tuyến* → dễ bảo trì, dễ test độc lập, không phải sửa cơ chế `tool_use`/`tool_result`.
 
 ```javascript
 function runTool(name, input) {
@@ -362,7 +371,13 @@ function runTool(name, input) {
 }
 ```
 
-Muốn thêm tool thứ 3? Chỉ cần thêm 1 khai báo JSON + 1 nhánh `case` mới — toàn bộ logic vòng lặp bên dưới giữ nguyên, không cần sửa.
+Muốn thêm tool thứ 3? Chỉ cần thêm 1 khai báo JSON + 1 hàm xử lý + 1 nhánh `case` mới — toàn bộ logic vòng lặp bên dưới giữ nguyên, không cần sửa.
+
+**Lưu ý khi số tool tăng:**
+
+- **`description` không chồng chéo** — hai tool tương tự mà mô tả không phân biệt rõ thì Claude dễ chọn nhầm.
+- **Xử lý lỗi đồng nhất** — mọi tool đều trả lỗi rõ ràng qua `tool_result` (`is_error: true`), xem [[#Xử lý lỗi]].
+- **Kiểm soát quyền hạn, chi phí, độ trễ** — giới hạn tham số đầu vào, quản lý thời gian phản hồi của từng tool.
 
 **Ví dụ:** yêu cầu *"Chuẩn bị hành lý đi Denver 3 ngày"* — Claude tự nhận ra cần cả thời tiết hôm nay lẫn dự báo 3 ngày tới, nên gọi cả `get_weather` lẫn `get_forecast` rồi tổng hợp thành lời khuyên cụ thể (ví dụ: mặc nhiều lớp áo vì có tuyết nhẹ, sẽ ấm dần). Việc Claude nhận diện đúng cả 2 tool cần dùng phụ thuộc hoàn toàn vào `description` của mỗi tool có đủ rõ ràng hay không — một lần nữa khẳng định `description` là yếu tố quyết định độ chính xác của Agent.
 

@@ -88,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -284,21 +284,20 @@
       "new-3d-graph:Open 3d graph": false
     }
   },
-  "active": "4942bf9ef7cb9f76",
+  "active": "f6a4c5728696f2c3",
   "lastOpenFiles": [
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.56329b05de6d",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.26fcdc2029fb",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.bde6dcbca55c",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.a669126b2fe1",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.2a19533d321c",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.e51a6e9d41d3",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.81ea325f07f9",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.bd13271e0d59",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.16116.a8b89d1af741",
     "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.20128.3201ec7c0d7b",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.20128.e14fece9f6b4",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.458fe29209bc",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.c8421cc35cac",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.a072a688bff8",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.4434740e64db",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.f2383bfe98cf",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.3598a94f65a2",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.1248e0555457",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.eaed7661ad7a",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.388410a61dc3",
+    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.4bf496228f10",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Thẻ XML (XML Tags).md",
