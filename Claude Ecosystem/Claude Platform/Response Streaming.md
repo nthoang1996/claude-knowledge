@@ -110,7 +110,7 @@ graph LR
 | Loại delta | Block | Cách dùng |
 | --- | --- | --- |
 | `text_delta` | `text` | Nối vào chuỗi hiển thị |
-| `input_json_delta` | `tool_use` | JSON tham số tool **đến từng phần** — gom đủ rồi mới parse ([[Tool Use (Function Calling)]]) |
+| `input_json_delta` | `tool_use` | JSON tham số tool **đến từng phần** — gom đủ rồi mới parse ([[Tool Use Streaming]]) |
 | `thinking_delta` | `thinking` | Suy luận trung gian ([[Extended Thinking]]) |
 
 - **Tên gọi theo SDK** — tài liệu/SDK hay viết kiểu PascalCase (`MessageStart`, `ContentBlockStart`, `ContentBlockDelta`, `ContentBlockStop`, `MessageDelta`, `MessageStop`); trên đường truyền (SSE) là `message_start`, `content_block_delta`... Cùng một thứ, trường `type` của event dùng dạng snake_case.
@@ -253,4 +253,4 @@ log_usage(final.usage.input_tokens, final.usage.output_tokens, final.stop_reason
 - Thuộc nhóm: [[Claude Platform]]
 - Ngữ cảnh pipeline & bước relay Server → Client: [[Vòng đời Request (Request Lifecycle)]]
 - Giao thức nền: [[REST API]], [[SDKs]]
-- Tool use trong stream: [[Vòng lặp Agent]]
+- Tool use trong stream: [[Tool Use Streaming]], [[Vòng lặp Agent]]

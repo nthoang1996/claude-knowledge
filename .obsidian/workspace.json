@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
+                "file": "Claude Ecosystem/Claude Platform/Tool Use Streaming.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tool Use (Function Calling)"
+              "title": "Tool Use Streaming"
             }
           },
           {
@@ -286,18 +286,21 @@
   },
   "active": "f6a4c5728696f2c3",
   "lastOpenFiles": [
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.458fe29209bc",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.c8421cc35cac",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.a072a688bff8",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.4434740e64db",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.f2383bfe98cf",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.c8cff4f20384",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.e28f8652ab26",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.4b00a8b3cb00",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.0bda381eec9a",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.9aa76cbeddaa",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.c5fb1cba2ded",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.e9a39298de6b",
+    "Claude Ecosystem/Claude Platform/Response Streaming.md",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.e6d67ff6f890",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.b90626de67c0",
+    "Claude Ecosystem/Claude Platform/Tool Use Streaming.md.tmp.5036.22d4a872435c",
     "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.3598a94f65a2",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.1248e0555457",
-    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md.tmp.29604.eaed7661ad7a",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.388410a61dc3",
-    "Claude Ecosystem/Claude Platform/Tool Use (Function Calling).md.tmp.29604.4bf496228f10",
+    "Claude Ecosystem/Claude Platform.md.tmp.5036.fe47d8896335",
+    "Claude Ecosystem/Claude Platform/Vòng lặp Agent.md",
     "Claude Ecosystem/Công cụ tìm kiếm & nghiên cứu/Enterprise Search.md",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Few-shot Prompting (Cung cấp ví dụ mẫu).md",
     "Sử dụng Claude hiệu quả/Prompt Engineering/Thẻ XML (XML Tags).md",
@@ -317,10 +320,8 @@
     "Claude Ecosystem/Claude Platform/Model Tiers.md",
     "Claude Ecosystem/Claude Platform/Structured Output (Ép đầu ra JSON thuần).md",
     "Claude Ecosystem/Claude Platform/System Prompt.md",
-    "Claude Ecosystem/Claude Platform/Response Streaming.md",
     "Claude Ecosystem/Claude Platform/Temperature.md",
     "Claude Ecosystem/Claude Platform/Context Management.md",
-    "Claude Ecosystem/Claude Platform/SDKs/TypeScript.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]

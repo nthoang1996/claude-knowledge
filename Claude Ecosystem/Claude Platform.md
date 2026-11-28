@@ -28,6 +28,7 @@ graph TD
 - [[Stateless API & Hội thoại nhiều lượt]] — API không nhớ gì, ứng dụng phải tự gửi lại history
 - [[Temperature]] — tham số cân bằng chính xác/nhất quán và sáng tạo/đa dạng khi sinh token
 - [[Response Streaming]] — nhận câu trả lời theo luồng (SSE) để chữ hiện dần, giảm thời gian chờ chữ đầu tiên (TTFT)
+- [[Tool Use Streaming]] — gọi tool ở chế độ streaming: tham số đến từng phần (`input_json_delta`), nhận đủ mới chạy tool
 - [[System Prompt]] — chỉ dẫn nền (vai trò, quy tắc, định dạng) gửi kèm mỗi request qua tham số `system`
 - [[Structured Output (Ép đầu ra JSON thuần)]] — ép Claude trả JSON thuần (không lời dẫn, không markdown fence) để code parse trực tiếp
 - [[Prompt Evaluation (Đánh giá câu lệnh)]] — đo lường định lượng chất lượng prompt trên test set (như unit test), đảm bảo độ tin cậy trước khi deploy

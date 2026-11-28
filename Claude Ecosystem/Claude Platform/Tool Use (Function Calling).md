@@ -449,6 +449,7 @@ Ví dụ: một **Compliance Agent** (kiểm định tuân thủ pháp lý) dùn
 - Thuộc nhóm: [[Claude Platform]]
 - Phân biệt với [[Skills]]: Tool = khả năng hành động (what Claude can do), Skill = quy trình/quy chuẩn thực hiện (how you want it done)
 - Cơ chế lắp ráp nhiều lượt gọi tool thành hành vi agent: [[Vòng lặp Agent]]
+- Nhận tham số tool theo luồng (`input_json_delta`): [[Tool Use Streaming]]
 - Kết nối tool từ server ngoài: [[Connectors (MCP)]]
 - Tool Anthropic tự host & thực thi sẵn: [[Built-in Tools (Server Tools)]]
 - Tool chạy trên máy bạn nhưng dùng schema dựng sẵn từ SDK: [[Client Tools]]
