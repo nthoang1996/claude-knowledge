@@ -29,7 +29,7 @@ graph LR
 - **Code execution** — Claude tự viết và chạy code Python trong sandbox an toàn do Anthropic quản lý (không cần tự dựng môi trường thực thi).
 - **Web fetch** — lấy toàn bộ nội dung chi tiết từ một URL cụ thể (khác Web search ở chỗ: fetch cần URL đã biết trước, còn search là đi tìm URL phù hợp).
 
-Ngoài 3 tool trên, Anthropic còn cung cấp thêm các server tool khác cho các use case đặc thù hơn: **bash**, **text editor**, **computer use** (điều khiển máy tính ảo) — xem thêm trong tài liệu [[Tool Use (Function Calling)|Tool Use]].
+> **Dễ nhầm:** **bash** và **[[Text Editor Tool|text editor]]** cũng do Anthropic định nghĩa sẵn, nhưng là [[Client Tools]] (code của bạn thực thi), không phải server tool. Riêng Code execution có sẵn khả năng chạy bash và sửa file **bên trong sandbox của Anthropic**.
 
 ## Dùng nhiều server tool trong cùng 1 request
 

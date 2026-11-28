@@ -17,10 +17,11 @@ Về bản chất, Client tools vẫn là [[Tool Use (Function Calling)|custom t
 
 > Khác với [[Tool Runner]] (tự sinh schema từ *hàm code tự viết* của bạn), Client tools là schema **đã được Anthropic định nghĩa sẵn** cho một nhóm use case cụ thể — bạn không tự đặt tên/tham số.
 
-## 2 ví dụ tiêu biểu
+## Các ví dụ tiêu biểu
 
 | Tool | Công dụng |
 | --- | --- |
+| **[[Text Editor Tool]]** | Cho Claude xem, tạo, sửa file văn bản và liệt kê thư mục. |
 | **Memory** | Cho Claude đọc/ghi thông tin để nhớ xuyên suốt nhiều phiên hội thoại (session) khác nhau. |
 | **Bash** | Cấp một shell Bash **liên tục (persistent)** để Claude tự chạy lệnh trực tiếp trên hệ thống của bạn. |
 
@@ -32,7 +33,7 @@ Về bản chất, Client tools vẫn là [[Tool Use (Function Calling)|custom t
 | Ai lo sandbox/hạ tầng | Anthropic | Bạn |
 | Schema | Anthropic định nghĩa & tự chạy luôn | Anthropic định nghĩa sẵn, bạn tự cài phần thực thi |
 | Kiểm soát dữ liệu/môi trường | Không (dữ liệu đi qua server Anthropic) | Toàn quyền (chạy nội bộ) |
-| Ví dụ | Web search, Code execution, Web fetch | Memory, Bash |
+| Ví dụ | Web search, Code execution, Web fetch | Memory, Bash, Text editor |
 
 ## Liên kết
 
